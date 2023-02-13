@@ -1,0 +1,273 @@
+{% extends 'account/base.html' %}
+{% block title %}Donation{% endblock title%}
+{% load static %}
+{% block body %}
+        <!-- Page Breadcumb -->
+        <section class="pageBreadcumb pageBreadcumb--style1 position-relative" data-bg-image="{% static 'account/image/bg/pageBreadcumbBg1.jpg' %}">
+            <div class="pageBreadcumbTopDown">
+                <a class="btn btn--styleOne btn--icon btn--icon2 it-btn" href="donation-listing.html">
+          <svg class="btn__icon" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.869141 8.70508L1.45508 8.11914C1.60156 8.00195 1.80664 8.00195 1.95312 8.14844L4.23828 10.4922V0.414062C4.23828 0.208984 4.38477 0.0625 4.58984 0.0625H5.41016C5.58594 0.0625 5.76172 0.208984 5.76172 0.414062V10.4922L8.01758 8.14844C8.16406 8.00195 8.36914 8.00195 8.51562 8.11914L9.10156 8.70508C9.21875 8.85156 9.21875 9.05664 9.10156 9.20312L5.23438 13.0703C5.08789 13.1875 4.88281 13.1875 4.73633 13.0703L0.869141 9.20312C0.751953 9.05664 0.751953 8.85156 0.869141 8.70508Z" fill="#60646B" />
+          </svg>
+          <span class="it-btn__inner">
+          <span class="it-btn__blobs">
+            <span class="it-btn__blob"></span>
+          <span class="it-btn__blob"></span>
+          <span class="it-btn__blob"></span>
+          <span class="it-btn__blob"></span>
+          </span>
+          </span>
+          <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter>
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
+                </feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+        </a>
+            </div>
+            <div class="sectionShape sectionShape--top">
+                <img src="{% static 'account/image/shapes/pagebreadcumbShapeTop.svg' %}" alt="Gainioz">
+            </div>
+            <div class="sectionShape sectionShape--bottom">
+                <img src="{% static 'account/image/shapes/pagebreadcumbShapeBottom.svg' %}" alt="Gainioz">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pageTitle text-center">
+                            <h2 class="pageTitle__heading text-white text-uppercase mb-25">Donation Details</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Donation Details</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Breadcumb End -->
+        <!-- Donation Details -->
+        <section class="donation pt-130 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-30">
+                        <div class="innerWrapper">
+                            <div class="donationDetails">
+                                <div class="donationDetails__header mb-45">
+                                    <figure class="thumb mb-45">
+                                        <img src="{% static 'account/image/utilites/dontaion-details-thumb1.jpg' %}" alt="Gainioz">
+                                    </figure>
+                                    <h3 class="donationDetails__title text-uppercase">Donate for African Child Education</h3>
+                                </div>
+                                <div class="featureBlock__donation featureBlock__donation--style2 mb-50">
+                                    <div class="featureBlock__donation__progress">
+                                        <div class="featureBlock__donation__bar">
+                                            <span class="featureBlock__donation__text skill-bar" data-width="80%" style="width: 80%;">80%</span>
+                                            <div class="featureBlock__donation__line">
+                                                <span class="skill-bars">
+                        <span class="skill-bars__line skill-bar" data-width="80%" style="width: 80%;"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="featureBlock__eqn">
+                                        <div class="featureBlock__eqn__block">
+                                            <span class="featureBlock__eqn__title">our goal</span>
+                                            <span class="featureBlock__eqn__price">$13,0000</span>
+                                        </div>
+                                        <div class="featureBlock__eqn__block text-center">
+                                            <span class="featureBlock__eqn__title">Raised</span>
+                                            <span class="featureBlock__eqn__price">$22,9098</span>
+                                        </div>
+                                        <div class="featureBlock__eqn__block text-end">
+                                            <span class="featureBlock__eqn__title">to go</span>
+                                            <span class="featureBlock__eqn__price">$38,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="donationDetails__warning">
+                                    <p>
+                                        <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M23.8236 19.6887L12.7561 0.966058C12.6007 0.698209 12.3114 0.5 12.0007 0.5C11.6847 0.5 11.3954 0.698209 11.2454 0.966058L0.177863 19.6887C0.0278673 19.9566 -0.0792725 20.3851 0.0760802 20.6476C0.231433 20.9101 0.515353 21.0708 0.826059 21.0708H23.1701C23.4808 21.0708 23.7647 20.9101 23.92 20.6476C24.0807 20.3851 23.9736 19.9512 23.8236 19.6887ZM13.715 18.4995H10.2865V15.9281H13.715V18.4995ZM13.715 14.2139H10.2865V6.49983H13.715V14.2139Z" fill="black" />
+                    </svg>
+                                        <span>Notice:</span> Test mode is enabled. While in test mode no live donations are processed.
+                                    </p>
+                                </div>
+                                <div class="donationDetails__payments">
+                                    <div class="payments">
+                                        <div class="paymentsHeader">
+                                            <div class="payments__title">
+                                                <h4 class="donationDetails__heading">Select Payment Method</h4>
+                                            </div>
+                                            <div class="payments__methods">
+                                                <div class="payments__method">
+                                                    <input class="payments__input" id="pay1" type="radio" name="pay">
+                                                    <label class="payments__label" for="pay1"><span
+                            class="payments__label__check"></span>Donation</label>
+                                                </div>
+                                                <div class="payments__method">
+                                                    <input class="payments__input" id="pay2" type="radio" name="pay">
+                                                    <label class="payments__label" for="pay2"><span class="payments__label__check"></span>Cradint
+                            Donation</label>
+                                                </div>
+                                                <div class="payments__method">
+                                                    <input class="payments__input" id="pay3" type="radio" name="pay">
+                                                    <label class="payments__label" for="pay3"><span class="payments__label__check"></span>Offline
+                            Donation</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="paymentsCustoms">
+                                            <div class="paymentsInput">
+                                                <input class="paymentsCustoms__field" type="text" placeholder="Custom Donation">
+                                            </div>
+                                            <div class="paymentsAmountChoice">
+                                                <div class="payments__method">
+                                                    <input class="payments__input" id="pay4" type="radio" name="pay2">
+                                                    <label class="paymentsAmountChoice__label" for="pay4">$20</label>
+                                                </div>
+                                                <div class="payments__method">
+                                                    <input class="payments__input" id="pay5" type="radio" name="pay2">
+                                                    <label class="paymentsAmountChoice__label" for="pay5">$50</label>
+                                                </div>
+                                                <div class="payments__method">
+                                                    <input class="payments__input" id="pay6" type="radio" name="pay2">
+                                                    <label class="paymentsAmountChoice__label" for="pay6">$100</label>
+                                                </div>
+                                                <div class="payments__method">
+                                                    <input class="payments__input" id="pay7" type="radio" name="pay2">
+                                                    <label class="paymentsAmountChoice__label" for="pay7">$500</label>
+                                                </div>
+                                                <div class="payments__method">
+                                                    <input class="payments__input" id="pay8" type="radio" name="pay2">
+                                                    <label class="paymentsAmountChoice__label" for="pay8">$1000</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="donationDetails__cross mb-45">
+                                    <p>
+                                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <mask id="mask0_1265_247" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="21">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 0C4.70156 0 0 4.70156 0 10.5C0 16.2984 4.70156 21 10.5 21C16.2984 21 21 16.2984 21 10.5C21 4.70156 16.2984 0 10.5 0ZM15.5766 14.0391C15.6469 14.1094 15.6844 14.2031 15.6844 14.3016C15.6844 14.4 15.6469 14.4984 15.5766 14.5641L14.5641 15.5812C14.4891 15.6562 14.3953 15.6891 14.3016 15.6891C14.2078 15.6891 14.1094 15.6516 14.0391 15.5812L10.5 12.0375L6.96562 15.5859C6.89531 15.6609 6.79687 15.6937 6.70312 15.6937C6.60937 15.6937 6.51093 15.6562 6.44062 15.5859L5.42812 14.5687C5.35781 14.4984 5.32031 14.4047 5.32031 14.3062C5.32031 14.2078 5.35781 14.1094 5.42812 14.0437L8.97656 10.4812L5.41874 6.96562C5.27343 6.82031 5.27343 6.58124 5.41874 6.43593L6.43124 5.41874C6.50156 5.34843 6.59531 5.31093 6.69374 5.31093C6.79218 5.31093 6.88593 5.34843 6.95624 5.41874L10.5047 8.92031L14.0531 5.41874C14.1234 5.34843 14.2172 5.31093 14.3156 5.31093C14.4141 5.31093 14.5078 5.34843 14.5781 5.41874L15.5906 6.43593C15.7359 6.58124 15.7359 6.82031 15.5906 6.96562L12.0328 10.4812L15.5766 14.0391Z" fill="white" />
+                      </mask>
+                      <g mask="url(#mask0_1265_247)">
+                        <rect width="21" height="21" rx="10.5" fill="#F05359" />
+                      </g>
+                    </svg> We're unable to recognize your session. Please refresh the screen to try again; otherwise contact your website administrator for assistance.
+                                    </p>
+                                </div>
+                                <p class="donationDetails__text mb-30">We have covered many special events such as fireworks, fairs, parades, races, walks, awards ceremonies, fashion shows, sporting events, and even a memorial service.</p>
+                                <p class="donationDetails__text mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate vestibulum rhoncus, dolor eget viverra pretium, dolor tellus aliquet nunc, vitae ultricies erat elit eu lacus. Vestibulum non justo consectetur,
+                                    cursus ante, tincidunt sapien. Nulla quis diam sit amet turpis interd enim. Vivamus faucibus ex sed nibh egestas elementum. Mauris et bibendum dui. Aenean consequat pulvinar luctus. Suspendisse consectetur tristique
+                                    tortor</p>
+                                <h4 class="donationDetails__heading mb-25">Our challenge & Goal</h4>
+                                <p class="donationDetails__text mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate vestibulum Phasellus rhoncus, dolor eget viverra pretium, dolor tellus aliquet nunc, vitae ultricies erat elit eu lacus. Vestibulum non justo
+                                    consectetur, cursus ante, tincidunt sapien. Nulla quis diam sit amet turpis interdum accumsan quis nec enim. Vivamus faucibus ex sed nibh egestas elementum. Mauris et bibendum dui. Aenean consequat pulvinar luctus</p>
+                                <p class="donationDetails__text mb-30">We have covered many special events such as fireworks, fairs, parades, races, walks, awards ceremonies, fashion shows, sporting events, and even a memorial service.</p>
+                                <p class="donationDetails__text mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate vestibulum Phasellus rhoncus, dolor eget viverra pretium, dolor tellus aliquet nunc, vitae ultricies erat elit eu lacus. Vestibulum non justo
+                                    consectetur, cursus ante, tincidunt sapien. Nulla quis diam sit amet turpis interdum accumsan quis nec enim. Vivamus faucibus ex sed nibh egestas elementum. Mauris et bibendum dui. Aenean consequat pulvinar luctus.
+                                    Suspendisse consectetur tristique tortor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-30">
+                        <div class="sidebarLayout">
+                            <div class="innerWrapperSidebar mb-30">
+                                <div class="sidebarWidget">
+                                    <div class="sidebarTitle">
+                                        <h5 class="sidebarTitle__heading text-uppercase mb-30">categories</h5>
+                                    </div>
+                                    <div class="sidebarCategories">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                          <span>Charity</span>
+                          <span>03</span>
+                        </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                          <span>Donation</span>
+                          <span>03</span>
+                        </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                          <span>Medical & Aid Kit</span>
+                          <span>03</span>
+                        </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                          <span>Volenteer Team</span>
+                          <span>03</span>
+                        </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                          <span>Food and Water</span>
+                          <span>03</span>
+                        </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                          <span>Help Hoomeless People</span>
+                          <span>03</span>
+                        </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="innerWrapperSidebar">
+                                <div class="sidebarWidget">
+                                    <div class="sidebarTitle">
+                                        <h5 class="sidebarTitle__heading text-uppercase mb-30">Direct Contact us</h5>
+                                    </div>
+                                    <div class="sidebarContacts">
+                                        <input type="text" class="sidebarContacts__input" placeholder="Enter name*">
+                                        <input type="email" class="sidebarContacts__input" placeholder="Enter your mail*">
+                                        <textarea class="sidebarContacts__input textarea" name="message" id="message" placeholder="Massage*"></textarea>
+                                        <a class="btn btn--styleOne btn--secondary it-btn" href="donation-listing.html">
+                      <span class="btn__text">donate now</span>
+                      <i class="fa-solid fa-heart btn__icon"></i>
+                      <span class="it-btn__inner">
+                      <span class="it-btn__blobs">
+                        <span class="it-btn__blob"></span>
+                      <span class="it-btn__blob"></span>
+                      <span class="it-btn__blob"></span>
+                      <span class="it-btn__blob"></span>
+                      </span>
+                      </span>
+                      <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <defs>
+                          <filter>
+                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10">
+                            </feGaussianBlur>
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
+                            </feColorMatrix>
+                            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                          </filter>
+                        </defs>
+                      </svg>
+                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Donation Details End -->
+    </main>
+    <!-- Main End -->
+    {% endblock body %}

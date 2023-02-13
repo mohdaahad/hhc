@@ -1,0 +1,56 @@
+// 4.6 Faq Block
+.ccFaqBlock {
+  margin-left: 12%;
+  @include respond-below(md) {
+    padding: 0 0;
+    margin-left: 0;
+  }
+  .accordion {
+    .accordion-button {
+      @include font-size(24px);
+      background: transparent;
+      padding-left: 0px;
+      color: $colorPrimary;
+      border-color: transparent;
+      box-shadow: none;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 42px 20px 42px;
+      @include transitionSmooth;
+      &::after {
+        background-image: none;
+        display: none;
+      }
+      &::before {
+        content: "\f148";
+        font-family: fontAwesome;
+        left: auto;
+        right: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 1;
+        @include transitionSmooth;
+      }
+      &.collapsed {
+        color: $colorTitle;
+        border-bottom: 1px solid $grayColor18;
+        &::before {
+          content: "\f149";
+          @include transitionSmooth;
+        }
+      }
+    }
+    .accordion-item {
+      background-color: transparent;
+      border: 0;
+      margin-bottom: 0px;
+    }
+    .accordion-body {
+      color: $colorText;
+      padding: 0px 0px 35px;
+      border-bottom: 1px solid $grayColor18;
+      font-size: 18px;
+    }
+  }
+}

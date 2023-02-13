@@ -1,0 +1,152 @@
+// 3.6 Review
+.review {
+  &__box {
+    @extend .bbb;
+    position: relative;
+    &__images {
+      @include respond-below(sm) {
+        display: none;
+      }
+      li {
+        position: absolute;
+        > img {
+          opacity: 0.6;
+        }
+        &:nth-child(1) {
+          bottom: 22%;
+          left: 0%;
+          animation: scale-up-one 5s linear infinite;
+        }
+        &:nth-child(2) {
+          top: 20%;
+          left: -5%;
+          animation: scale-up-one 8s linear infinite reverse;
+        }
+        &:nth-child(3) {
+          bottom: 97%;
+          left: 9px;
+          animation: scale-up-one 10s linear infinite;
+        }
+        &:nth-child(4) {
+          top: -10%;
+          left: 18%;
+          animation: scale-up-one 12s linear infinite reverse;
+        }
+      }
+    }
+  }
+  &__shape {
+    position: absolute;
+    &--one {
+      right: 0;
+      bottom: 35%;
+      z-index: -1;
+    }
+    &--two {
+      right: 0;
+      bottom: -4%;
+      z-index: -1;
+    }
+  }
+}
+
+.reviewblock {
+  $self: &;
+  max-width: 770px;
+  margin: 0 auto;
+  position: relative;
+  padding: 65px 15px 95px;
+  @include respond-below(sm) {
+    padding: 45px 15px 65px;
+  }
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+  &__author {
+    &__image {
+      border-radius: 50%;
+      background-color: $colorWhite;
+      border: 4px solid $colorWhite;
+      margin-bottom: 33px;
+    }
+    &__name {
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $colorTitle;
+    }
+  }
+  &__quoteIcon {
+    &__one {
+      display: block;
+      margin-bottom: 30px;
+    }
+    &__two {
+      position: absolute;
+      line-height: 0;
+      right: 0;
+      left: 0;
+      top: 50%;
+      transform: translateY(-30%);
+      @include respond-below(sm) {
+        transform: translateY(-50%);
+      }
+      > svg {
+        @include respond-below(sm) {
+          width: 80%;
+        }
+      }
+    }
+  }
+  &__qotes {
+    @include font-size(30px);
+    line-height: 1.4em;
+    font-weight: 400;
+    margin-bottom: 35px;
+  }
+  &--style2 {
+    padding: 0;
+    margin-bottom: 50px;
+    #{$self}__authorImage {
+      margin-bottom: 26px;
+      img {
+        border-radius: 50%;
+      }
+    }
+    #{$self}__authorName {
+      @include font-size(20px);
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+    #{$self}__authorSpeech {
+      @include font-size(15px);
+    }
+    #{$self}__authorDes {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+  }
+  &--style3 {
+    padding: 0px 130px 95px;
+    @include respond-below(md) {
+      padding: 0px 15px 20px;
+    }
+    #{$self}__content {
+      margin-top: -55px;
+    }
+    #{$self}__qotes {
+      @include font-size(24px);
+    }
+    #{$self}__author {
+      &__image {
+        border-color: $colorPrimary;
+        border-width: 2px;
+      }
+    }
+  }
+}

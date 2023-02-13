@@ -1,0 +1,155 @@
+// 3.7 Footer
+.footer {
+  position: relative;
+  &__shape {
+    position: absolute;
+    top: -1px;
+    width: 100%;
+  }
+  &--bg {
+    background: $colorTitle;
+  }
+  &__social {
+    text-align: right;
+    margin-bottom: 50px;
+  }
+  &__logo {
+    margin-bottom: 50px;
+  }
+  &__line {
+    margin: 0;
+    opacity: 1;
+    background-color: $colorBlackGray;
+  }
+  &__heading {
+    @include font-size(20px);
+    font-weight: 500;
+    margin-bottom: 25px;
+  }
+  &__menu {
+    ul {
+      li {
+        margin-bottom: 10px;
+        a {
+          font-size: 15px;
+          color: $colorWhite;
+          display: block;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:hover {
+          a {
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+  }
+  &__newsletter {
+    &__formGroup {
+      display: flex;
+      position: relative;
+      align-items: center;
+    }
+    &__input {
+      flex: 0 0 auto;
+      width: 100%;
+      height: 55px;
+      background-color: $colorBlackGray;
+      border: 0;
+      padding: 0 17px;
+      color: $colorMeta;
+      &:focus-visible,
+      &:focus,
+      &:hover {
+        outline: none;
+      }
+      &::placeholder {
+        color: $colorMeta;
+      }
+    }
+    &__button {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      background-color: $colorPrimary;
+      text-transform: uppercase;
+      border: 0;
+      color: $colorWhite;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0 30px;
+      @include transitionSmooth;
+      &:hover {
+        background-color: $colorSecondary;
+        @include transitionSmooth;
+      }
+    }
+    &__check,
+    &__check[type="checkbox"] {
+      background-color: $grayColor3;
+      border-radius: 0;
+      margin-right: 11px;
+      margin-top: 0px;
+    }
+    &__label {
+      color: $colorMeta;
+    }
+  }
+  &__copyright {
+    &__text {
+      color: $colorWhite;
+      @include font-size(15px);
+    }
+  }
+}
+
+.footer-main {
+  background-color: $colorTitle;
+}
+
+.footer-list {
+  color: var(--bs-light);
+}
+.footer-list li {
+  padding: 6px 0;
+}
+.footer-list a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+.footer-list a:hover,
+.footer-list a:focus {
+  color: var(--bs-light);
+  text-decoration: none;
+}
+
+.footer-copyright {
+  background-color: $colorBlack;
+  color: #fff;
+  padding: 25px 0;
+  text-align: center;
+  a {
+    color: $colorPrimary;
+  }
+}
+.heading--tertiary {
+  font-size: 20px;
+  font-weight: 700;
+  color: $colorPrimary;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.footer-nav__list {
+  display: flex;
+}
+.footer-nav__link {
+  padding: 10px 15px;
+  color: $colorWhite;
+}
+.footer-section {
+  position: sticky !important;
+  bottom: 0;
+  z-index: 1;
+}

@@ -1,0 +1,91 @@
+// 4.5 Contact Block
+.sliderNav {
+  $self: &;
+  &__btn {
+    width: 63px;
+    height: 54px;
+    display: grid;
+    place-content: center;
+    @include transitionSmooth;
+  }
+  &--style1 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    #{$self}__btn {
+      &.btn-prev {
+        background: $colorTitle;
+      }
+      &.btn-next {
+        background: $colorPrimary;
+      }
+      &:hover {
+        background: $colorSecondary;
+      }
+    }
+    @include respond-below(sm) {
+      justify-content: flex-start;
+    }
+  }
+  &--style2 {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 120px;
+    @include respond-below(md) {
+      top: 20%;
+      transform: translateY(0%);
+      padding: 0 50px;
+    }
+    #{$self}__btn {
+      border: 1px solid $grayColor5;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      svg {
+        path {
+          fill: $colorTitle;
+        }
+      }
+      &:hover {
+        background-color: $colorPrimary;
+        color: $colorWhite;
+        border-color: $colorPrimary;
+        svg {
+          path {
+            fill: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+}
+
+.testi-slider-active2 {
+  padding-top: 165px;
+}
+
+// Slider Pagination
+.it-pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+
+  .swiper-pagination-bullet {
+    width: 13px;
+    height: 13px;
+    background-color: transparent;
+    border: 1px solid #c9c9c9;
+    opacity: 1;
+    @include transitionSmooth;
+
+    &.swiper-pagination-bullet-active {
+      background-color: $colorPrimary;
+      border-color: $colorPrimary;
+      @include transitionSmooth;
+    }
+  }
+}

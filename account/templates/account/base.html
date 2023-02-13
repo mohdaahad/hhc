@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <link rel="icon" href="{% static 'account/image/favicon1.png' %}" type="image/png" sizes="32*32">
+    <link rel="stylesheet" href="{% static 'account/assets/animation/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'account/assets/animation/custom-animation.css' %}">
+    <link rel="stylesheet" href="{% static 'account/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'account/assets/swiper/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'account/assets/nice-select/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'account/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>{% block title %}{% endblock title%}</title>
+</head>
+<body>
+    {% include 'account/navbar.html'%}
+    {% block body %}{% endblock body %}
+    {% include 'account/footer.html'%}
+
+
+    <script src="{% static 'account/assets/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'account/assets/bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'account/assets/swiper/swiper.min.js' %}"></script>
+    <script src="{% static 'account/assets/nice-select/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'account/assets/validator.min.js' %}"></script>
+    <script src="{% static 'account/assets/animation/wow.min.js' %}"></script>
+    <script src="{% static 'account/js/app.js' %}"></script>
+</body>
+</html>

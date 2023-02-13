@@ -1,0 +1,346 @@
+// 3.11 Blog
+.blogBlock {
+  $self: &;
+  &__content {
+    background: $colorWhite;
+    border: 1px solid $grayColor5;
+    box-shadow: 0px 10px 15px rgba($grayColor8, 0.15);
+  }
+  &__heading {
+    @include font-size(30px);
+    font-weight: 500;
+  }
+  &__meta {
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 84%;
+      flex-wrap: wrap;
+      gap: 5px;
+      @include respond-below(lg) {
+        max-width: 100%;
+      }
+    }
+  }
+  &__metaUser {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    &__thumb {
+      max-width: 36px;
+      border-radius: 50%;
+    }
+    &__name {
+      @include font-size(16px);
+      font-weight: 600;
+      color: $colorBlack2;
+      @include transitionSmooth;
+    }
+    &:hover {
+      #{$self}__metaUser {
+        &__name {
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+  &__reactButton {
+    background-color: transparent;
+    border: 0;
+    &__count {
+      color: $grayColor1;
+      &::after {
+        position: relative;
+        content: "\f004";
+        font-family: "Font Awesome 6 Free";
+        padding-left: 7px;
+        color: $colorTitle;
+        font-size: 15px;
+        font-weight: 400;
+        @include transitionSmooth;
+      }
+    }
+    &:hover {
+      #{$self}__reactButton {
+        &__count {
+          &::after {
+            font-weight: 900;
+            color: $colorTagsOne;
+            @include transitionSmooth;
+          }
+        }
+      }
+    }
+  }
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    &__text {
+      color: $grayColor1;
+    }
+    i {
+      color: $colorTitle;
+      font-size: 15px;
+    }
+  }
+  &--style1 {
+    #{$self}__content {
+      padding: 70px 80px;
+      max-width: 702px;
+      margin: -13.6% auto 0 auto;
+      position: relative;
+      z-index: 1;
+      @include respond-below(sm) {
+        padding: 20px 15px;
+        max-width: 702px;
+        margin: -7.6% 15px 0 15px;
+      }
+    }
+  }
+  &--style2 {
+    #{$self}__content {
+      padding: 40px 40px;
+      max-width: 100%;
+      margin: -13.6% 25px 0 25px;
+      position: relative;
+      z-index: 1;
+      @include respond-below(sm) {
+        padding: 20px 15px;
+        max-width: 702px;
+        margin: -7.6% 15px 0 15px;
+      }
+    }
+  }
+  &--style3 {
+    #{$self}__content {
+      padding: 40px 40px;
+      @include respond-below(md) {
+        padding: 20px 20px;
+      }
+    }
+  }
+  &--style4 {
+    #{$self}__header {
+      padding-right: 20%;
+    }
+    #{$self}__content {
+      border: 0;
+      box-shadow: none;
+    }
+    #{$self}__button {
+      text-align: right;
+      margin-top: -35px;
+      padding-right: 80px;
+      .btn {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 5px;
+      }
+    }
+    #{$self}__text {
+      font-size: 18px;
+    }
+    #{$self}__meta {
+      ul {
+        display: flex;
+        gap: 86px;
+        align-items: center;
+        flex-wrap: wrap;
+        li {
+          &:nth-last-of-type(2) {
+            flex: 1;
+          }
+          &:hover {
+            a {
+              color: $colorPrimary;
+            }
+          }
+        }
+      }
+      &__text {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        color: $colorText;
+        font-weight: 500;
+      }
+      &--style2 {
+        padding-top: 20px;
+        border-top: 1px solid $grayColor15;
+        padding-right: 55px;
+      }
+    }
+    #{$self}__quotes {
+      font-family: $fontPrimary;
+      @include font-size(25px);
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1.52em;
+      color: $colorTitle;
+      background-color: $grayColor9;
+      padding: 65px 90px 65px 46px;
+      margin-bottom: 0;
+      position: relative;
+      &::before {
+        content: "";
+        @include absolute-left-top;
+        width: 4px;
+        height: 100%;
+        background-color: $colorPrimary;
+      }
+    }
+  }
+}
+
+.blogDetails-title {
+  &__heading {
+    @include font-size(24px);
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+}
+
+.blogDetails-tags {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.blogDetails-share {
+  gap: 30px;
+  justify-content: flex-end;
+  &.itSocial {
+    ul {
+      gap: 20px;
+      li {
+        a {
+          padding: 0;
+          width: unset;
+          height: unset;
+          color: $colorTitle;
+          border: none;
+          &.facebook {
+            color: #0072ac;
+          }
+          &.twitter {
+            color: #3ac4ff;
+          }
+          &.instagram {
+            color: #e1306c;
+          }
+          &.linkedin {
+            color: #0072ac;
+          }
+          &.pinterest {
+            color: #da0021;
+          }
+        }
+        &:hover {
+          a {
+            background-color: unset;
+            color: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+.blogDetails-socialTags {
+  padding: 40px 0;
+  border-top: $border;
+  border-bottom: $border;
+}
+
+.comments {
+  ul {
+    display: grid;
+    gap: 62px;
+  }
+}
+
+.commentsBlock {
+  display: flex;
+  gap: 30px;
+  &__figure {
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  &__content {
+    flex: 1;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  &__name {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: $colorTitle;
+  }
+  &__date {
+    font-size: 12px;
+    font-weight: 600;
+    color: #949392;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  &__reply {
+    &__link {
+      @include font-size(25px);
+      color: $colorTitle;
+    }
+  }
+  &__text {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  &--reply {
+    padding-left: 100px;
+  }
+}
+
+.commentsPost {
+  &__input {
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #eeeeee;
+      font-size: 14px;
+      padding: 0 22px;
+      &::placeholder {
+        color: #949392;
+      }
+    }
+    input {
+      min-height: 60px;
+    }
+    textarea {
+      min-height: 209px;
+      padding: 17px 22px;
+    }
+  }
+  &__check {
+    .form-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .form-check-input {
+      margin-top: 0;
+      border-radius: 50%;
+      width: 23px;
+      height: 23px;
+    }
+    .form-check-label {
+      font-size: 16px;
+    }
+  }
+}

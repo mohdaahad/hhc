@@ -1,0 +1,197 @@
+// 3.8 Sidebar
+
+.sidebarLayout {
+  position: sticky;
+  top: 134px;
+}
+.sidebarTitle {
+  &__heading {
+    @include font-size(24px);
+    font-weight: 500;
+  }
+}
+
+.sidebarCategories {
+  ul {
+    display: grid;
+    gap: 15px;
+    li {
+      a {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid $grayColor15;
+        padding: 11px 17px;
+        color: $colorText;
+        @include transitionSmooth;
+        font-weight: 500;
+        &:hover {
+          border-color: $grayColor17;
+          box-shadow: $box-shadow;
+          color: $colorPrimary;
+          @include transitionSmooth;
+        }
+      }
+    }
+  }
+}
+
+.sidebarContacts {
+  display: flex;
+  gap: 35px;
+  flex-direction: column;
+  input,
+  textarea {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid $grayColor18;
+    resize: none;
+    padding-bottom: 8px;
+  }
+  .btn {
+    align-self: flex-start;
+  }
+}
+
+.searchInput {
+  position: relative;
+  &__box {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid $grayColor4;
+    font-size: 14px;
+    color: $colorText;
+    padding: 0 19px;
+    &::placeholder {
+      font-size: 14px;
+      color: $colorText;
+    }
+  }
+  &__button {
+    @include center(vertical);
+    right: 16px;
+    border: 0;
+    background-color: transparent;
+  }
+}
+
+.sidebarBlogs {
+  ul {
+    display: grid;
+    gap: 20px;
+  }
+}
+
+.blogBlockSmall {
+  $self: &;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  &__thumb {
+    overflow: hidden;
+    &__link {
+      display: inline-block;
+      img {
+        filter: saturate(0);
+        @include transitionSmooth;
+      }
+    }
+  }
+  &__content {
+    flex: 1;
+  }
+  &__heading {
+    @include font-size(16px);
+    font-weight: 500;
+    margin-bottom: 0;
+    letter-spacing: 0.06em;
+  }
+  &__meta {
+    @include font-size(14px);
+    display: block;
+    margin-bottom: 7px;
+  }
+  &:hover {
+    #{$self}__thumb {
+      &__link {
+        img {
+          filter: saturate(1);
+          @include transitionSmooth;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  &--style2 {
+    #{$self}__heading {
+      font-family: $fontSecondary;
+      letter-spacing: 0;
+      @include font-size(18px);
+      color: $colorText;
+      font-weight: 500;
+      a {
+        display: inline;
+        padding-bottom: 0;
+        transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+        background: linear-gradient(to bottom, #000 0%, #000 98%);
+        background-size: 0 1px;
+        background-repeat: no-repeat;
+        background-position: left 100%;
+      }
+    }
+    &:hover {
+      #{$self}__heading {
+        a {
+          background-size: 100% 1px;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+.sidebarContact {
+  padding-right: 35%;
+  ul {
+    display: grid;
+    gap: 18px;
+    li {
+      color: $colorText;
+      span {
+        font-weight: 600;
+        font-size: 15px;
+        color: $colorTitle;
+      }
+    }
+  }
+}
+
+.sidebarTags,
+.blogDetails-tags {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    li {
+      a {
+        text-transform: uppercase;
+        color: $grayColor20;
+        text-transform: uppercase;
+        border: 1px solid $grayColor18;
+        display: inline-block;
+        font-weight: 600;
+        border-radius: 4px;
+        padding: 11px 29px;
+        font-size: 12px;
+        @include transitionSmooth;
+      }
+      &:hover {
+        a {
+          background-color: $colorPrimary;
+          border-color: $colorPrimary;
+          color: $colorWhite;
+          @include transitionSmooth;
+        }
+      }
+    }
+  }
+}

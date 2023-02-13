@@ -1,0 +1,69 @@
+// 4.7 pagination
+.paginationBlock {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  margin-bottom: 40px;
+
+  > nav {
+    > ul {
+      align-items: center;
+      gap: 7px;
+
+      .page-item {
+        &--prev,
+        &--next {
+          .page-link {
+            min-height: 48px;
+            border: 0;
+            box-shadow: none;
+            display: grid;
+            place-content: center;
+            min-width: 48px;
+            border-radius: 6px;
+            color: $colorMeta;
+            border: 1px solid #f2f2f2;
+          }
+        }
+      }
+    }
+  }
+
+  &__number {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    background: $colorWhite;
+    border-radius: 6px;
+
+    > ul {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      .page-item {
+        .page-link {
+          box-shadow: none;
+          border: 0;
+          width: 48px;
+          height: 48px;
+          display: grid;
+          place-content: center;
+          font-size: 16px;
+          color: #66687b;
+          border-radius: 6px;
+          border: 1px solid #f2f2f2;
+
+          &:hover {
+            background-color: $colorPrimary;
+            color: $colorWhite;
+            border-color: $colorPrimary;
+            box-shadow: 4px 4px 8px rgba($colorPrimary, 0.25);
+          }
+        }
+      }
+    }
+  }
+}

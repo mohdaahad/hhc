@@ -1,0 +1,238 @@
+{% extends 'account/base.html' %}
+{% block title %}faq{% endblock title%}
+{% load static %}
+{% block body %}
+        <!-- Page Breadcumb -->
+        <section class="pageBreadcumb pageBreadcumb--style1 position-relative" data-bg-image="{% static 'account/image/bg/pageBreadcumbBg1.jpg' %}">
+            <div class="pageBreadcumbTopDown">
+                <a class="btn btn--styleOne btn--icon btn--icon2 it-btn" href="donation-listing.html">
+          <svg class="btn__icon" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.869141 8.70508L1.45508 8.11914C1.60156 8.00195 1.80664 8.00195 1.95312 8.14844L4.23828 10.4922V0.414062C4.23828 0.208984 4.38477 0.0625 4.58984 0.0625H5.41016C5.58594 0.0625 5.76172 0.208984 5.76172 0.414062V10.4922L8.01758 8.14844C8.16406 8.00195 8.36914 8.00195 8.51562 8.11914L9.10156 8.70508C9.21875 8.85156 9.21875 9.05664 9.10156 9.20312L5.23438 13.0703C5.08789 13.1875 4.88281 13.1875 4.73633 13.0703L0.869141 9.20312C0.751953 9.05664 0.751953 8.85156 0.869141 8.70508Z" fill="#60646B" />
+          </svg>
+          <span class="it-btn__inner">
+          <span class="it-btn__blobs">
+            <span class="it-btn__blob"></span>
+          <span class="it-btn__blob"></span>
+          <span class="it-btn__blob"></span>
+          <span class="it-btn__blob"></span>
+          </span>
+          </span>
+          <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter>
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
+                </feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+        </a>
+            </div>
+            <div class="sectionShape sectionShape--top">
+                <img src="{% static 'account/image/shapes/pagebreadcumbShapeTop.svg' %}" alt="Gainioz">
+            </div>
+            <div class="sectionShape sectionShape--bottom">
+                <img src="{% static 'account/image/shapes/pagebreadcumbShapeBottom.svg' %}" alt="Gainioz">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pageTitle text-center">
+                            <h2 class="pageTitle__heading text-white text-uppercase mb-25">Ask Qustion</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">FAQ's</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Breadcumb End -->
+        <!-- Donation Details -->
+        <section class="donation pt-130 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-30">
+                        <div class="innerWrapperSidebar mb-30">
+                            <div class="sidebarWidget">
+                                <div class="sidebarTitle">
+                                    <h5 class="sidebarTitle__heading text-uppercase mb-30">categories</h5>
+                                </div>
+                                <div class="sidebarCategories">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                        <span>Charity</span>
+                        <span>03</span>
+                      </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                        <span>Donation</span>
+                        <span>03</span>
+                      </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                        <span>Medical & Aid Kit</span>
+                        <span>03</span>
+                      </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                        <span>Volenteer Team</span>
+                        <span>03</span>
+                      </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                        <span>Food and Water</span>
+                        <span>03</span>
+                      </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                        <span>Help Hoomeless People</span>
+                        <span>03</span>
+                      </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="innerWrapperSidebar">
+                            <div class="sidebarWidget">
+                                <div class="sidebarTitle">
+                                    <h5 class="sidebarTitle__heading text-uppercase mb-30">Direct Contact us</h5>
+                                </div>
+                                <div class="sidebarContacts">
+                                    <input type="text" class="sidebarContacts__input" placeholder="Enter name*">
+                                    <input type="email" class="sidebarContacts__input" placeholder="Enter your mail*">
+                                    <textarea class="sidebarContacts__input textarea" name="message" id="message" placeholder="Massage*"></textarea>
+                                    <a class="btn btn--styleOne btn--secondary it-btn" href="donation-listing.html">
+                    <span class="btn__text">send massage</span>
+                    <span class="it-btn__inner">
+                    <span class="it-btn__blobs">
+                      <span class="it-btn__blob"></span>
+                    <span class="it-btn__blob"></span>
+                    <span class="it-btn__blob"></span>
+                    <span class="it-btn__blob"></span>
+                    </span>
+                    </span>
+                    <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                      <defs>
+                        <filter>
+                          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10">
+                          </feGaussianBlur>
+                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
+                          </feColorMatrix>
+                          <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 mb-30">
+                        <div class="ccFaqBlock">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      How do I create an account ?
+                    </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Praesent sodales posuere mi vel consectetur. Suspendisse eu lacus sit amet arcu venenatis lobortis. Donec in molestie justo. Sed id porta dui, et tincidunt enim. Proin dignissim sem nisl, quis fringilla nisl volutpat sed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      How do i Creat a Casus page ?
+                    </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Praesent sodales posuere mi vel consectetur. Suspendisse eu lacus sit amet arcu venenatis lobortis. Donec in molestie justo. Sed id porta dui, et tincidunt enim. Proin dignissim sem nisl, quis fringilla nisl volutpat sed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      what kind of causus we should add our site ?
+                    </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Praesent sodales posuere mi vel consectetur. Suspendisse eu lacus sit amet arcu venenatis lobortis. Donec in molestie justo. Sed id porta dui, et tincidunt enim. Proin dignissim sem nisl, quis fringilla nisl volutpat sed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                      Is it difficult to fly a drone ?
+                    </button>
+                                    </h2>
+                                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Praesent sodales posuere mi vel consectetur. Suspendisse eu lacus sit amet arcu venenatis lobortis. Donec in molestie justo. Sed id porta dui, et tincidunt enim. Proin dignissim sem nisl, quis fringilla nisl volutpat sed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading5">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                      What kind of regulations are there to fly a drone ?
+                    </button>
+                                    </h2>
+                                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Praesent sodales posuere mi vel consectetur. Suspendisse eu lacus sit amet arcu venenatis lobortis. Donec in molestie justo. Sed id porta dui, et tincidunt enim. Proin dignissim sem nisl, quis fringilla nisl volutpat sed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading6">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                      what payment mathod do you accept ?
+                    </button>
+                                    </h2>
+                                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Praesent sodales posuere mi vel consectetur. Suspendisse eu lacus sit amet arcu venenatis lobortis. Donec in molestie justo. Sed id porta dui, et tincidunt enim. Proin dignissim sem nisl, quis fringilla nisl volutpat sed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading7">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse7">
+                      Not working properly in donation page ?
+                    </button>
+                                    </h2>
+                                    <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Praesent sodales posuere mi vel consectetur. Suspendisse eu lacus sit amet arcu venenatis lobortis. Donec in molestie justo. Sed id porta dui, et tincidunt enim. Proin dignissim sem nisl, quis fringilla nisl volutpat sed.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Donation Details End -->
+    </main>
+    <!-- Main End -->
+{% endblock body %}

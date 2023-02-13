@@ -1,0 +1,97 @@
+// 3.20 Events
+.eventsBlock {
+  display: flex;
+  align-items: center;
+  gap: 82px;
+  flex-wrap: wrap;
+  border: $border;
+  box-shadow: $box-shadow;
+  @include respond-below(lg) {
+    gap: 30px;
+  }
+  &__thumb {
+    position: relative;
+    @include respond-below(md) {
+      width: 100%;
+    }
+    &__image {
+      @include respond-below(md) {
+        width: 100%;
+      }
+    }
+  }
+  &__content {
+    flex: 1;
+    padding: 0 115px 0 0;
+    @include respond-below(lg) {
+      padding: 30px;
+    }
+    @include respond-below(md) {
+      flex: 100%;
+      padding: 15px;
+    }
+  }
+  &__heading {
+    @include font-size(30px);
+    margin-bottom: 26px;
+  }
+  &__meta {
+    margin-bottom: 35px;
+    ul {
+      display: grid;
+      gap: 18px;
+      li {
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+    }
+    &__title {
+      font-weight: 700;
+      color: $colorTitle;
+    }
+    &__text {
+      color: $grayColor19;
+    }
+  }
+  &__text {
+    @include font-size(18px);
+    margin-bottom: 75px;
+  }
+  &__detailsLink {
+    @include font-size(15px);
+    text-transform: uppercase;
+    color: $colorTitle;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    &:hover {
+      svg {
+        path {
+          fill: $colorPrimary;
+        }
+      }
+    }
+  }
+}
+
+.eventAddress {
+  background-color: $grayColor15;
+  padding: 49px 39px;
+  ul {
+    display: flex;
+    gap: 40px;
+    li {
+      display: grid;
+      gap: 13px;
+      span {
+        display: block;
+        font-size: 15px;
+      }
+    }
+  }
+  &__heading {
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+}

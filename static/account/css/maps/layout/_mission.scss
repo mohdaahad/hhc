@@ -1,0 +1,140 @@
+// 3.18 Mission
+.missionSection {
+  &--style1 {
+    padding-top: 125px;
+    padding-bottom: 130px;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    &::before,
+    &::after {
+      @extend .after-before;
+      background: rgba($colorTitle, $alpha: 0.5);
+      z-index: -1;
+    }
+  }
+}
+
+.missionBlock {
+  display: flex;
+  align-items: center;
+  padding: 30px 25px;
+  gap: 29px;
+  @include respond-below(lg) {
+    gap: 20px;
+    padding: 25px 20px;
+  }
+  &__counter {
+    font-size: 35px;
+    font-weight: 500;
+    color: $colorWhite;
+    font-family: $fontPrimary;
+    display: block;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+  &__title {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $colorWhite;
+  }
+}
+
+.mission-video-main {
+  position: relative;
+  display: inline-block;
+}
+
+.video {
+  height: 117.37px;
+  width: 117.37px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  background: transparent;
+  color: $colorPrimary;
+  display: grid;
+  z-index: 999;
+  place-content: center;
+  font-size: 18px;
+  border: 1px solid $colorWhite;
+  @include transitionSmooth;
+  i {
+    position: relative;
+    z-index: 1;
+    @include transitionSmooth;
+  }
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    @include transitionSmooth;
+  }
+  &::before {
+    height: 117.37px;
+    width: 117.37px;
+    border-radius: 50%;
+    border: 1px solid rgba($colorWhite, $alpha: 0.3);
+    animation: waves 2s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+  &::after {
+    height: 118.37px;
+    width: 118.37px;
+    border-radius: 50%;
+    border: 1px solid rgba($colorWhite, $alpha: 0.15);
+    animation: waves 2s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorPrimary;
+    border-color: $colorPrimary;
+    @include transitionSmooth;
+    i {
+      transform: scale(1.4);
+      @include transitionSmooth;
+    }
+    &::before,
+    &::after {
+      @include transitionSmooth;
+      border-color: transparent;
+    }
+    &::before {
+      background-color: rgba($colorPrimary, $alpha: 0.3);
+    }
+    &::after {
+      background-color: rgba($colorPrimary, $alpha: 0.15);
+    }
+  }
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.fa-play:before {
+  content: "\f04b";
+}
+
+.missionVideo {
+  text-align: right;
+  padding-top: 50px;
+  @include respond-below(xxlg) {
+    text-align: center;
+  }
+}

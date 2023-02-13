@@ -1,0 +1,336 @@
+{% extends 'account/base.html' %}
+{% block title %}{% endblock title%}
+{% load static %}
+{% block body %}
+        <!-- Page Breadcumb -->
+        <section class="pageBreadcumb pageBreadcumb--style1 position-relative" data-bg-image="{% static 'account/image/bg/pageBreadcumbBg1.jpg' %}">
+            <div class="pageBreadcumbTopDown">
+                <a class="btn btn--styleOne btn--icon btn--icon2 it-btn" href="donation-listing.html">
+          <svg class="btn__icon" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.869141 8.70508L1.45508 8.11914C1.60156 8.00195 1.80664 8.00195 1.95312 8.14844L4.23828 10.4922V0.414062C4.23828 0.208984 4.38477 0.0625 4.58984 0.0625H5.41016C5.58594 0.0625 5.76172 0.208984 5.76172 0.414062V10.4922L8.01758 8.14844C8.16406 8.00195 8.36914 8.00195 8.51562 8.11914L9.10156 8.70508C9.21875 8.85156 9.21875 9.05664 9.10156 9.20312L5.23438 13.0703C5.08789 13.1875 4.88281 13.1875 4.73633 13.0703L0.869141 9.20312C0.751953 9.05664 0.751953 8.85156 0.869141 8.70508Z" fill="#60646B" />
+          </svg>
+          <span class="it-btn__inner">
+          <span class="it-btn__blobs">
+            <span class="it-btn__blob"></span>
+          <span class="it-btn__blob"></span>
+          <span class="it-btn__blob"></span>
+          <span class="it-btn__blob"></span>
+          </span>
+          </span>
+          <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter>
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
+                </feColorMatrix>
+                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+        </a>
+            </div>
+            <div class="sectionShape sectionShape--top">
+                <img src="{% static 'account/image/shapes/pagebreadcumbShapeTop.svg' %}" alt="Gainioz">
+            </div>
+            <div class="sectionShape sectionShape--bottom">
+                <img src="{% static 'account/image/shapes/pagebreadcumbShapeBottom.svg' %}" alt="Gainioz">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pageTitle text-center">
+                            <h2 class="pageTitle__heading text-white text-uppercase mb-25">Our Services</h2>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Service</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Breadcumb End -->
+        <!-- Services -->
+        <div class="service pt-130 pb-95">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="keyFeatureBlock keyFeatureBlock--style3 keyFeatureBlock--style5 mb-30">
+                            <div class="keyFeatureBlock__left">
+                                <span class="keyFeatureBlock__icon">
+                <img src="{% static 'account/image/icons/services-icon1.svg' %}" alt="Gainioz Feature_Icon">
+              </span>
+                            </div>
+                            <div class="keyFeatureBlock__content">
+                                <h3 class="keyFeatureBlock__heading">
+                                    <a class="keyFeatureBlock__heading__link" href="services.html">
+                    Water & Healthy Food
+                  </a>
+                                </h3>
+                                <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
+                                <a class="keyFeatureBlock__link" href="services.html">
+                  Read more
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="keyFeatureBlock keyFeatureBlock--style3 keyFeatureBlock--style5 mb-30">
+                            <div class="keyFeatureBlock__left">
+                                <span class="keyFeatureBlock__icon">
+                <img src="{% static 'account/image/icons/services-icon2.svg' %}" alt="Gainioz Feature_Icon">
+              </span>
+                            </div>
+                            <div class="keyFeatureBlock__content">
+                                <h3 class="keyFeatureBlock__heading">
+                                    <a class="keyFeatureBlock__heading__link" href="services.html">
+                    Study & Life Tips
+                  </a>
+                                </h3>
+                                <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
+                                <a class="keyFeatureBlock__link" href="services.html">
+                  Read more
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="keyFeatureBlock keyFeatureBlock--style3 keyFeatureBlock--style5 mb-30">
+                            <div class="keyFeatureBlock__left">
+                                <span class="keyFeatureBlock__icon">
+                <img src="{% static 'account/image/icons/services-icon3.svg' %}" alt="Gainioz Feature_Icon">
+              </span>
+                            </div>
+                            <div class="keyFeatureBlock__content">
+                                <h3 class="keyFeatureBlock__heading">
+                                    <a class="keyFeatureBlock__heading__link" href="services.html">
+                    Medical & Aid
+                  </a>
+                                </h3>
+                                <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
+                                <a class="keyFeatureBlock__link" href="services.html">
+                  Read more
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="keyFeatureBlock keyFeatureBlock--style3 keyFeatureBlock--style5 mb-30">
+                            <div class="keyFeatureBlock__left">
+                                <span class="keyFeatureBlock__icon">
+                <img src="{% static 'account/image/icons/services-icon4.svg' %}" alt="Gainioz Feature_Icon">
+              </span>
+                            </div>
+                            <div class="keyFeatureBlock__content">
+                                <h3 class="keyFeatureBlock__heading">
+                                    <a class="keyFeatureBlock__heading__link" href="services.html">
+                    Build Home
+                  </a>
+                                </h3>
+                                <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
+                                <a class="keyFeatureBlock__link" href="services.html">
+                  Read more
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services End -->
+        <!-- Service Details -->
+        <section class="serviceDetails pb-115">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class="serviceDetailsContent">
+                            <h2 class="serviceDetailsContent__heading mb-45 text-uppercase">We are always there others need help</h2>
+                            <p class="">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                                adipisci velit, loremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                                aut fugit, dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Service Details End -->
+        <!-- Mission -->
+        <section class="missionSection missionSection--style1 position-relative" data-bg-image="{% static 'account/image/bg/missionBg.jpg' %}">
+            <div class="sectionShape sectionShape--top">
+                <img src="{% static 'account/image/shapes/pagebreadcumbShapeTop.svg' %}" alt="Gainioz">
+            </div>
+            <div class="sectionShape sectionShape--bottom">
+                <img src="{% static 'account/image/shapes/pagebreadcumbShapeBottom.svg' %}" alt="Gainioz">
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="missionContent">
+                            <!-- Section Heading/Title -->
+                            <div class="sectionTitle mb-35">
+                                <span class="sectionTitle__small">
+                <i class="fa-solid fa-heart btn__icon"></i>
+                Our mission
+              </span>
+                                <h2 class="sectionTitle__big text-white">our mission in- 2022</h2>
+                            </div>
+                            <!-- Section Heading/Title End -->
+                            <div class="row g-4">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="missionBlock bgSecondary">
+                                        <div class="missionBlock__icon">
+                                            <img src="{% static 'account/image/icons/mission-icon1.svg' %}" alt="Gainioz Mission">
+                                        </div>
+                                        <div class="missionBlock__content">
+                                            <span class="missionBlock__counter">1600</span>
+                                            <p class="missionBlock__title">SOLAR PANEL</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="missionBlock bgPrimary">
+                                        <div class="missionBlock__icon">
+                                            <img src="{% static 'account/image/icons/mission-icon2.svg' %}" alt="Gainioz Mission">
+                                        </div>
+                                        <div class="missionBlock__content">
+                                            <span class="missionBlock__counter">289</span>
+                                            <p class="missionBlock__title">Build HOme</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="missionBlock bgPrimary">
+                                        <div class="missionBlock__icon">
+                                            <img src="{% static 'account/image/icons/mission-icon3.svg' %}" alt="Gainioz Mission">
+                                        </div>
+                                        <div class="missionBlock__content">
+                                            <span class="missionBlock__counter">16<span>k</span></span>
+                                            <p class="missionBlock__title">Give Job</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="missionBlock bgSecondary">
+                                        <div class="missionBlock__icon">
+                                            <img src="{% static 'account/image/icons/mission-icon4.svg' %}" alt="Gainioz Mission">
+                                        </div>
+                                        <div class="missionBlock__content">
+                                            <span class="missionBlock__counter">24<span>mln</span></span>
+                                            <p class="missionBlock__title">Pure water</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="missionVideo">
+                            <div class="mission-video-main">
+                                <div class="promo-video">
+                                    <div class="waves-block">
+                                        <div class="waves wave-1"></div>
+                                        <div class="waves wave-2"></div>
+                                        <div class="waves wave-3"></div>
+                                    </div>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=BqI0Q7e4kbk" class="video video-popup mfp-iframe" data-lity><i
+                  class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Mission End -->
+        <!-- Testimonials -->
+        <section class="review pt-125 pb-60 position-relative overflow-hidden">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Section Heading/Title -->
+                        <div class="sectionTitle mb-65">
+                            <span class="sectionTitle__small justify-content-start">
+              <i class="fa-solid fa-heart btn__icon"></i>
+              Testimonial
+            </span>
+                            <h2 class="sectionTitle__big">People Say about our foundation</h2>
+                        </div>
+                        <!-- Section Heading/Title End -->
+                        <div class="reviewMap mb-50">
+                            <img src="{% static 'account/image/map/map-thumb.png' %}" alt="Gainioz Map">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="reviewblock reviewblock--style2">
+                                    <div class="reviewblock__content">
+                                        <div class="reviewblock__author">
+                                            <div class="reviewblock__authorImage">
+                                                <img src="{% static 'account/image/users/review-user-1.jpg' %}" alt="Gainioz Reviewer">
+                                            </div>
+                                            <h3 class="reviewblock__authorName">Jane Cooper</h3>
+                                            <p class="reviewblock__authorSpeech">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+                                            <span class="reviewblock__authorDes">Founder & Co (HTJ)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="reviewblock reviewblock--style2">
+                                    <div class="reviewblock__content">
+                                        <div class="reviewblock__author">
+                                            <div class="reviewblock__authorImage">
+                                                <img src="{% static 'account/image/users/review-user-2.jpg' %}" alt="Gainioz Reviewer">
+                                            </div>
+                                            <h3 class="reviewblock__authorName">Cameron Williamson</h3>
+                                            <p class="reviewblock__authorSpeech">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+                                            <span class="reviewblock__authorDes">Founder & Co (HTJ)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="reviewblock reviewblock--style2">
+                                    <div class="reviewblock__content">
+                                        <div class="reviewblock__author">
+                                            <div class="reviewblock__authorImage">
+                                                <img src="{% static 'account/image/users/review-user-3.jpg' %}" alt="Gainioz Reviewer">
+                                            </div>
+                                            <h3 class="reviewblock__authorName">Jenny Wilson</h3>
+                                            <p class="reviewblock__authorSpeech">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+                                            <span class="reviewblock__authorDes">Founder & Co (HTJ)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="reviewblock reviewblock--style2">
+                                    <div class="reviewblock__content">
+                                        <div class="reviewblock__author">
+                                            <div class="reviewblock__authorImage">
+                                                <img src="{% static 'account/image/users/review-user-4.jpg' %}" alt="Gainioz Reviewer">
+                                            </div>
+                                            <h3 class="reviewblock__authorName">Robert Fox</h3>
+                                            <p class="reviewblock__authorSpeech">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+                                            <span class="reviewblock__authorDes">Founder & Co (HTJ)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials End -->
+    </main>
+    <!-- Main End -->
+{% endblock body %}
