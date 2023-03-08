@@ -1,6 +1,11 @@
 from django.shortcuts import render
+import os 
+import random
+
+
 
 # Create your views here.
+
 def home(request):
     return render(request, "account/home.html")
 
@@ -35,3 +40,13 @@ def donation_details(request):
 
 def blog_details(request):
     return render(request, "account/blog-details.html")     
+
+def gallery(request):
+    dir_list = os.listdir("/home/mohdaahad/Documents/HHC_v1/src/hhc/static/account/image/gallery")
+    random.shuffle(dir_list)
+    return render(request, "account/gallery.html",{'photo': dir_list})      
+
+
+def join_volunteers(request):
+    return render(request, "account/join-volunteers.html") 
+

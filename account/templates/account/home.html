@@ -15,8 +15,8 @@
                     <span class="hero__title hero__title--small wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="200ms"><i class="fa-solid fa-heart btn__icon"></i>We Beleve
       That</span>
                     <h1 class="hero__title hero__title--big wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="300ms">Do good For Others</h1>
-                    <p class="hero__text wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="400ms">We help nonprofits from Afghanistan to Zimbabwe (and hundreds of places in between) access the tools, training,</p>
-                    <a class="btn btn--styleOne btn--primary it-btn wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="500ms" href="donation-listing.html">
+                    <p class="hero__text wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="400ms">Because the world needs a good Community.</p>
+                    <a class="btn btn--styleOne btn--primary it-btn wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="500ms" href="{% url 'join_volunteers' %}">
         <span class="btn__text">join the journey</span>
         <i class="fa-solid fa-heart btn__icon"></i>
         <span class="it-btn__inner">
@@ -42,7 +42,7 @@
             </div>
             <div class="col-xl-6 mb-30">
                 <figure class="hero__figure wow animate__zoomIn animate__animated" data-wow-duration="1200ms" data-wow-delay="600ms">
-                    <img src="{% static 'account/image/man/boy.png'  %}" alt="Gainioz Man" class="hero__figure__thumbs">
+                    <img src="{% static 'account/image/girls/girl1.png'  %}" alt="Gainioz Man" class="hero__figure__thumbs">
                     <img class="hero__figure__overlay" src="{% static 'account/image/shapes/shapes3.svg'%}" alt="Gainioz">
                 </figure>
             </div>
@@ -58,7 +58,7 @@
     <div class="aboutArea aboutArea--padding position-relative">
         <img class="mask-aboutBack wow animate__fadeInLeft animate__animated" data-wow-duration="1200ms" data-wow-delay="300ms" src="{% static 'account/image/shapes/mask-shape3.svg'%}" alt="Gainioz Shape">
         <div class="mask mask--about wow animate__fadeInLeft animate__animated" data-wow-duration="1200ms" data-wow-delay="200ms">
-            <img src="{% static 'account/image/girls/girls1.jpg'  %}" alt="Gainioz Shape" class="mask__thumb">
+            <img src="{% static 'account/image/girls/girl2.png'  %}" alt="Gainioz Shape" class="mask__thumb">
             <img class="mask__overlay" src="{% static 'account/image/shapes/mask-shape2.svg'%}" alt="Gainioz Shape">
         </div>
         <div class="container">
@@ -75,11 +75,11 @@
                         </div>
                         <!-- Section Heading/Title End -->
                         <p class="aboutContent__text">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage Lorem of Lorem
-                            Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle There are many variations of passages
+                            We are committed to work for the prosperity and the digital soundness of our world by doing some work in the field of education & the Charity.
+                            Education and prosperity for all - our mission, our commitment.
                         </p>
                         <span class="aboutContent__quote">join our Action and everyone can help</span>
-                        <a class="btn btn--styleOne btn--secondary it-btn" href="donation-listing.html">
+                        <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'donation_details' %}">
           <span class="btn__text">donate now</span>
           <i class="fa-solid fa-heart btn__icon"></i>
           <span class="it-btn__inner">
@@ -125,11 +125,11 @@
                                     </div>
                                     <div class="keyFeatureBlock__content">
                                         <h3 class="keyFeatureBlock__heading">
-                                            <a class="keyFeatureBlock__heading__link" href="services.html">
+                                            <a class="keyFeatureBlock__heading__link" href="{% url 'service' %}">
                     healthy Food
                   </a>
                                         </h3>
-                                        <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
+                                        <p class="keyFeatureBlock__text">Donate healthy food to fight hunger and promote wellness today.</p>
                                     </div>
                                     <div class="keyFeatureBlock__skill skill-bar" data-width="80%">
                                         <span class="keyFeatureBlock__skill__bar"></span>
@@ -145,11 +145,11 @@
                                     </div>
                                     <div class="keyFeatureBlock__content">
                                         <h3 class="keyFeatureBlock__heading">
-                                            <a class="keyFeatureBlock__heading__link" href="services.html">
+                                            <a class="keyFeatureBlock__heading__link" href="{% url 'service' %}">
                     Dedicated
                   </a>
                                         </h3>
-                                        <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
+                                        <p class="keyFeatureBlock__text">Support NGOs with dedicated donations to make a meaningful impact.</p>
                                     </div>
                                     <div class="keyFeatureBlock__skill skill-bar" data-width="94%">
                                         <span class="keyFeatureBlock__skill__bar"></span>
@@ -165,11 +165,11 @@
                                     </div>
                                     <div class="keyFeatureBlock__content">
                                         <h3 class="keyFeatureBlock__heading">
-                                            <a class="keyFeatureBlock__heading__link" href="services.html">
+                                            <a class="keyFeatureBlock__heading__link" href="{% url 'service' %}">
                     Strong Team
                   </a>
                                         </h3>
-                                        <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
+                                        <p class="keyFeatureBlock__text">Empowering communities through collaboration with a strong team approach.</p>
                                     </div>
                                     <div class="keyFeatureBlock__skill skill-bar" data-width="70%">
                                         <span class="keyFeatureBlock__skill__bar"></span>
@@ -187,11 +187,17 @@
                     <div class="col-12">
                         <div class="donnerAreaContent text-center mb-30">
                             <h2 class="donnerAreaContent__bigTitle wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="200ms">
-                                <span class="donnerAreaContent__bigTitle__number">250</span>
-                                <span class="donnerAreaContent__bigTitle__text">mln</span>
+                                <span class="donnerAreaContent__bigTitle__number">25</span>
+                                <span class="donnerAreaContent__bigTitle__text">%</span>
                             </h2>
-                            <h3 class="donnerAreaContent__heading text-uppercase wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">People Live with a disability</h3>
-                            <a class="btn btn--styleOne btn--black it-btn wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="400ms" href="donation-listing.html">
+                            <h3 class="donnerAreaContent__heading text-uppercase wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">People of India comes under illatracy rate.</h3>
+                            <div class="position-relative">
+                                <div class="position-absolute top-0 end-0">
+                                    <p class=" wow animate__fadeInUp" data-wow-duration="1800ms" data-wow-delay="600ms" >Source: India Book 2020 - A Reference Annual</p>
+                                </div>
+                            </div>
+                           
+                            <a class="btn mt-5 btn--styleOne btn--black it-btn wow animate__fadeInUp" data-wow-duration="1200ms" data-wow-delay="400ms" href="{% url 'donation_details' %}">
             <span class="btn__text">dECAME A VOLEENTEER</span>
             <i class="fa-solid fa-heart btn__icon"></i>
             <span class="it-btn__inner">
@@ -257,25 +263,25 @@
                             <div class="featureBlock featureBlock--active">
                                 <div class="featureBlock__wrap">
                                     <figure class="featureBlock__thumb">
-                                        <a class="featureBlock__thumb__link" href="donation-details.html">
-                  <img src="{% static 'account/image/featured/featuredThumb1.jpg'  %}" alt="Gainioz Featured Thumb">
+                                        <a class="featureBlock__thumb__link" href="">
+                  <img src="{% static 'account/image/featured/featuredThumb3.png'  %}" alt="Gainioz Featured Thumb">
                 </a>
-                                        <a class="featureBlock__hashLink" href="donation-details.html">
+                                        <a class="featureBlock__hashLink" href="{% url 'donation_details' %}">
                   <span class="featureBlock__hashLink__text">#Life</span>
                 </a>
                                     </figure>
                                     <div class="featureBlock__content">
                                         <h3 class="featureBlock__heading">
-                                            <a class="featureBlock__heading__link" href="donation-details.html">
-                    Help poor people give food & Careing african child
+                                            <a class="featureBlock__heading__link" href="{% url 'donation_details' %}">
+                    Help poor people give food & Careing Indian child
                   </a>
                                         </h3>
                                         <p class="featureBlock__text">
-                                            We help local nonprofits access the funding, training, and support they need to become more
+                                            Support NGO helping needy with food and care for children.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="featureBlock__donation">
+                                <!-- <div class="featureBlock__donation">
                                     <div class="featureBlock__donation__progress">
                                         <div class="featureBlock__donation__bar">
                                             <span class="featureBlock__donation__text skill-bar" data-width="85%">85%</span>
@@ -300,32 +306,32 @@
                                             <span class="featureBlock__eqn__price">$34,000</span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="featureBlock">
                                 <div class="featureBlock__wrap">
                                     <figure class="featureBlock__thumb">
-                                        <a class="featureBlock__thumb__link" href="donation-details.html">
-                  <img src="{% static 'account/image/featured/featuredThumb2.jpg'  %}" alt="Gainioz Featured Thumb">
+                                        <a class="featureBlock__thumb__link" href="{% url 'donation_details' %}">
+                  <img src="{% static 'account/image/featured/featuredThumb1.png'  %}" alt="Gainioz Featured Thumb">
                 </a>
-                                        <a class="featureBlock__hashLink" href="donation-details.html">
+                                        <a class="featureBlock__hashLink" href="{% url 'donation_details' %}">
                   <span class="featureBlock__hashLink__text">#Education</span>
                 </a>
                                     </figure>
                                     <div class="featureBlock__content">
                                         <h3 class="featureBlock__heading">
-                                            <a class="featureBlock__heading__link" href="donation-details.html">
-                    Contribute for the Make somalians happy- 2022
+                                            <a class="featureBlock__heading__link" href="{% url 'donation_details' %}">
+                                                Collect Donation for Indian School
                   </a>
                                         </h3>
                                         <p class="featureBlock__text">
-                                            We help local nonprofits access the funding, training, and support they need to become more
+                                            Help fund Indian School NGO, donate and make a difference.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="featureBlock__donation">
+                                <!-- <div class="featureBlock__donation">
                                     <div class="featureBlock__donation__progress">
                                         <div class="featureBlock__donation__bar">
                                             <span class="featureBlock__donation__text skill-bar" data-width="75%">75%</span>
@@ -350,32 +356,32 @@
                                             <span class="featureBlock__eqn__price">$56,000</span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="featureBlock">
                                 <div class="featureBlock__wrap">
                                     <figure class="featureBlock__thumb">
-                                        <a class="featureBlock__thumb__link" href="donation-details.html">
-                  <img src="{% static 'account/image/featured/featuredThumb3.jpg'  %}" alt="Gainioz Featured Thumb">
+                                        <a class="featureBlock__thumb__link" href="{% url 'donation_details' %}">
+                  <img src="{% static 'account/image/featured/featuredThumb2.png'  %}" alt="Gainioz Featured Thumb">
                 </a>
-                                        <a class="featureBlock__hashLink" href="donation-details.html">
+                                        <a class="featureBlock__hashLink" href="{% url 'donation_details' %}">
                   <span class="featureBlock__hashLink__text">#Health</span>
                 </a>
                                     </figure>
                                     <div class="featureBlock__content">
                                         <h3 class="featureBlock__heading">
-                                            <a class="featureBlock__heading__link" href="donation-details.html">
-                    Collect Donation for zimbabwe's School & Hospital
+                                            <a class="featureBlock__heading__link" href="{% url 'donation_details' %}">
+                    Collect Donation for Indian Hospital
                   </a>
                                         </h3>
                                         <p class="featureBlock__text">
-                                            We help local nonprofits access the funding, training, and support they need to become more
+                                            Join us in collecting donations for an Indian hospital NGO and help save lives today.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="featureBlock__donation">
+                                <!-- <div class="featureBlock__donation">
                                     <div class="featureBlock__donation__progress">
                                         <div class="featureBlock__donation__bar">
                                             <span class="featureBlock__donation__text skill-bar" data-width="80%">80%</span>
@@ -400,7 +406,7 @@
                                             <span class="featureBlock__eqn__price">$38,000</span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -477,12 +483,31 @@
                     fill="#EB9309" />
                 </svg>
               </span>
-                                        <h4 class="reviewblock__qotes">“ I ah4preciate your amazing services and professional staff for all your hard work and creative thinking! It was fun, and I hope to work with you again soon “</h4>
-                                        <span class="reviewblock__author__name">Rasalina Willams</span>
+                                        <h4 class="reviewblock__qotes">“ Helping Hands Community NGO is a great organization that is making a difference by collecting donations for hospitals and schools in India, as well as providing food and care for impoverished children “</h4>
+                                        <span class="reviewblock__author__name">Pravez Alam</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="reviewblock__content">
+                                        <img class="reviewblock__author__image" src="{% static 'account/image/auth/reviewAuth6.png' %}" alt="Gainioz Reviewer">
+                                        <span class="reviewblock__quoteIcon__one">
+                <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M21.75 10.9951H18V7.99512C18 6.35449 19.3125 4.99512 21 4.99512H21.375C21.9844 4.99512 22.5 4.52637 22.5 3.87012V1.62012C22.5 1.01074 21.9844 0.495117 21.375 0.495117H21C16.8281 0.495117 13.5 3.87012 13.5 7.99512V19.2451C13.5 20.5107 14.4844 21.4951 15.75 21.4951H21.75C22.9688 21.4951 24 20.5107 24 19.2451V13.2451C24 12.0264 22.9688 10.9951 21.75 10.9951ZM8.25 10.9951H4.5V7.99512C4.5 6.35449 5.8125 4.99512 7.5 4.99512H7.875C8.48438 4.99512 9 4.52637 9 3.87012V1.62012C9 1.01074 8.48438 0.495117 7.875 0.495117H7.5C3.32812 0.495117 0 3.87012 0 7.99512V19.2451C0 20.5107 0.984375 21.4951 2.25 21.4951H8.25C9.46875 21.4951 10.5 20.5107 10.5 19.2451V13.2451C10.5 12.0264 9.46875 10.9951 8.25 10.9951Z"
+                    fill="#EB9309" />
+                </svg>
+              </span>
+                                        <h4 class="reviewblock__qotes">“ The Helping Hands Community NGO is making a positive impact on education, healthcare, and providing healthy food. Their strong team is dedicated to improving the lives of others through their hospital and other programs “</h4>
+                                        <span class="reviewblock__author__name">Mehfooz Malik</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+            
+                           
+                                
+                           
+                        
                     </div>
                 </div>
             </div>
@@ -503,9 +528,9 @@
                                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                     <div class="mvvTabs__content">
                                         <h2 class="mvvTabs__heading">Listen, Act, Learn, Repeat</h2>
-                                        <p class="mvvTabs__text mb-25">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                            If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle There are many variations</p>
-                                        <div class="mvvTabs__skills">
+                                        <p class="mvvTabs__text mb-25">Our mission is to educate and empower individuals across the world to improve their health and wellbeing, and to support sustainable development that leads to increased prosperity and social justice for all.Empowering communities through education and prosperity.
+                                            Investing in education for a brighter future.Together, we can build a better world through education and prosperity.</p>
+                                        <!-- <div class="mvvTabs__skills">
                                             <div class="mvvTabs__skills__block mb-20">
                                                 <h4 class="mvvTabs__skills__counter"><span class="mvvTabs__skills__counter">45</span>%</h4>
                                                 <span class="mvvTabs__skills__title color-title">kids need help</span>
@@ -518,16 +543,16 @@
                                                 <h4 class="mvvTabs__skills__counter"><span class="mvvTabs__skills__counter">189</span>+</h4>
                                                 <span class="mvvTabs__skills__title color-title">Voleenteer</span>
                                             </div>
-                                        </div>
-                                        <p class="mvvTabs__text mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                                        </div> -->
+                                        <p class="mvvTabs__text mb-5">Transforming lives through education and prosperity.Education and prosperity - the keys to unlocking human potential.Empowering individuals and communities through education and prosperity.</p>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <div class="mvvTabs__content">
-                                        <h2 class="mvvTabs__heading">Listen, Act, Learn, Repeat</h2>
-                                        <p class="mvvTabs__text mb-25">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                            If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle There are many variations</p>
-                                        <div class="mvvTabs__skills">
+                                        <h2 class="mvvTabs__heading">Creating opportunities for a prosperous tomorrow.</h2>
+                                        <p class="mvvTabs__text mb-25">The world today is marked by rapid technological advancement and an ever-increasing demand for education. The combination of these two factors provides a unique opportunity to create a prosperous future for individuals and communities across the globe. By leveraging technology to enhance educational opportunities, we can unlock human potential and pave the way towards a brighter tomorrow
+                                        </p>
+                                        <!-- <div class="mvvTabs__skills">
                                             <div class="mvvTabs__skills__block mb-20">
                                                 <h4 class="mvvTabs__skills__counter"><span class="mvvTabs__skills__counter">45</span>%</h4>
                                                 <span class="mvvTabs__skills__title color-title">kids need help</span>
@@ -540,16 +565,16 @@
                                                 <h4 class="mvvTabs__skills__counter"><span class="mvvTabs__skills__counter">189</span>+</h4>
                                                 <span class="mvvTabs__skills__title color-title">Voleenteer</span>
                                             </div>
-                                        </div>
-                                        <p class="mvvTabs__text mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                                        </div> -->
+                                        <p class="mvvTabs__text mb-2">Education is the foundation upon which a prosperous society is built.  </p>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                                     <div class="mvvTabs__content">
-                                        <h2 class="mvvTabs__heading">Listen, Act, Learn, Repeat</h2>
-                                        <p class="mvvTabs__text mb-25">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                            If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle There are many variations</p>
-                                        <div class="mvvTabs__skills">
+                                        <h2 class="mvvTabs__heading">Core Values of our NGO</h2>
+                                        <p class="mvvTabs__text mb-0">Integrity: NGOs must maintain the highest standards of honesty and ethical behavior, and operate with transparency and accountability.
+                                        </p>
+                                        <!-- <div class="mvvTabs__skills">
                                             <div class="mvvTabs__skills__block mb-20">
                                                 <h4 class="mvvTabs__skills__counter"><span class="mvvTabs__skills__counter">45</span>%</h4>
                                                 <span class="mvvTabs__skills__title color-title">kids need help</span>
@@ -562,8 +587,14 @@
                                                 <h4 class="mvvTabs__skills__counter"><span class="mvvTabs__skills__counter">189</span>+</h4>
                                                 <span class="mvvTabs__skills__title color-title">Voleenteer</span>
                                             </div>
-                                        </div>
-                                        <p class="mvvTabs__text mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                                        </div> -->
+                                        <p class="mvvTabs__text mb-0">Commitment: NGOs must be dedicated to achieving their mission, and must be willing to invest time, energy, and resources to make a positive impact.
+                                        </p> <p class="mvvTabs__text mb-0">Empathy: NGOs must demonstrate empathy towards the communities they serve, and must strive to understand their unique needs and perspectives.
+
+                                        </p> <p class="mvvTabs__text mb-0">Collaboration: NGOs must work collaboratively with other organizations, stakeholders, and communities to achieve shared goals.
+
+                                        </p> <p class="mvvTabs__text mb-0">Innovation: NGOs must be innovative in their approach to problem-solving, and must be willing to adapt and evolve in response to changing circumstances.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -576,7 +607,7 @@
 </section>
 <!-- Testimonials End -->
 <!-- Portfolio -->
-<section class="portfolio">
+<!-- <section class="portfolio">
     <div class="container-fluid p-0 overflow-hidden">
         <div class="row g-0">
             <div class="col-lg-4 col-md-6">
@@ -629,14 +660,14 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Portfolio End -->
 <!-- Blog -->
-<section class="blog pt-125 pb-55">
+<!-- <section class="blog  pb-55">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mx-auto">
-                <!-- Section Heading/Title -->
+            
                 <div class="sectionTitle text-center mb-60">
                     <span class="sectionTitle__small justify-content-center">
       <i class="fa-solid fa-heart btn__icon"></i>
@@ -644,7 +675,7 @@
     </span>
                     <h2 class="sectionTitle__big">Latest News & Article</h2>
                 </div>
-                <!-- Section Heading/Title End -->
+               
             </div>
         </div>
         <div class="row">
@@ -786,7 +817,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Blog End -->
 <!-- Sponsors -->
 <section class="sponsors pb-60">

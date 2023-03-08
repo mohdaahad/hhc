@@ -5,7 +5,7 @@
         <!-- Page Breadcumb -->
         <section class="pageBreadcumb pageBreadcumb--style1 position-relative" data-bg-image="{% static 'account/image/bg/pageBreadcumbBg1.jpg' %}">
             <div class="pageBreadcumbTopDown">
-                <a class="btn btn--styleOne btn--icon btn--icon2 it-btn" href="donation-listing.html">
+                <a class="btn btn--styleOne btn--icon btn--icon2 it-btn" href="{% url 'donation_details' %}">
           <svg class="btn__icon" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.869141 8.70508L1.45508 8.11914C1.60156 8.00195 1.80664 8.00195 1.95312 8.14844L4.23828 10.4922V0.414062C4.23828 0.208984 4.38477 0.0625 4.58984 0.0625H5.41016C5.58594 0.0625 5.76172 0.208984 5.76172 0.414062V10.4922L8.01758 8.14844C8.16406 8.00195 8.36914 8.00195 8.51562 8.11914L9.10156 8.70508C9.21875 8.85156 9.21875 9.05664 9.10156 9.20312L5.23438 13.0703C5.08789 13.1875 4.88281 13.1875 4.73633 13.0703L0.869141 9.20312C0.751953 9.05664 0.751953 8.85156 0.869141 8.70508Z" fill="#60646B" />
           </svg>
@@ -56,11 +56,12 @@
         <div class="service pt-130 pb-95">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-4">
+                    <div class="col-lg-4 col-md-4">
                         <div class="keyFeatureBlock keyFeatureBlock--style3 keyFeatureBlock--style5 mb-30">
                             <div class="keyFeatureBlock__left">
                                 <span class="keyFeatureBlock__icon">
-                <img src="{% static 'account/image/icons/services-icon1.svg' %}" alt="Gainioz Feature_Icon">
+              
+                <img src="{% static 'account/image/icons/services-icon2.svg' %}" alt="Gainioz Feature_Icon">
               </span>
                             </div>
                             <div class="keyFeatureBlock__content">
@@ -69,19 +70,19 @@
                     Water & Healthy Food
                   </a>
                                 </h3>
-                                <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
-                                <a class="keyFeatureBlock__link" href="services.html">
+                                <p class="keyFeatureBlock__text">Access to clean water and healthy food is essential for wellbeing.</p>
+                                <!-- <a class="keyFeatureBlock__link" href="services.html">
                   Read more
                   <i class="fa-solid fa-arrow-right-long"></i>
-                </a>
+                </a> -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4">
+                    <div class="col-lg-4 col-md-4">
                         <div class="keyFeatureBlock keyFeatureBlock--style3 keyFeatureBlock--style5 mb-30">
                             <div class="keyFeatureBlock__left">
                                 <span class="keyFeatureBlock__icon">
-                <img src="{% static 'account/image/icons/services-icon2.svg' %}" alt="Gainioz Feature_Icon">
+                                    <img src="{% static 'account/image/icons/services-icon3.svg' %}" alt="Gainioz Feature_Icon">
               </span>
                             </div>
                             <div class="keyFeatureBlock__content">
@@ -90,19 +91,20 @@
                     Study & Life Tips
                   </a>
                                 </h3>
-                                <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
-                                <a class="keyFeatureBlock__link" href="services.html">
+                                <p class="keyFeatureBlock__text">Empowering students through education for a better future and society.</p>
+                                <!-- <a class="keyFeatureBlock__link" href="services.html">
                   Read more
                   <i class="fa-solid fa-arrow-right-long"></i>
-                </a>
+                </a> -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4">
+                    <div class="col-lg-4 col-md-4">
                         <div class="keyFeatureBlock keyFeatureBlock--style3 keyFeatureBlock--style5 mb-30">
                             <div class="keyFeatureBlock__left">
                                 <span class="keyFeatureBlock__icon">
-                <img src="{% static 'account/image/icons/services-icon3.svg' %}" alt="Gainioz Feature_Icon">
+                
+                <img src="{% static 'account/image/icons/services-icon1.svg' %}" alt="Gainioz Feature_Icon">
               </span>
                             </div>
                             <div class="keyFeatureBlock__content">
@@ -111,15 +113,15 @@
                     Medical & Aid
                   </a>
                                 </h3>
-                                <p class="keyFeatureBlock__text">We help local nonprofits access the funding, tools, training,</p>
-                                <a class="keyFeatureBlock__link" href="services.html">
+                                <p class="keyFeatureBlock__text">Providing healthcare assistance and resources to underserved communities through a HHC.</p>
+                                <!-- <a class="keyFeatureBlock__link" href="services.html">
                   Read more
                   <i class="fa-solid fa-arrow-right-long"></i>
-                </a>
+                </a> -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4">
+                    <!-- <div class="col-lg-3 col-md-4">
                         <div class="keyFeatureBlock keyFeatureBlock--style3 keyFeatureBlock--style5 mb-30">
                             <div class="keyFeatureBlock__left">
                                 <span class="keyFeatureBlock__icon">
@@ -139,7 +141,7 @@
                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -151,10 +153,13 @@
                     <div class="col-lg-11">
                         <div class="serviceDetailsContent">
                             <h2 class="serviceDetailsContent__heading mb-45 text-uppercase">We are always there others need help</h2>
-                            <p class="">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-                                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                                adipisci velit, loremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-                                aut fugit, dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,</p>
+                            <p class="">Helping Hands Community is a non-governmental organization committed to supporting those in need. Our mission is to provide assistance to individuals and communities who are facing difficult circumstances, such as poverty, illness, or natural disasters.
+
+                                Our organization is driven by the belief that we are all responsible for helping one another in times of need. That's why we work tirelessly to offer a helping hand to anyone who needs it, regardless of their background or situation.
+                                
+                                We believe that every individual has something to contribute, and that by working together, we can create a better world for everyone. Our dedicated volunteers come from all walks of life, and are united by a shared desire to make a positive impact on the world.
+                                
+                                At Helping Hands Community, we are always there for others in need. Whether it's providing food and shelter, offering emotional support, or organizing community events, we are committed to making a difference in the lives of those we serve.</p>
                         </div>
                     </div>
                 </div>
@@ -179,51 +184,52 @@
                 <i class="fa-solid fa-heart btn__icon"></i>
                 Our mission
               </span>
-                                <h2 class="sectionTitle__big text-white">our mission in- 2022</h2>
+                                <h2 class="sectionTitle__big text-white">our mission in- 2023</h2>
                             </div>
                             <!-- Section Heading/Title End -->
                             <div class="row g-4">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="missionBlock bgSecondary">
                                         <div class="missionBlock__icon">
-                                            <img src="{% static 'account/image/icons/mission-icon1.svg' %}" alt="Gainioz Mission">
+                                           
+                                            <img src="https://img.icons8.com/windows/64/FFFFFF/poor.png" alt="Gainioz Mission">
                                         </div>
                                         <div class="missionBlock__content">
-                                            <span class="missionBlock__counter">1600</span>
-                                            <p class="missionBlock__title">SOLAR PANEL</p>
+                                            <span class="missionBlock__counter">160</span>
+                                            <p class="missionBlock__title">POOR HELP</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="missionBlock bgPrimary">
                                         <div class="missionBlock__icon">
-                                            <img src="{% static 'account/image/icons/mission-icon2.svg' %}" alt="Gainioz Mission">
+                                            <img src="https://img.icons8.com/ios/50/FFFFFF/vegetarian-food.png" alt="Gainioz Mission">
                                         </div>
                                         <div class="missionBlock__content">
-                                            <span class="missionBlock__counter">289</span>
-                                            <p class="missionBlock__title">Build HOme</p>
+                                            <span class="missionBlock__counter">250</span>
+                                            <p class="missionBlock__title">HEALTHY FOOD</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="missionBlock bgPrimary">
                                         <div class="missionBlock__icon">
-                                            <img src="{% static 'account/image/icons/mission-icon3.svg' %}" alt="Gainioz Mission">
+                                            <img src="https://img.icons8.com/ios/50/FFFFFF/classroom.png" alt="Gainioz Mission">
                                         </div>
                                         <div class="missionBlock__content">
-                                            <span class="missionBlock__counter">16<span>k</span></span>
-                                            <p class="missionBlock__title">Give Job</p>
+                                            <span class="missionBlock__counter">30</span>
+                                            <p class="missionBlock__title">STUDENT ADMISSION</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="missionBlock bgSecondary">
                                         <div class="missionBlock__icon">
-                                            <img src="{% static 'account/image/icons/mission-icon4.svg' %}" alt="Gainioz Mission">
+                                            <img src="https://img.icons8.com/ios/50/FFFFFF/ambulance.png" alt="Gainioz Mission">
                                         </div>
                                         <div class="missionBlock__content">
-                                            <span class="missionBlock__counter">24<span>mln</span></span>
-                                            <p class="missionBlock__title">Pure water</p>
+                                            <span class="missionBlock__counter">24</span>
+                                            <p class="missionBlock__title">MEDICAL HELP</p>
                                         </div>
                                     </div>
                                 </div>
@@ -277,8 +283,8 @@
                                                 <img src="{% static 'account/image/users/review-user-1.jpg' %}" alt="Gainioz Reviewer">
                                             </div>
                                             <h3 class="reviewblock__authorName">Jane Cooper</h3>
-                                            <p class="reviewblock__authorSpeech">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
-                                            <span class="reviewblock__authorDes">Founder & Co (HTJ)</span>
+                                            <p class="reviewblock__authorSpeech">Helping Hands Community is an NGO dedicated to providing assistance and support to those in need through various initiatives and programs.</p>
+                                            <!-- <span class="reviewblock__authorDes">Founder & Co (HTJ)</span> -->
                                         </div>
                                     </div>
                                 </div>
@@ -291,8 +297,8 @@
                                                 <img src="{% static 'account/image/users/review-user-2.jpg' %}" alt="Gainioz Reviewer">
                                             </div>
                                             <h3 class="reviewblock__authorName">Cameron Williamson</h3>
-                                            <p class="reviewblock__authorSpeech">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
-                                            <span class="reviewblock__authorDes">Founder & Co (HTJ)</span>
+                                            <p class="reviewblock__authorSpeech">Helping Hands Community NGO provides education for underprivileged communities, creating opportunities for a brighter future. Join us in making a difference today.</p>
+                                            <!-- <span class="reviewblock__authorDes">Founder & Co (HTJ)</span> -->
                                         </div>
                                     </div>
                                 </div>
@@ -305,8 +311,8 @@
                                                 <img src="{% static 'account/image/users/review-user-3.jpg' %}" alt="Gainioz Reviewer">
                                             </div>
                                             <h3 class="reviewblock__authorName">Jenny Wilson</h3>
-                                            <p class="reviewblock__authorSpeech">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
-                                            <span class="reviewblock__authorDes">Founder & Co (HTJ)</span>
+                                            <p class="reviewblock__authorSpeech">Helping Hands Community NGO provides aid to the poor and vulnerable populations in need. Join us in making a difference today.</p>
+                                            <!-- <span class="reviewblock__authorDes">Founder & Co (HTJ)</span> -->
                                         </div>
                                     </div>
                                 </div>
@@ -319,8 +325,8 @@
                                                 <img src="{% static 'account/image/users/review-user-4.jpg' %}" alt="Gainioz Reviewer">
                                             </div>
                                             <h3 class="reviewblock__authorName">Robert Fox</h3>
-                                            <p class="reviewblock__authorSpeech">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
-                                            <span class="reviewblock__authorDes">Founder & Co (HTJ)</span>
+                                            <p class="reviewblock__authorSpeech">Helping Hands Community NGO provides health and food support to the poor through medicine and aid programs.</p>
+                                            <!-- <span class="reviewblock__authorDes">Founder & Co (HTJ)</span> -->
                                         </div>
                                     </div>
                                 </div>

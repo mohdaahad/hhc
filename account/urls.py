@@ -12,4 +12,6 @@ urlpatterns = [
     path('volunteers/', views.volunteers, name='volunteers'),
     path('donation-details/', views.donation_details, name='donation_details'),
     path('blog-details/', views.blog_details, name='blog_details'),
+    path('gallery/', views.gallery, name='gallery'),
+     path('join_volunteers/', views.join_volunteers, name='join_volunteers'),
 ]

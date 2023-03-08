@@ -34,19 +34,21 @@
                             <div class="header__menu">
                                 <nav class="mainMenu">
                                     <ul>
-                                        <li class="dropdown"><a href="{% url 'home' %}">Home</a> </li>
-                                        <li><a href="{% url 'about' %}">About</a></li>
-                                        <li><a href="{% url 'donation_listing' %}">Donations</a></li>
-                                        <li><a href="{% url 'blog' %}">Blog</a></li>
-                                        <li class="dropdown"><a href="{% url 'home' %}">Pages</a>
+                                        <li class="dropdown"><a class="a" href="{% url 'home' %}">Home</a> </li>
+                                        <li><a class="a" href="{% url 'about' %}">About</a></li>
+                                        <!-- <li><a class="a" href="{% url 'donation_details' %}">Donations</a></li> -->
+                                         <li><a class="a" href="{% url 'donation_details' %}">Donations</a></li>
+                                        <!-- <li><a href="{% url 'blog' %}">Blog</a></li> -->
+                                        <li class="dropdown"><p class="a" >Pages</p>
                                             <ul class="dropdown_menu dropdown_menu-2">
-                                                <li class="dropdown_item-1"><a href="{% url 'events' %}">Events</a></li>
-                                                <li class="dropdown_item-2"><a href="{% url 'faq' %}">FAQ`s</a></li>
+                                                <!-- <li class="dropdown_item-1"><a href="{% url 'events' %}">Events</a></li> -->
+                                                <!-- <li class="dropdown_item-2"><a href="{% url 'faq' %}">FAQ`s</a></li> -->
                                                 <li class="dropdown_item-4"><a href="{% url 'service' %}">Services</a></li>
+                                                <li class="dropdown_item-4"><a href="{% url 'gallery' %}">Gallery</a></li>
                                                 <li class="dropdown_item-5"><a href="{% url 'volunteers' %}">Volunteers</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{% url 'contact' %}">Contacts</a></li>
+                                        <li><a class="a" href="{% url 'contact' %}">Contacts</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -56,17 +58,17 @@
                                                         <div class="header__actions">
                                                             <ul>
                     
-                                                                <li>
+                                                                <!-- <li>
                                                                     <a href="#template-search">
                                                 <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                   <path d="M21.8281 21.4609L16.2852 15.918C16.1992 15.832 16.0703 15.7891 15.9414 15.7891H15.4688C16.9727 14.1562 17.875 12.0508 17.875 9.6875C17.875 4.78906 13.8359 0.75 8.9375 0.75C3.99609 0.75 0 4.78906 0 9.6875C0 14.6289 3.99609 18.625 8.9375 18.625C11.2578 18.625 13.4062 17.7227 14.9961 16.2617V16.6914C14.9961 16.8633 15.0391 16.9922 15.125 17.0781L20.668 22.6211C20.8828 22.8359 21.1836 22.8359 21.3984 22.6211L21.8281 22.1914C22.043 21.9766 22.043 21.6758 21.8281 21.4609ZM8.9375 17.25C4.72656 17.25 1.375 13.8984 1.375 9.6875C1.375 5.51953 4.72656 2.125 8.9375 2.125C13.1055 2.125 16.5 5.51953 16.5 9.6875C16.5 13.8984 13.1055 17.25 8.9375 17.25Z" fill="#7FB432" />
                                                 </svg>
                                               </a>
-                                                                </li>
+                                                                </li> -->
                                                             </ul>
                                                         </div>
                                                         <div class="header__button">
-                                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'donation_listing' %}">
+                                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'donation_details' %}">
                                             <span class="btn__text">donate now</span>
                                             <i class="fa-solid fa-heart btn__icon"></i>
                                             <span class="it-btn__inner">
@@ -108,13 +110,13 @@
                                         <div class="header__right">
                                             <div class="header__actions">
                                                 <ul>
-                                                    <li>
+                                                    <!-- <li>
                                                         <a href="#template-search">
                                           <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M21.8281 21.4609L16.2852 15.918C16.1992 15.832 16.0703 15.7891 15.9414 15.7891H15.4688C16.9727 14.1562 17.875 12.0508 17.875 9.6875C17.875 4.78906 13.8359 0.75 8.9375 0.75C3.99609 0.75 0 4.78906 0 9.6875C0 14.6289 3.99609 18.625 8.9375 18.625C11.2578 18.625 13.4062 17.7227 14.9961 16.2617V16.6914C14.9961 16.8633 15.0391 16.9922 15.125 17.0781L20.668 22.6211C20.8828 22.8359 21.1836 22.8359 21.3984 22.6211L21.8281 22.1914C22.043 21.9766 22.043 21.6758 21.8281 21.4609ZM8.9375 17.25C4.72656 17.25 1.375 13.8984 1.375 9.6875C1.375 5.51953 4.72656 2.125 8.9375 2.125C13.1055 2.125 16.5 5.51953 16.5 9.6875C16.5 13.8984 13.1055 17.25 8.9375 17.25Z" fill="#7FB432" />
                                           </svg>
                                         </a>
-                                                    </li>
+                                                    </li> -->
                                                     <li>
                                                         <button class="headerBurgerMenu__button sidebarBtn" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
                                           <svg width="50" height="50" viewBox="0 0 100 100">
@@ -148,22 +150,23 @@
                                                     <a class="animation" href="{% url 'about' %}">About</a>
                                                 </li>
                                                 <li class="list menu-item-parent">
-                                                    <a class="animation" href="{% url 'donation_listing' %}">Donations</a>
+                                                    <a class="animation" href="{% url 'donation_details' %}">Donations</a>
                                                 </li>
-                                                <li class="list menu-item-parent">
+                                                <!-- <li class="list menu-item-parent">
                                                     <a class="animation" href="{% url 'blog' %}">Blog</a>
-                                                </li>
+                                                </li> -->
                                                 <li class="list menu-item-parent menu-item-has-children">
                                                     <a class="animation" href="{% url 'home' %}">Pages</a>
                                                     <ul class="main-menu__dropdown sub-menu">
-                                                        <li><a href="{% url 'events' %}">Events</a></li>
-                                                        <li>
+                                                        <!-- <li><a href="{% url 'events' %}">Events</a></li> -->
+                                                        <!-- <li>
                                                             <a href="{% url 'faq' %}">Faq</a>
-                                                        </li>
+                                                        </li> -->
                                         
                                                         <li>
                                                             <a href="{% url 'service' %}">Service</a>
                                                         </li>
+                                                        <li class="dropdown_item-4"><a href="{% url 'gallery' %}">Gallery</a></li>
                                                         <li>
                                                             <a href="{% url 'volunteers' %}">Volunteers</a>
                                                         </li>
@@ -201,7 +204,7 @@
                                     </div>
                                     <div class="cc__button">
                                         <div class="header__button">
-                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'donation_listing' %}">
+                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'donation_details' %}">
                                     <span class="btn__text">Contact Us</span>
                                     <i class="fa-solid fa-heart btn__icon"></i>
                                     <span class="it-btn__inner">

@@ -2070,7 +2070,7 @@ html {
     -ms-transition: all 0.4s ease;
 }
 
-.mainMenu>ul>li>a {
+.mainMenu>ul>li>.a {
     font-size: 15px;
     font-weight: 600;
     color: #000;
@@ -2078,7 +2078,7 @@ html {
     position: relative;
 }
 
-.mainMenu>ul>li>a::before {
+.mainMenu>ul>li>.a::before {
     content: "";
     width: 10px;
     height: 10px;
@@ -2092,19 +2092,19 @@ html {
     transition: all 0.8s;
 }
 
-.header__menu--style2 .mainMenu>ul>li>a {
+.header__menu--style2 .mainMenu>ul>li>.a {
     color: #fff;
 }
 
-.sticky-on.sticky .header__menu--style2 .mainMenu>ul>li>a {
+.sticky-on.sticky .header__menu--style2 .mainMenu>ul>li>.a {
     color: #000;
 }
 
-.mainMenu>ul>li:hover>a {
+.mainMenu>ul>li:hover>.a {
     color: #eb9309;
 }
 
-.mainMenu>ul>li:hover>a::before {
+.mainMenu>ul>li:hover>.a::before {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
@@ -7502,4 +7502,16 @@ img.map-about-tab {
     box-shadow: 4px 4px 8px rgba(235, 147, 9, 0.25);
 }
 
-/*# sourceMappingURL=maps/main.css.map */
+.nice-select{
+    width: 100%;
+    min-height: 66px;
+}
+.nice-select .list {
+    width: 100%;
+}
+
+.nice-select .current {
+    position: absolute;
+    top: 12px;
+}
+
