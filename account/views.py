@@ -2,7 +2,20 @@ from django.shortcuts import render
 import os 
 import random
 
-
+volunteers={
+    'VAJID MALIK':'vajidmalik.png',
+    'MO KADIR':'mokadir.png',
+    'ASHU QURESHI':3,
+    'MO SHADAB':4,
+    'PRAVEZ ALAM':5,
+    'ARSHAD MALIK':6,
+    'MEHFOOZ MALIK':7,
+    'MO SHAHZAD':8,
+    'AHSAN MALIK':9,
+    'MO AAMIR':10,
+    'MUSTAKEEM MALIK':11,
+    'MO SHADAB':12,
+}
 
 # Create your views here.
 
