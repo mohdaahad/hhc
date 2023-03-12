@@ -7515,3 +7515,13 @@ img.map-about-tab {
     top: 12px;
 }
 
+
+.page-item.active .page-link{
+    background-color: #eb9309 !important;
+    color:white !important;
+    border-color: #eb9309 !important;
+
+}
+.page-item .page-link{
+    color:  #7fb432 !important;
+}

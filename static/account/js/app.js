@@ -481,3 +481,9 @@ function myFunction() {
   }
 
 
+ // Initiate Lightbox
+    $(function() {
+      $('.gallery a').lightbox(); 
+    });
+
+    
