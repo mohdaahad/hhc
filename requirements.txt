@@ -1,5 +1,6 @@
 apturl==0.5.2
 asgiref==3.5.0
+Babel==2.12.1
 bcrypt==3.2.0
 blinker==1.4
 Brlapi==0.8.3
@@ -16,6 +17,8 @@ distlib==0.3.6
 distro==1.7.0
 distro-info===1.1build1
 Django==3.2.12
+django-phonenumber-field==7.0.2
+django-phonenumbers==1.0.1
 duplicity==0.8.21
 fasteners==0.14.1
 filelock==3.9.0
@@ -41,6 +44,7 @@ oauthlib==3.2.0
 olefile==0.46
 paramiko==2.9.3
 pexpect==4.8.0
+phonenumbers==8.13.7
 Pillow==9.0.1
 platformdirs==3.1.1
 protobuf==3.12.4
