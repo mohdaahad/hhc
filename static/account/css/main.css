@@ -1407,8 +1407,8 @@ path,
 }
 
 .mask--review {
-    -webkit-mask-image: url(../image/shapes/testi-shape3.svg);
-    mask-image: url(../image/shapes/testi-shape3.svg);
+    /* -webkit-mask-image: url(../image/shapes/testi-shape3.svg); */
+    /* mask-image: url(../image/shapes/testi-shape3.svg); */
     bottom: 9%;
     right: 0;
     z-index: -1;

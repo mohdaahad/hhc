@@ -1,7 +1,6 @@
 from django.contrib.gis.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from cities.models import City, Country, Region
-from django.http import JsonResponse
 # Create your models here.
 class Gallery(models.Model): 
     image=models.ImageField(upload_to='static/account/image/gallery/') 

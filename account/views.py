@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.core.paginator import Paginator
+from django.http import JsonResponse
 # Create your views here.
 #  dir_list = os.listdir("/home/mohdaahad/Documents/HHC_v1/src/hhc/static/account/image/gallery")
 #     random.shuffle(dir_list)

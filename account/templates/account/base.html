@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <meta name="viewport"  initial-scale=1.0>
     <link rel="icon" href="{% static 'account/image/favicon1.png' %}" type="image/png" sizes="32*32">
     <link rel="stylesheet" href="{% static 'account/assets/animation/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'account/assets/animation/custom-animation.css' %}">
     <link rel="stylesheet" href="{% static 'account/assets/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'account/assets/swiper/swiper.min.css' %}">
     <link rel="stylesheet" href="{% static 'account/assets/nice-select/nice-select.css' %}">
-    <link rel="stylesheet" href="{% static 'account/assets/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="{% static 'account/assets/fontawesome/css/all.min.css' %}"> -->
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'account/assets/magnific-popup/css/jquery.lightbox.css' %}">
-    <link rel="stylesheet" href="{% static 'account/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'account/assets/magnific-popup/css/jquery.lightbox.css' %}">
     <script src="{% static 'account/assets/jquery/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'account/css/main.css' %}">
 
     <title>{% block title %}{% endblock title%}</title>
 </head>
@@ -24,9 +26,9 @@
     {% include 'account/navbar.html'%}
     {% block body %}{% endblock body %}
     {% include 'account/footer.html'%}
-    <script src="{% static 'account/assets/jquery/jquery.min.js' %}"></script>
+    <!-- <script src="{% static 'account/assets/jquery/jquery.min.js' %}"></script> -->
     <script src="{% static 'account/assets/magnific-popup/js/jquery.lightbox.js' %}"></script>
-    <script src="{% static 'account/assets/fontawesome/js/all.min.js' %}"></script>
+    <!-- <script src="{% static 'account/assets/fontawesome/js/all.min.js' %}"></script> -->
     <script src="{% static 'account/assets/bootstrap/js/bootstrap.bundle.js' %}"></script>
     <script src="{% static 'account/assets/swiper/swiper.min.js' %}"></script>
     <script src="{% static 'account/assets/nice-select/jquery.nice-select.min.js' %}"></script>
