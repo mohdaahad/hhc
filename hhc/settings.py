@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     "phonenumber_field",
+    'cities',
+    "django.contrib.gis",
+    
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,8 +85,12 @@ WSGI_APPLICATION = 'hhc.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+       'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'hhc4u',
+        'USER': 'hhc',
+        'PASSWORD': 'HHC',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

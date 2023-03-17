@@ -1,5 +1,7 @@
-from django.db import models
+from django.contrib.gis.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from cities.models import City, Country, Region
+from django.http import JsonResponse
 # Create your models here.
 class Gallery(models.Model): 
     image=models.ImageField(upload_to='static/account/image/gallery/') 
@@ -20,7 +22,10 @@ class Volunteers(models.Model):
        ]
     full_name = models.CharField(max_length=100)
     father_name = models.CharField(max_length=100)
-    address = models.CharField(max_length=100)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    pincode = models.IntegerField()
     education =models.CharField(max_length=32,choices=CHOICES,default='Undergraduate' ,verbose_name="Choose your Education")
     image   =  models.ImageField(upload_to='static/account/image/volunteers/') 
     email = models.EmailField(max_length = 254)
@@ -52,4 +57,4 @@ class Social_Voluteers(models.Model):
 
 
     def __str__(self):
-        return self.account        
+        return self.volunteers.full_name      

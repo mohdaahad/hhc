@@ -53,48 +53,59 @@
 </section>
 <!-- Page Breadcumb End -->
 
-
+<link rel="stylesheet" href="{% static 'account/assets/magnific-popup/css/jquery.lightbox.css' %}">
 <div id="content" class="container pt-120 pb-105">
-    <div class="row text-center gallery text-lg-start">
-      {% for x in photo %}
-      <div class="col-lg-3 col-md-4 col-6">
-        <a  href="{{x}}" class="d-block mb-4 h-100">
-          <img class="img-fluid img-thumbnail" style="object-fit: cover; width: 304px;
-        height: 206px;"src="{{x}}" alt="">
-        </a>
-      </div>
-      {% endfor %}
-
+    <div id="my-data" class="row text-center gallery text-lg-start">
+     
     </div>
-    <nav class="d-flex justify-content-center" aria-label="Page navigation  example">
-      <ul class="pagination">
-        {% if photo.has_previous %}
-        <li class="page-item">
-          <a class="page-link" href="?page={{photo.previous_page_number}}" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="?page={{photo.previous_page_number}}">{{photo.previous_page_number}}</a></li>
-        {% endif %}
-      
-        <li class="page-item active"><a class="page-link " href="?page={{photo.number}}">{{photo.number}}</a></li>
-        {% if photo.has_next %}
-        <li class="page-item"><a class="page-link" onclick="scrollToTop()" href="?page={{photo.next_page_number}}">{{photo.next_page_number}}</a></li>
-        <li class="page-item">
-          <a class="page-link" href="?page={{photo.next_page_number}}" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-        {% endif %}
+    <nav class="d-flex justify-content-center " aria-label="Page navigation  example">
+      <ul id="my-pagination" class="pagination">
       </ul>
     </nav>
-  </div>
+
+</div>
+
+
+
 <script>
-document.body.onload = function(e) {
- const element = document.getElementById("content");
-    element.scrollIntoView({behavior: "smooth"});
-}</script>
- 
+$(function() {
+        function load_data(page) {
+            $.ajax({
+                url: "{% url 'vol' %}",
+                data: {'page': page},
+                success: function(data) {
+                    var html = '';
+                    for (var i = 0; i < data.data.length; i++) {
+                      html += '<div class="col-lg-3 col-md-4 col-6"><a data-lightbox="image-1" href="/' + data.data[i].image+'"class="d-block mb-4 h-100"><img class="img-fluid img-thumbnail" style="object-fit: cover; width: 304px; height: 206px;" src="/' +data.data[i].image + '" alt=""></a></div>';
+                    }
+                    $('#my-data').html(html);
+                    var pagination_html = '';
+                    if (data.has_previous) {
+                        pagination_html += '<li class="page-item">'+'<a class="next-page page-link " data-page="'+data.previous_page_number +'" aria-label="Previous">'+'<span aria-hidden="true">&laquo;</span>'+' <span class="sr-only">Previous</span>'+' </a>'+'</li>'+' <li class="page-item"><a class="next-page page-link " data-page="'+data.previous_page_number +'">'+data.previous_page_number +'</a></li>';   
+                    }
+                    pagination_html +='<li class="page-item active"><a class="next-page page-link " data-page="'+data.page+'">'+ data.page+'</a></li>';
+                    if (data.has_next) {
+                        pagination_html +='<li class="page-item"><a class="next-page page-link "  data-page="'+data.next_page_number+'">'+ data.next_page_number+'</a></li>'+'<li class="page-item">'+'<a class="next-page page-link " data-page="'+data.next_page_number+'" aria-label="Next">'+'<span aria-hidden="true">&raquo;</span>'+'<span class="sr-only">Next</span>'+'</a>'+'</li>';
+                    }
+                    $('#my-pagination').html(pagination_html);
+                    $('.gallery a').lightbox();
+                }
+           
+              });
+        }
+    
+        load_data(1);
+    
+        $(document).on('click', '.next-page', function(e) {
+            e.preventDefault();
+            var page = $(this).data('page');
+            load_data(page);
+        });
+    });
+
+</script>
+
+
+
+
 {% endblock body %}

@@ -471,19 +471,14 @@
 
 
 
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.innerHTML == "See all Volunteers") {
-      x.innerHTML = "Collapse Volunteers";
-    } else {
-      x.innerHTML = "See all Volunteers";
-    }
-  }
+
 
 
  // Initiate Lightbox
-    $(function() {
-      $('.gallery a').lightbox(); 
-    });
+
+
+
+
 
     
+   
