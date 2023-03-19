@@ -21,9 +21,9 @@ class Volunteers(models.Model):
        ]
     full_name = models.CharField(max_length=100)
     father_name = models.CharField(max_length=100)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE)
-    region = models.ForeignKey(Region, on_delete=models.CASCADE)
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE,default=1269750)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE,default=1253626)
+    city = models.ForeignKey(City, on_delete=models.CASCADE,default=1257806)
     pincode = models.IntegerField()
     education =models.CharField(max_length=32,choices=CHOICES,default='Undergraduate' ,verbose_name="Choose your Education")
     image   =  models.ImageField(upload_to='static/account/image/volunteers/') 

@@ -69,7 +69,7 @@
 $(function() {
         function load_data(page) {
             $.ajax({
-                url: "{% url 'vol' %}",
+                url: "{% url 'ajax_gallery' %}",
                 data: {'page': page},
                 success: function(data) {
                     var html = '';

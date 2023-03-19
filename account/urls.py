@@ -15,6 +15,7 @@ urlpatterns = [
     path('blog-details/', views.blog_details, name='blog_details'),
     path('gallery/', views.gallery, name='gallery'),
     path('join_volunteers/', views.join_volunteers, name='join_volunteers'),
-    path('vol/', views.my_ajax_view, name='vol'),
+    path('ajax_gallery/', views.gallery_ajax, name='ajax_gallery'),
+    path('volunteers_ajax/', views.volunteers_ajax, name='volunteers_ajax'),
 
 ]
