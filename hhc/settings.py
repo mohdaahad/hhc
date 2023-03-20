@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     "phonenumber_field",
-    'cities',
     "django.contrib.gis",
     
 ]

@@ -1,7 +1,6 @@
 asgiref==3.6.0
 Babel==2.12.1
 Django==4.1.7
-django-cities==0.6.1
 django-model-utils==4.3.1
 django-phonenumber-field==7.0.2
 phonenumbers==8.13.7

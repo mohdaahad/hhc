@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from django.core.paginator import Paginator
 from django.http import JsonResponse
+from .form import *
 # Create your views here.
 #  dir_list = os.listdir("/home/mohdaahad/Documents/HHC_v1/src/hhc/static/account/image/gallery")
 #     random.shuffle(dir_list)
@@ -76,5 +77,15 @@ def gallery_ajax(request):
 
 
 def join_volunteers(request):
-    return render(request, "account/join-volunteers.html") 
+    
+    if request.method == 'POST':
+        form = MyModelForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            pass
+    else:
+        form = MyModelForm()
+        print(form)
+       
+    return render(request, "account/join-volunteers.html",{'form': form}) 
 

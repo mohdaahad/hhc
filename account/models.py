@@ -1,7 +1,6 @@
 from django.contrib.gis.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from cities.models import City, Country, Region
-# Create your models here.
+
 class Gallery(models.Model): 
     image=models.ImageField(upload_to='static/account/image/gallery/') 
     created_date =models.DateTimeField(auto_now_add=True,null=True)
@@ -21,9 +20,9 @@ class Volunteers(models.Model):
        ]
     full_name = models.CharField(max_length=100)
     father_name = models.CharField(max_length=100)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE,default=1269750)
-    region = models.ForeignKey(Region, on_delete=models.CASCADE,default=1253626)
-    city = models.ForeignKey(City, on_delete=models.CASCADE,default=1257806)
+    country = models.CharField(max_length=100,default='India')
+    region = models.CharField(max_length=100,default='Uttar Pradesh')
+    city = models.CharField(max_length=100,default='Saharanpur')
     pincode = models.IntegerField()
     education =models.CharField(max_length=32,choices=CHOICES,default='Undergraduate' ,verbose_name="Choose your Education")
     image   =  models.ImageField(upload_to='static/account/image/volunteers/') 

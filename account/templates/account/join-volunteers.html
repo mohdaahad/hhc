@@ -1,5 +1,5 @@
 {% extends 'account/base.html' %}
-{% block title %}HHC - Donation{% endblock title%}
+{% block title %}HHC - Join Volunteers{% endblock title%}
 {% load static %}
 {% block body %}
 <section class="pageBreadcumb pageBreadcumb--style1 position-relative" data-bg-image="{% static 'account/image/bg/pageBreadcumbBg1.jpg' %}">
@@ -41,8 +41,8 @@
                     <h2 class="pageTitle__heading text-white text-uppercase mb-25">Join us</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Join us</li>
                         </ol>
                     </nav>
                 </div>
@@ -59,7 +59,7 @@
 <div class="contact contact--layout1">
     <div class="container">
               
-<form id="contact-form" action="#" class="it-contact-form commentsPost commentsPost--style2 pt-45 pb-25">
+<!-- <form id="contact-form" action="#" class="it-contact-form commentsPost commentsPost--style2 pt-45 pb-25">
     <div class="row g-4">
         <div class="col-md-6">
             <div class="commentsPost__input">
@@ -131,9 +131,13 @@
         </div>
     </div>
     <div class="form-response"></div>
+</form> -->
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
 </form>
-
-
     </div></div>
 
 {% endblock body %}
