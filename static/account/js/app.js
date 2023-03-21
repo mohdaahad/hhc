@@ -361,59 +361,59 @@
         });
 
     // 18. AJAX Contact Form
-    const contactForm = $(".it-contact-form");
-    if (contactForm.length) {
-        contactForm.each(function() {
-            const innerContactForm = $(this);
-            innerContactForm.validator().on("submit", function(e) {
-                const $this = $(this),
-                    $target = innerContactForm.find(".form-response");
-                if (e.isDefaultPrevented()) {
-                    $target.html(
-                        "<div class='alert alert-danger'><p>Please select all required field.</p></div>"
-                    );
-                } else {
-                    $.ajax({
-                        url: "php/mailer.php",
-                        type: "POST",
-                        data: innerContactForm.serialize(),
-                        beforeSend: function() {
-                            $target.html(
-                                "<div class='alert alert-info'><p>Loading ...</p></div>"
-                            );
-                        },
-                        success: function(response) {
-                            if (response === "success") {
-                                $this[0].reset();
-                                $target.html(
-                                    "<div class='alert alert-success'><p>Message has been sent successfully.</p></div>"
-                                );
-                            } else {
-                                res = JSON.parse(response);
-                                if (res.message.length) {
-                                    const messages = null;
-                                    res.message.forEach(function(message) {
-                                        messages += "<p>" + message + "</p>";
-                                    });
-                                    $target.html(
-                                        "<div class='alert alert-success'><p>" +
-                                        messages +
-                                        "</p></div>"
-                                    );
-                                }
-                            }
-                        },
-                        error: function() {
-                            $target.html(
-                                "<div class='alert alert-success'><p>Error !!!</p></div>"
-                            );
-                        },
-                    });
-                    return false;
-                }
-            });
-        });
-    }
+    // const contactForm = $(".it-contact-form");
+    // if (contactForm.length) {
+    //     contactForm.each(function() {
+    //         const innerContactForm = $(this);
+    //         innerContactForm.validator().on("submit", function(e) {
+    //             const $this = $(this),
+    //                 $target = innerContactForm.find(".form-response");
+    //             if (e.isDefaultPrevented()) {
+    //                 $target.html(
+    //                     "<div class='alert alert-danger'><p>Please select all required field.</p></div>"
+    //                 );
+    //             } else {
+    //                 $.ajax({
+    //                     url: "php/mailer.php",
+    //                     type: "POST",
+    //                     data: innerContactForm.serialize(),
+    //                     beforeSend: function() {
+    //                         $target.html(
+    //                             "<div class='alert alert-info'><p>Loading ...</p></div>"
+    //                         );
+    //                     },
+    //                     success: function(response) {
+    //                         if (response === "success") {
+    //                             $this[0].reset();
+    //                             $target.html(
+    //                                 "<div class='alert alert-success'><p>Message has been sent successfully.</p></div>"
+    //                             );
+    //                         } else {
+    //                             res = JSON.parse(response);
+    //                             if (res.message.length) {
+    //                                 const messages = null;
+    //                                 res.message.forEach(function(message) {
+    //                                     messages += "<p>" + message + "</p>";
+    //                                 });
+    //                                 $target.html(
+    //                                     "<div class='alert alert-success'><p>" +
+    //                                     messages +
+    //                                     "</p></div>"
+    //                                 );
+    //                             }
+    //                         }
+    //                     },
+    //                     error: function() {
+    //                         $target.html(
+    //                             "<div class='alert alert-success'><p>Error !!!</p></div>"
+    //                         );
+    //                     },
+    //                 });
+    //                 return false;
+    //             }
+    //         });
+    //     });
+    // }
 
     // 19. Sponsor/Brand Slider Activation
     $(".sponsor-slider-active").each(function(i) {
@@ -482,3 +482,32 @@
 
     
    
+ $('#contact-form').submit(function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    $.ajax({
+        type: 'POST',
+        url: window.location.pathname,
+        data: formData,
+        success: function(response) {
+            $('.error').remove();
+            var html = '';
+                if(response.errors){
+                    console.log(response.errors)
+                    html +='<div class="col-md-12"><div class="alert alert-danger" role="alert">'+response.errors['phone']+'</div></div>';
+                }
+                else{
+                    console.log(response)
+                    $('#contact-form')[0].reset();
+                    document.getElementById("image").src = "/static/account/image/1.png";
+                    html +='<div class="col-md-12"><div class="alert alert-success" role="alert">'+response['success']+'</div></div>';
+                }
+                $('#alert').html(html);
+        },
+            cache: false,
+            contentType: false,
+            processData: false
+            
+        
+    });
+});

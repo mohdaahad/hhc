@@ -7504,7 +7504,7 @@ img.map-about-tab {
 
 .nice-select{
     width: 100%;
-    min-height: 66px;
+    min-height: 60px;
 }
 .nice-select .list {
     width: 100%;
@@ -7525,3 +7525,26 @@ img.map-about-tab {
 .page-item .page-link{
     color:  #7fb432 !important;
 }
+
+.list  {
+  max-height: 150px;
+  overflow-y: scroll !important;
+}
+
+.commentsPost__input{
+    display: flex;
+}
+
+
+.user_profile img:last-child {
+    display: none;  
+  }
+  .user_profile:hover img:last-child {
+    display: block;  
+  }
+  .user_profile:hover img:first-child {
+    display: none;  
+  }
+  #file_input{
+    display: none;
+  }

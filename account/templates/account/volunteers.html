@@ -74,14 +74,18 @@
                     data: {'page': page},
                     success: function(data) {
                         var html = '';
+                        
                         for (var i = 0; i < data.data.length; i++) {
-                          html += ' <div class="col-lg-3 col-md-6 mb-45"><div class="volunteerBlock text-center"><figure class="volunteerBlock__figure"><img class="volunteerBlock__figure__thumb" src="/'+data.data[i].image+'" alt="Gainioz Volunteers"></figure><div class="volunteerBlock__content"><h3 class="volunteerBlock__name text-uppercase text-center"><a href="#">'+data.data[i].full_name+'</a></h3><div class="itSocial itSocial--volunteer"><ul>';
+                            if(data.data[i].visible_flag){
+                                html += ' <div class="col-lg-3 col-md-6 mb-45"><div class="volunteerBlock text-center"><figure class="volunteerBlock__figure"><img class="volunteerBlock__figure__thumb" src="/'+data.data[i].image+'" alt="Gainioz Volunteers"></figure><div class="volunteerBlock__content"><h3 class="volunteerBlock__name text-uppercase text-center"><a href="#">'+data.data[i].full_name+'</a></h3><div class="itSocial itSocial--volunteer"><ul>';
                             for (var j = 0; j < data.social_voluteers.length; j++) {
                                 if(data.data[i].id==data.social_voluteers[j].volunteers_id){
                                     html += '<li><a class="facebook" target="_blank" href="'+data.social_voluteers[j].url+'" rel="nofollow"><i class="fab '+data.social_voluteers[j].account+'"></i></a></li>'
                                 }
                             }
                             html+='</ul></div></div></div></div>';
+                            }
+                         
                         }
                         $('#my-data').html(html);
                         var pagination_html = '';

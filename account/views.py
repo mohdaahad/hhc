@@ -3,6 +3,7 @@ from .models import *
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 from .form import *
+from django.http.response import HttpResponseRedirect
 # Create your views here.
 #  dir_list = os.listdir("/home/mohdaahad/Documents/HHC_v1/src/hhc/static/account/image/gallery")
 #     random.shuffle(dir_list)
@@ -76,16 +77,19 @@ def gallery_ajax(request):
     })
 
 
-def join_volunteers(request):
-    
+def join_volunteers(request):   
     if request.method == 'POST':
-        form = MyModelForm(request.POST)
+        form = MyModelForm(request.POST,request.FILES)   
         if form.is_valid():
-            # Process the form data
-            pass
+            form.save()
+            return JsonResponse({'success': "successful submit your form"})
+        else:
+            errors = {}
+            for field in form.errors:
+                errors[field] = form.errors[field][0]
+            print(errors)      
+            return JsonResponse({'errors': errors})
     else:
         form = MyModelForm()
-        print(form)
-       
     return render(request, "account/join-volunteers.html",{'form': form}) 
 

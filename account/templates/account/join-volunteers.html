@@ -59,50 +59,33 @@
 <div class="contact contact--layout1">
     <div class="container">
               
-<!-- <form id="contact-form" action="#" class="it-contact-form commentsPost commentsPost--style2 pt-45 pb-25">
-    <div class="row g-4">
-        <div class="col-md-6">
-            <div class="commentsPost__input">
-                <input name="name" type="text" placeholder="Enter your fullname*">
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="commentsPost__input">
-                <input name="name" type="text" placeholder="Enter your father name*">
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="commentsPost__input">
-                <input name="email" type="text" placeholder="Enter your email*">
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="commentsPost__input">
-                <input name="phone" type="text" placeholder="Enter your  number*">
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="commentsPost__input">
-                <input name="Adress" type="text" placeholder="Adress*">
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="commentsPost__input">
-                <select class="commentsPost__input" name="pets" id="pet-select">
-                    <option value="">Undergraduate</option>
-                    <option value="dog">Postgraduate</option>
-                    <option value="cat">Other</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="commentsPost__check">
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Are you agree</label>
-                </div>
-            </div>
-        </div>
+ <form id="contact-form"   method="post" enctype="multipart/form-data"  action="#" class=" commentsPost commentsPost--style2 pt-45 pb-25">
+  <div>
+    <div class="d-flex  justify-content-center mb-4">
+      <div class="user_profile" >
+        <img src="{% static 'account/image/1.png' %}"
+        class="rounded-circle" alt="example placeholder" id="image"style="width: 200px;object-fit: cover; height: 200px;" />
+        <img src="{% static 'account/image/2.png' %}"
+        class="rounded-circle" onclick="document.getElementById('file_input').click()" alt="example placeholder" style="width: 200px;" />
+      </div>
+    </div>
+   
+</div>
+    <div   class="row g-4">
+        {% csrf_token %}
+        {% for fm in form %}
+          <div class="col-md-6">
+         <div class="commentsPost__input">
+        {{fm}} <small class="text-warning">{{fm.errors|striptags}}</small>
+    </div>
+</div>
+{% endfor %} 
+<div id="alert" class="">
+  
+</div>
+
+<!-- <img src="" alt="" id="image"> -->
+      
         <div class="col-12">
             <div class="commentsPost__button text-center">
                 <button type="submit" class="btn btn--styleOne btn--primary it-btn">
@@ -131,13 +114,20 @@
         </div>
     </div>
     <div class="form-response"></div>
-</form> -->
+</form> 
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-</form>
+
     </div></div>
+<script>
 
+file_input.onchange = evt => {
+  const [file] = file_input.files
+  if (file) {
+    console.log(file)
+  
+    image.src = URL.createObjectURL(file)
+  }
+}
+
+</script>
 {% endblock body %}
