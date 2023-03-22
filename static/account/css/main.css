@@ -7541,6 +7541,7 @@ img.map-about-tab {
   }
   .user_profile:hover img:last-child {
     display: block;  
+    
   }
   .user_profile:hover img:first-child {
     display: none;  

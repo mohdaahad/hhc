@@ -59,7 +59,7 @@
 <div class="contact contact--layout1">
     <div class="container">
               
- <form id="contact-form"   method="post" enctype="multipart/form-data"  action="#" class=" commentsPost commentsPost--style2 pt-45 pb-25">
+ <form id="join-vol-form"   method="post" enctype="multipart/form-data"  action="#" class=" commentsPost commentsPost--style2 pt-45 pb-25">
   <div>
     <div class="d-flex  justify-content-center mb-4">
       <div class="user_profile" >
@@ -71,7 +71,7 @@
     </div>
    
 </div>
-    <div   class="row g-4">
+    <div class="row g-4">
         {% csrf_token %}
         {% for fm in form %}
           <div class="col-md-6">
@@ -81,7 +81,6 @@
 </div>
 {% endfor %} 
 <div id="alert" class="">
-  
 </div>
 
 <!-- <img src="" alt="" id="image"> -->
@@ -113,21 +112,21 @@
             </div>
         </div>
     </div>
-    <div class="form-response"></div>
+    
 </form> 
 
 
     </div></div>
 <script>
 
-file_input.onchange = evt => {
-  const [file] = file_input.files
-  if (file) {
-    console.log(file)
+// file_input.onchange = evt => {
+//   const [file] = file_input.files
+//   if (file) {
+//     console.log(file)
   
-    image.src = URL.createObjectURL(file)
-  }
-}
+//     image.src = URL.createObjectURL(file)
+//   }
+// }
 
 </script>
 {% endblock body %}

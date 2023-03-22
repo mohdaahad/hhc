@@ -96,42 +96,19 @@
                         </div>
                     </div> -->
                 </div>
-                <form id="contact-form" action="#" class="it-contact-form commentsPost commentsPost--style2 pt-45 pb-25">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="commentsPost__input">
-                                <input name="name" type="text" placeholder="Enter your name*">
-                            </div>
+                <form id="contact-form" action="#" method="p
+                " class="commentsPost commentsPost--style2 pt-45 pb-25">
+                        <div class="row g-4">
+                            {% csrf_token %}
+                            {% for fm in form %}
+                              <div class="col-md-6">
+                             <div class="commentsPost__input">
+                            {{fm}} <small class="text-warning">{{fm.errors|striptags}}</small>
                         </div>
-                        <div class="col-md-6">
-                            <div class="commentsPost__input">
-                                <input name="email" type="text" placeholder="Enter your email*">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="commentsPost__input">
-                                <input name="phone" type="text" placeholder="Enter your  number*">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="commentsPost__input">
-                                <input name="subject" type="text" placeholder="Subject*">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="commentsPost__input">
-                                <textarea name="message" placeholder="Enter your Massage*"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="commentsPost__check">
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Save my name, email, and website in this
-                    browser for the next time I comment.</label>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    {% endfor %} 
+                    <div id="alert12" class="">
+                    </div>
                         <div class="col-12">
                             <div class="commentsPost__button text-center">
                                 <button type="submit" class="btn btn--styleOne btn--primary it-btn">
@@ -159,7 +136,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-response"></div>
+            
                 </form>
             </div>
         </div>

@@ -482,7 +482,7 @@
 
     
    
- $('#contact-form').submit(function(event) {
+ $('#join-vol-form').submit(function(event) {
     event.preventDefault();
     var formData = new FormData(this);
     $.ajax({
@@ -493,16 +493,39 @@
             $('.error').remove();
             var html = '';
                 if(response.errors){
-                    console.log(response.errors)
                     html +='<div class="col-md-12"><div class="alert alert-danger" role="alert">'+response.errors['phone']+'</div></div>';
                 }
                 else{
-                    console.log(response)
-                    $('#contact-form')[0].reset();
+                    $('#join-vol-form')[0].reset();
                     document.getElementById("image").src = "/static/account/image/1.png";
                     html +='<div class="col-md-12"><div class="alert alert-success" role="alert">'+response['success']+'</div></div>';
                 }
                 $('#alert').html(html);
+        },
+            cache: false,
+            contentType: false,
+            processData: false
+            
+        
+    });
+});
+
+$('#contact-form').submit(function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    $.ajax({
+        type: 'POST',
+        url: window.location.pathname,
+        data: formData,
+        success: function(response) {
+            $('.error').remove();
+            var html = '';
+                if(response){
+                    $('#contact-form')[0].reset();
+                    html +='<div class="col-md-12"><div class="alert alert-success" role="alert">'+response['success']+'</div></div>';
+                }
+              
+                $('#alert12').html(html);
         },
             cache: false,
             contentType: false,

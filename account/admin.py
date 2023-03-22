@@ -20,9 +20,11 @@ class VolunteersAdmin(admin.ModelAdmin):
 class Social_VoluteersAdmin(admin.ModelAdmin):
     list_display=('volunteers','account' )
 
-    
+class ContactsAdmin(admin.ModelAdmin):
+    list_display=('name','subject' )
 # Register your models here.
 
 admin.site.register(Gallery,GalleryAdmin)
 admin.site.register(Volunteers,VolunteersAdmin)
 admin.site.register(Social_Voluteers,Social_VoluteersAdmin)
+admin.site.register(Contacts,ContactsAdmin)
