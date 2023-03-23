@@ -98,15 +98,35 @@
                 </div>
                 <form id="contact-form" action="#" method="p
                 " class="commentsPost commentsPost--style2 pt-45 pb-25">
+                {% csrf_token %}
                         <div class="row g-4">
-                            {% csrf_token %}
-                            {% for fm in form %}
                               <div class="col-md-6">
                              <div class="commentsPost__input">
-                            {{fm}} <small class="text-warning">{{fm.errors|striptags}}</small>
+                            {{form.name}} 
+                            <small class="text-warning">{{form.name.errors|striptags}}</small>
                         </div>
                     </div>
-                    {% endfor %} 
+                    <div class="col-md-6">
+                        <div class="commentsPost__input">
+                       {{form.email}} 
+                       <small class="text-warning">{{form.email.errors|striptags}}</small>
+                   </div>
+                   </div>  <div class="col-md-6">
+                <div class="commentsPost__input">
+               {{form.phone_number}} 
+               <small class="text-warning">{{form.phone_number.errors|striptags}}</small>
+               </div>
+           </div>  <div class="col-md-6">
+        <div class="commentsPost__input">
+       {{form.subject}} 
+       <small class="text-warning">{{form.subject.errors|striptags}}</small>
+          </div>
+        </div>  <div class="col-md-12">
+    <div class="commentsPost__input">
+   {{form.massage}} 
+   <small class="text-warning">{{form.massage.errors|striptags}}</small>
+</div>
+</div>
                     <div id="alert12" class="">
                     </div>
                         <div class="col-12">
@@ -136,7 +156,7 @@
                             </div>
                         </div>
                     </div>
-            
+                    
                 </form>
             </div>
         </div>

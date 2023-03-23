@@ -17,7 +17,7 @@ def contact(request):
         form = ContactsForm(request.POST) 
         if form.is_valid():
             form.save()
-            return JsonResponse({'success': "successful submit your form"})
+            return JsonResponse({'success': "successful submit your Massage"})
         # else:
         #     # errors = {}
         #     # for field in form.errors:
