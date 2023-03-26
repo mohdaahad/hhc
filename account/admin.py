@@ -16,15 +16,38 @@ class VolunteersForm(forms.ModelForm):
 
 class VolunteersAdmin(admin.ModelAdmin):
     form = VolunteersForm
+    class Meta:
+        widgets = {
+            'phone': PhoneNumberPrefixWidget(),
+        }
     
 class Social_VoluteersAdmin(admin.ModelAdmin):
     list_display=('volunteers','account' )
 
 class ContactsAdmin(admin.ModelAdmin):
     list_display=('name','subject' )
+    class Meta:
+        widgets = {
+            'phone_number': PhoneNumberPrefixWidget(),
+        }
+
+class Feature_CampaignsAdmin(admin.ModelAdmin):
+    list_display=('tag','title' )
+
+
+class DonationAdmin(admin.ModelAdmin):
+    list_display=('id','name','phone_number','amount' ,'campaigns','Certificate_80G')
+    class Meta:
+        widgets = {
+            'phone_number': PhoneNumberPrefixWidget(),
+        }
+
+
 # Register your models here.
 
 admin.site.register(Gallery,GalleryAdmin)
 admin.site.register(Volunteers,VolunteersAdmin)
 admin.site.register(Social_Voluteers,Social_VoluteersAdmin)
 admin.site.register(Contacts,ContactsAdmin)
+admin.site.register(Feature_Campaigns,Feature_CampaignsAdmin)
+admin.site.register(Donation,DonationAdmin)

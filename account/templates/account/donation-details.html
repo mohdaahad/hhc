@@ -39,11 +39,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="pageTitle text-center">
-                            <h2 class="pageTitle__heading text-white text-uppercase mb-25">Donation Details</h2>
+                            <h2 class="pageTitle__heading text-white text-uppercase mb-25">Donation </h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Donation Details</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Donation </li>
                                 </ol>
                             </nav>
                         </div>
@@ -55,218 +55,125 @@
         <!-- Donation Details -->
         <section class="donation pt-130 pb-100">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mb-30">
-                        <div class="innerWrapper">
-                            <div class="donationDetails">
-                                <div class="donationDetails__header mb-45">
-                                    <figure class="thumb mb-45">
-                                        <img src="{% static 'account/image/utilites/dontaion-details-thumb1.jpg' %}" alt="Gainioz">
-                                    </figure>
-                                    <h3 class="donationDetails__title text-uppercase">Donate for Indian Child Education</h3>
-                                </div>
-                                <!-- <div class="featureBlock__donation featureBlock__donation--style2 mb-50">
-                                    <div class="featureBlock__donation__progress">
-                                        <div class="featureBlock__donation__bar">
-                                            <span class="featureBlock__donation__text skill-bar" data-width="80%" style="width: 80%;">80%</span>
-                                            <div class="featureBlock__donation__line">
-                                                <span class="skill-bars">
-                        <span class="skill-bars__line skill-bar" data-width="80%" style="width: 80%;"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="featureBlock__eqn">
-                                        <div class="featureBlock__eqn__block">
-                                            <span class="featureBlock__eqn__title">our goal</span>
-                                            <span class="featureBlock__eqn__price">$13,0000</span>
-                                        </div>
-                                        <div class="featureBlock__eqn__block text-center">
-                                            <span class="featureBlock__eqn__title">Raised</span>
-                                            <span class="featureBlock__eqn__price">$22,9098</span>
-                                        </div>
-                                        <div class="featureBlock__eqn__block text-end">
-                                            <span class="featureBlock__eqn__title">to go</span>
-                                            <span class="featureBlock__eqn__price">$38,000</span>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="donationDetails__warning">
-                                    <p>
-                                        <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M23.8236 19.6887L12.7561 0.966058C12.6007 0.698209 12.3114 0.5 12.0007 0.5C11.6847 0.5 11.3954 0.698209 11.2454 0.966058L0.177863 19.6887C0.0278673 19.9566 -0.0792725 20.3851 0.0760802 20.6476C0.231433 20.9101 0.515353 21.0708 0.826059 21.0708H23.1701C23.4808 21.0708 23.7647 20.9101 23.92 20.6476C24.0807 20.3851 23.9736 19.9512 23.8236 19.6887ZM13.715 18.4995H10.2865V15.9281H13.715V18.4995ZM13.715 14.2139H10.2865V6.49983H13.715V14.2139Z" fill="black" />
-                    </svg>
-                                        <span>Notice:</span> Test mode is enabled. While in test mode no live donations are processed.
-                                    </p>
-                                </div> -->
-                                <div class="donationDetails__payments">
-                                    <div class="payments">
-                                        <div class="paymentsHeader">
-                                            <div class="payments__title">
-                                                <h4 class="donationDetails__heading">Select Payment Method</h4>
-                                            </div>
-                                            <div class="payments__methods">
-                                                <!-- <div class="payments__method">
-                                                    <input class="payments__input" id="pay1" type="radio" name="pay">
-                                                    <label class="payments__label" for="pay1"><span
-                            class="payments__label__check"></span>Donation</label>
-                                                </div> -->
-                                                <div class="payments__method">
-                                                    <input class="payments__input" id="pay2" type="radio" name="pay">
-                                                    <label class="payments__label" for="pay2"><span class="payments__label__check"></span>Cradint
-                            Donation</label>
-                                                </div>
-                                                <div class="payments__method">
-                                                    <input class="payments__input" id="pay3" type="radio" name="pay">
-                                                    <label class="payments__label" for="pay3"><span class="payments__label__check"></span>Offline
-                            Donation</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="paymentsCustoms">
-                                            <div class="paymentsInput">
-                                                <input class="paymentsCustoms__field" type="text" placeholder="Custom Donation">
-                                            </div>
-                                            <div class="paymentsAmountChoice">
-                                                <div class="payments__method">
-                                                    <input class="payments__input" id="pay4" type="radio" name="pay2">
-                                                    <label class="paymentsAmountChoice__label" for="pay4">&#8377;100</label>
-                                                </div>
-                                                <div class="payments__method">
-                                                    <input class="payments__input" id="pay5" type="radio" name="pay2">
-                                                    <label class="paymentsAmountChoice__label" for="pay5">&#8377;500</label>
-                                                </div>
-                                                <div class="payments__method">
-                                                    <input class="payments__input" id="pay6" type="radio" name="pay2">
-                                                    <label class="paymentsAmountChoice__label" for="pay6">&#8377;1000</label>
-                                                </div>
-                                                <!-- <div class="payments__method">
-                                                    <input class="payments__input" id="pay7" type="radio" name="pay2">
-                                                    <label class="paymentsAmountChoice__label" for="pay7">$500</label>
-                                                </div>
-                                                <div class="payments__method">
-                                                    <input class="payments__input" id="pay8" type="radio" name="pay2">
-                                                    <label class="paymentsAmountChoice__label" for="pay8">$1000</label>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- <div class="donationDetails__cross mb-45">
-                                    <p>
-                                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <mask id="mask0_1265_247" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="21" height="21">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 0C4.70156 0 0 4.70156 0 10.5C0 16.2984 4.70156 21 10.5 21C16.2984 21 21 16.2984 21 10.5C21 4.70156 16.2984 0 10.5 0ZM15.5766 14.0391C15.6469 14.1094 15.6844 14.2031 15.6844 14.3016C15.6844 14.4 15.6469 14.4984 15.5766 14.5641L14.5641 15.5812C14.4891 15.6562 14.3953 15.6891 14.3016 15.6891C14.2078 15.6891 14.1094 15.6516 14.0391 15.5812L10.5 12.0375L6.96562 15.5859C6.89531 15.6609 6.79687 15.6937 6.70312 15.6937C6.60937 15.6937 6.51093 15.6562 6.44062 15.5859L5.42812 14.5687C5.35781 14.4984 5.32031 14.4047 5.32031 14.3062C5.32031 14.2078 5.35781 14.1094 5.42812 14.0437L8.97656 10.4812L5.41874 6.96562C5.27343 6.82031 5.27343 6.58124 5.41874 6.43593L6.43124 5.41874C6.50156 5.34843 6.59531 5.31093 6.69374 5.31093C6.79218 5.31093 6.88593 5.34843 6.95624 5.41874L10.5047 8.92031L14.0531 5.41874C14.1234 5.34843 14.2172 5.31093 14.3156 5.31093C14.4141 5.31093 14.5078 5.34843 14.5781 5.41874L15.5906 6.43593C15.7359 6.58124 15.7359 6.82031 15.5906 6.96562L12.0328 10.4812L15.5766 14.0391Z" fill="white" />
-                      </mask>
-                      <g mask="url(#mask0_1265_247)">
-                        <rect width="21" height="21" rx="10.5" fill="#F05359" />
-                      </g>
-                    </svg> We're unable to recognize your session. Please refresh the screen to try again; otherwise contact your website administrator for assistance.
-                                    </p>
-                                </div> -->
-                                <p class="donationDetails__text mb-30">Helping Hands Community is a non-governmental organization (NGO) that aims to support and uplift underprivileged communities by providing them with basic necessities such as food, shelter, education, and healthcare. Our mission is to create a better future for those in need, and we rely on the generosity of donors to achieve this goal.
+                <form id="donation"   method="post" enctype="multipart/form-data"  action="#" class=" commentsPost commentsPost--style2 pt-45 pb-25">
+                      <div class="row g-4">
+                          {% csrf_token %}
+                            <div class="col-md-6">
+                           <div class="commentsPost__input">
+                          {{form.campaigns}} <small class="text-warning">{{form.campaigns.errors|striptags}}</small>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="commentsPost__input">
+                   {{form.name}} <small class="text-warning">{{form.name.errors|striptags}}</small>
+               </div>
+           </div>   <div class="col-md-6">
+            <div class="commentsPost__input">
+           {{form.email}} <small class="text-warning">{{form.email.errors|striptags}}</small>
+       </div>
+   </div>   <div class="col-md-6">
+    <div class="commentsPost__input">
+   {{form.phone_number}} <small class="text-warning">{{form.phone_number.errors|striptags}}</small>
+</div>
+</div>   <div class="col-md-6">
+  <div class="commentsPost__input">
+ {{form.country}} <small class="text-warning">{{form.country.errors|striptags}}</small>
+</div>
+</div>   <div class="col-md-6">
+  <div class="commentsPost__input">
+ {{form.region}} <small class="text-warning">{{form.region.errors|striptags}}</small>
+</div>
+</div>   <div class="col-md-6">
+  <div class="commentsPost__input">
+ {{form.city}} <small class="text-warning">{{form.city.errors|striptags}}</small>
+</div>
+</div>   <div class="col-md-6">
+  <div class="commentsPost__input">
+ {{form.pincode}} <small class="text-warning">{{form.pincode.errors|striptags}}</small>
+</div>
+</div>   <div class="col-md-6">
+  <div class="commentsPost__input">
+ {{form.amount}} <small class="text-warning">{{form.amount.errors|striptags}}</small>
+</div>
+</div>   <div class="col-md-6">
+  <div class="commentsPost__input">
+ {{form.reference}} <small class="text-warning">{{form.reference.errors|striptags}}</small>
+</div>
+</div>
+                  <div id="alert12" class="">
+                  </div>
 
-                                </p>
-                                <p class="donationDetails__text mb-30">Through our donation programs, we strive to empower individuals and families to overcome poverty and lead successful, fulfilling lives. Your contribution can help us provide critical resources and services to those who would otherwise be unable to access them.</p>
-                                <p class="donationDetails__text mb-30">We believe that every person deserves a chance to succeed and that by working together, we can make a meaningful difference in the lives of those around us. Your donation, no matter how small, can help us achieve this vision and make a positive impact in our community. Thank you for considering donating to Helping Hands Community.</p>
-                                <h4 class="donationDetails__heading mb-25">Our challenge & Goal</h4>
-                                <p class="donationDetails__text mb-30">At Helping Hands Community NGO, our mission is to make a positive impact in the lives of those in need. Our organization strives to provide vital resources and support to those facing challenges such as poverty, hunger, homelessness, and lack of access to education and healthcare.</p>
-                                <p class="donationDetails__text mb-30">However, we cannot achieve our goals alone. We rely on the generosity and support of individuals like you who believe in our cause and want to make a difference in the world. Your donation can help us to continue providing essential services and resources to those who need it most.</p>
-                                <p class="donationDetails__text mb-30">Our challenge is to raise enough funds to sustain our operations and expand our reach to even more individuals and communities in need. With your help, we can make a difference in the lives of countless individuals and families, and empower them to lead healthier, happier, and more fulfilling lives.</p>
-                                <p class="donationDetails__text mb-30">Thank you for considering a donation to Helping Hands Community NGO. With your support, we can continue to make a positive impact in the world and create a brighter future for us all.</p>
-                            </div>
+                  <!-- <img src="" alt="" id="image"> -->
+                  <div class="col-12">
+                    <div class="commentsPost__check">
+                        <div class="form-group form-check">
+                          {{form.Certificate_80G}}<small class="text-warning">{{form.Certificate_80G.errors|striptags}}</small>
+                            <label class="form-check-label" for="exampleCheck1">Require 80G Tax Exp. Certificate*</label>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-30">
-                        <div class="sidebarLayout">
-                            <div class="innerWrapperSidebar mb-30">
-                                <div class="sidebarWidget">
-                                    <div class="sidebarTitle">
-                                        <h5 class="sidebarTitle__heading text-uppercase mb-30">categories</h5>
-                                    </div>
-                                    <div class="sidebarCategories">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                          <span>Charity</span>
-                          <span>03</span>
-                        </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                          <span>Donation</span>
-                          <span>03</span>
-                        </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                          <span>Medical & Aid Kit</span>
-                          <span>01</span>
-                        </a>
-                                            </li>
-                                            <!-- <li>
-                                                <a href="#">
-                          <span>Volenteer Team</span>
-                          <span>03</span>
-                        </a>
-                                            </li> -->
-                                            <li>
-                                                <a href="#">
-                          <span>Food and Water</span>
-                          <span>01</span>
-                        </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                          <span>Help Hoomeless People</span>
-                          <span>01</span>
-                        </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="innerWrapperSidebar">
-                                <div class="sidebarWidget">
-                                    <div class="sidebarTitle">
-                                        <h5 class="sidebarTitle__heading text-uppercase mb-30">Direct Contact us</h5>
-                                    </div>
-                                    <div class="sidebarContacts">
-                                        <input type="text" class="sidebarContacts__input" placeholder="Enter name*">
-                                        <input type="text" class="sidebarContacts__input" placeholder="Enter your phone number*">
-                                        <textarea class="sidebarContacts__input textarea" name="message" id="message" placeholder="Massage*"></textarea>
-                                        <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'donation_details' %}">
-                      <span class="btn__text">donate now</span>
-                      <i class="fa-solid fa-heart btn__icon"></i>
-                      <span class="it-btn__inner">
-                      <span class="it-btn__blobs">
-                        <span class="it-btn__blob"></span>
+                </div>     
+                          <div class="col-12">
+                              <div class="commentsPost__button text-center">
+                                  <button type="submit" class="btn btn--styleOne btn--primary it-btn">
+                    <span class="btn__text">Donate </span>
+                    <i class="fa-solid fa-heart btn__icon"></i>
+                    <span class="it-btn__inner">
+                    <span class="it-btn__blobs">
                       <span class="it-btn__blob"></span>
-                      <span class="it-btn__blob"></span>
-                      <span class="it-btn__blob"></span>
-                      </span>
-                      </span>
-                      <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                        <defs>
-                          <filter>
-                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10">
-                            </feGaussianBlur>
-                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
-                            </feColorMatrix>
-                            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-                          </filter>
-                        </defs>
-                      </svg>
-                    </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <span class="it-btn__blob"></span>
+                    <span class="it-btn__blob"></span>
+                    <span class="it-btn__blob"></span>
+                    </span>
+                    </span>
+                    <svg class="it-btn__animation" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                      <defs>
+                        <filter>
+                          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo">
+                          </feColorMatrix>
+                          <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                        </filter>
+                      </defs>
+                    </svg>
+                  </button>
+                              </div>
+                          </div>
+                      </div>
+                      
+                  </form> 
+                  
             </div>
         </section>
         <!-- Donation Details End -->
     </main>
     <!-- Main End -->
+    <script>
+      $('#donation').submit(function(event) {
+          event.preventDefault();
+          var formData = new FormData(this);
+          $.ajax({
+              type: 'POST',
+              url: window.location.pathname,
+              data: formData,
+              success: function(response) {
+                  $('.error').remove();
+                  var html = '';
+                      if(response){
+                          $('#donation')[0].reset();
+                          html +='<div class="col-md-12"><div class="alert alert-success" role="alert"><i class="fa fa-check-circle" style="color: #4BB543;"></i><strong class="mx-2">Success!</strong> '+response['success']+'</div></div>';
+                      }
+                    
+                      $('#alert12').html(html);
+              },
+                  cache: false,
+                  contentType: false,
+                  processData: false
+                  
+              
+          });
+      });
+      
+      
+      
+      </script>
     {% endblock body %}

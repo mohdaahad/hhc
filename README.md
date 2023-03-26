@@ -7,3 +7,4 @@ https://blog.nextideatech.com/how-to-create-a-django-app-and-connect-it-to-a-dat
 python manage.py migrate --run-syncdb
 
 
+pip install pycryptodome

@@ -259,25 +259,26 @@
                 </div>
                 <div class="cc-sliderStyle1 swiper">
                     <div class="swiper-wrapper">
+                        {% for i in campaigns %}
                         <div class="swiper-slide">
                             <div class="featureBlock featureBlock--active">
                                 <div class="featureBlock__wrap">
                                     <figure class="featureBlock__thumb">
                                         <a class="featureBlock__thumb__link" href="">
-                  <img src="{% static 'account/image/featured/featuredThumb3.png'  %}" alt="Gainioz Featured Thumb">
+                  <img src="{{i.image}}" alt="Gainioz Featured Thumb">
                 </a>
                                         <a class="featureBlock__hashLink" href="{% url 'donation_details' %}">
-                  <span class="featureBlock__hashLink__text">#Life</span>
+                  <span class="featureBlock__hashLink__text">#{{i.tag}}</span>
                 </a>
                                     </figure>
                                     <div class="featureBlock__content">
                                         <h3 class="featureBlock__heading">
                                             <a class="featureBlock__heading__link" href="{% url 'donation_details' %}">
-                    Help poor people give food & Careing Indian child
+                 {{i.title}}
                   </a>
                                         </h3>
                                         <p class="featureBlock__text">
-                                            Support NGO helping needy with food and care for children.
+                                            {{i.description}}
                                         </p>
                                     </div>
                                 </div>
@@ -309,106 +310,7 @@
                                 </div> -->
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="featureBlock">
-                                <div class="featureBlock__wrap">
-                                    <figure class="featureBlock__thumb">
-                                        <a class="featureBlock__thumb__link" href="{% url 'donation_details' %}">
-                  <img src="{% static 'account/image/featured/featuredThumb1.png'  %}" alt="Gainioz Featured Thumb">
-                </a>
-                                        <a class="featureBlock__hashLink" href="{% url 'donation_details' %}">
-                  <span class="featureBlock__hashLink__text">#Education</span>
-                </a>
-                                    </figure>
-                                    <div class="featureBlock__content">
-                                        <h3 class="featureBlock__heading">
-                                            <a class="featureBlock__heading__link" href="{% url 'donation_details' %}">
-                                                Collect Donation for Indian School
-                  </a>
-                                        </h3>
-                                        <p class="featureBlock__text">
-                                            Help fund Indian School NGO, donate and make a difference.
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- <div class="featureBlock__donation">
-                                    <div class="featureBlock__donation__progress">
-                                        <div class="featureBlock__donation__bar">
-                                            <span class="featureBlock__donation__text skill-bar" data-width="75%">75%</span>
-                                            <div class="featureBlock__donation__line">
-                                                <span class="skill-bars">
-                    <span class="skill-bars__line skill-bar" data-width="75%"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="featureBlock__eqn">
-                                        <div class="featureBlock__eqn__block">
-                                            <span class="featureBlock__eqn__title">our goal</span>
-                                            <span class="featureBlock__eqn__price">$34.0000</span>
-                                        </div>
-                                        <div class="featureBlock__eqn__block">
-                                            <span class="featureBlock__eqn__title">Raised</span>
-                                            <span class="featureBlock__eqn__price">$11.9098</span>
-                                        </div>
-                                        <div class="featureBlock__eqn__block">
-                                            <span class="featureBlock__eqn__title">to go</span>
-                                            <span class="featureBlock__eqn__price">$56,000</span>
-                                        </div>
-                                    </div>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="featureBlock">
-                                <div class="featureBlock__wrap">
-                                    <figure class="featureBlock__thumb">
-                                        <a class="featureBlock__thumb__link" href="{% url 'donation_details' %}">
-                  <img src="{% static 'account/image/featured/featuredThumb2.png'  %}" alt="Gainioz Featured Thumb">
-                </a>
-                                        <a class="featureBlock__hashLink" href="{% url 'donation_details' %}">
-                  <span class="featureBlock__hashLink__text">#Health</span>
-                </a>
-                                    </figure>
-                                    <div class="featureBlock__content">
-                                        <h3 class="featureBlock__heading">
-                                            <a class="featureBlock__heading__link" href="{% url 'donation_details' %}">
-                    Collect Donation for Indian Hospital
-                  </a>
-                                        </h3>
-                                        <p class="featureBlock__text">
-                                            Join us in collecting donations for an Indian hospital NGO and help save lives today.
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- <div class="featureBlock__donation">
-                                    <div class="featureBlock__donation__progress">
-                                        <div class="featureBlock__donation__bar">
-                                            <span class="featureBlock__donation__text skill-bar" data-width="80%">80%</span>
-                                            <div class="featureBlock__donation__line">
-                                                <span class="skill-bars">
-                    <span class="skill-bars__line skill-bar" data-width="80%"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="featureBlock__eqn">
-                                        <div class="featureBlock__eqn__block">
-                                            <span class="featureBlock__eqn__title">our goal</span>
-                                            <span class="featureBlock__eqn__price">$13.0000</span>
-                                        </div>
-                                        <div class="featureBlock__eqn__block">
-                                            <span class="featureBlock__eqn__title">Raised</span>
-                                            <span class="featureBlock__eqn__price">$22.9098</span>
-                                        </div>
-                                        <div class="featureBlock__eqn__block">
-                                            <span class="featureBlock__eqn__title">to go</span>
-                                            <span class="featureBlock__eqn__price">$38,000</span>
-                                        </div>
-                                    </div>
-                                </div> -->
-                            </div>
-                        </div>
+                       {% endfor %}
                     </div>
                 </div>
             </div>

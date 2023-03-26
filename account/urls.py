@@ -17,5 +17,6 @@ urlpatterns = [
     path('join_volunteers/', views.join_volunteers, name='join_volunteers'),
     path('ajax_gallery/', views.gallery_ajax, name='ajax_gallery'),
     path('volunteers_ajax/', views.volunteers_ajax, name='volunteers_ajax'),
+    path("handlerequest/", views.handlerequest, name="HandleRequest"),
 
 ]

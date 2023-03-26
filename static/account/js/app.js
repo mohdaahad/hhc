@@ -493,12 +493,12 @@
             $('.error').remove();
             var html = '';
                 if(response.errors){
-                    html +='<div class="col-md-12"><div class="alert alert-danger" role="alert">'+response.errors['phone']+'</div></div>';
+                    html +='<div class="col-md-12"><div class="alert alert-danger" role="alert"><i class="fa fa-times-circle" style="color: #FF0000;"></i><strong class="mx-2">Oops!</strong>'+response.errors['phone']+'</div></div>';
                 }
                 else{
                     $('#join-vol-form')[0].reset();
                     document.getElementById("image").src = "/static/account/image/1.png";
-                    html +='<div class="col-md-12"><div class="alert alert-success" role="alert">'+response['success']+'</div></div>';
+                    html +='<div class="col-md-12"><div class="alert alert-success" role="alert"><i class="fa fa-check-circle" style="color: #4BB543;"></i><strong class="mx-2">Success!</strong>'+response['success']+'</div></div>';
                 }
                 $('#alert').html(html);
         },
@@ -522,7 +522,7 @@ $('#contact-form').submit(function(event) {
             var html = '';
                 if(response){
                     $('#contact-form')[0].reset();
-                    html +='<div class="col-md-12"><div class="alert alert-success" role="alert">'+response['success']+'</div></div>';
+                    html +='<div class="col-md-12"><div class="alert alert-success" role="alert"><i class="fa fa-check-circle" style="color: #4BB543;"></i><strong class="mx-2">Success!</strong>'+response['success']+'</div></div>';
                 }
               
                 $('#alert12').html(html);
@@ -534,3 +534,4 @@ $('#contact-form').submit(function(event) {
         
     });
 });
+
