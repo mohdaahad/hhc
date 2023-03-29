@@ -1,0 +1,183 @@
+/*-- Margin Top --*/
+@for $i from 1 through 30 {
+  .mt-#{5 * $i} {
+    margin-top: 5px * $i;
+  }
+}
+
+/*-- Margin Bottom --*/
+@for $i from 1 through 30 {
+  .mb-#{5 * $i} {
+    margin-bottom: 5px * $i;
+  }
+}
+
+/*-- Margin Left --*/
+@for $i from 1 through 30 {
+  .ml-#{5 * $i} {
+    margin-left: 5px * $i;
+  }
+}
+
+/*-- Margin Right --*/
+@for $i from 1 through 30 {
+  .mr-#{5 * $i} {
+    margin-right: 5px * $i;
+  }
+}
+
+/*-- Padding Top --*/
+@for $i from 1 through 30 {
+  .pt-#{5 * $i} {
+    padding-top: 5px * $i;
+  }
+}
+
+/*-- Padding Bottom --*/
+@for $i from 1 through 30 {
+  .pb-#{5 * $i} {
+    padding-bottom: 5px * $i;
+  }
+}
+// 1.3 Mixins
+/*-- Padding Left --*/
+@for $i from 1 through 30 {
+  .pl-#{5 * $i} {
+    padding-left: 5px * $i;
+  }
+}
+
+/*-- Padding Right --*/
+@for $i from 1 through 40 {
+  .pr-#{5 * $i} {
+    padding-right: 5px * $i;
+  }
+}
+
+// Position Vertical Horizontal Vertical
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == "vertical" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  } @else if $position == "horizontal" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  } @else if $position == "both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+//   @include center(both);
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+  /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+// Transition
+@mixin transitionSmooth($property: all, $duration: 0.4s, $ease: ease) {
+  transition: $property $duration $ease;
+  -webkit-transition: $property $duration $ease;
+  -moz-transition: $property $duration $ease;
+  -ms-transition: $property $duration $ease;
+}
+
+// absolute-left-top
+@mixin absolute-left-top($position: absolute, $left: 0, $top: 0) {
+  position: $position;
+  left: $left;
+  top: $top;
+}
+
+// absolute-left-bottom
+@mixin absolute-left-bottom($position: absolute, $left: 0, $bottom: 0) {
+  position: $position;
+  left: $left;
+  bottom: $bottom;
+}
+
+// absolute-right-top
+@mixin absolute-right-top($position: absolute, $right: 0, $top: 0) {
+  position: $position;
+  right: $right;
+  top: $top;
+}
+
+// absolute-right-bottom
+@mixin absolute-right-bottom($position: absolute, $right: 0, $bottom: 0) {
+  position: $position;
+  right: $right;
+  bottom: $bottom;
+}
+
+// Heading
+
+// HeadingTypographyOne
+@mixin HeadingTypographyOne($font-size: toEm(80), $line-height: 1.375) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+// HeadingTypographyTwo
+@mixin HeadingTypographyTwo($font-size: toEm(40), $line-height: 1.375) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+// HeadingTypographyThree
+@mixin HeadingTypographyThree($font-size: toEm(30), $line-height: 1.5) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+// HeadingTypographyFour
+@mixin HeadingTypographyFour($font-size: toEm(24), $line-height: 1.5) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+// HeadingTypographyFive
+@mixin HeadingTypographyFive($font-size: toEm(22), $line-height: 1.5) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+// HeadingTypographySix
+@mixin HeadingTypographySix($font-size: toEm(20), $line-height: 1.5) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+// HeadingTypographySeven
+@mixin HeadingTypographySeven($font-size: toEm(18), $line-height: 1.555) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+// HeadingTypographyEight
+@mixin HeadingTypographyEight($font-size: toEm(16), $line-height: 1.625) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+// HeadingTypographyNine
+@mixin HeadingTypographyNine($font-size: toEm(15), $line-height: 1.666) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+// Pesudo Background Overlay
+@mixin overlay($bgColor, $bgOpacity: 0.6) {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($bgColor, $bgOpacity);
+    z-index: 0;
+  }
+}

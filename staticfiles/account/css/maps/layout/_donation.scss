@@ -1,0 +1,312 @@
+// 3.15 Donation
+.liveDonation {
+  box-shadow: $box-shadow;
+  background: $colorWhite;
+  padding: 70px 90px;
+  position: relative;
+  z-index: 1;
+  margin: 0 40px;
+  @include respond-below(md) {
+    padding: 20px 15px;
+    margin: 0 0px;
+  }
+  .liveDonationTitle {
+    margin-bottom: 50px;
+    &__small {
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $colorTitle;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 18px;
+      span {
+        width: 14px;
+        height: 14px;
+        background: $specialColor;
+        display: inline-block;
+        border-radius: 50%;
+      }
+    }
+    &__heading {
+      @include font-size(55px);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+  }
+  .featureBlock__donation {
+    padding: 0;
+    margin-bottom: 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .featureBlock__donation__text {
+    transform: translateX(0px);
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: $colorPrimary;
+  }
+  .featureBlock__donation__line {
+    .skill-bars {
+      height: 12px;
+      &::before {
+        height: 12px;
+      }
+      .skill-bar {
+        &::before {
+          height: 12px;
+        }
+        &::after {
+          height: 37px;
+          width: 37px;
+          border-width: 12px;
+          right: -1px;
+        }
+      }
+    }
+  }
+  .featureBlock__donation__progress {
+    margin-bottom: 35px;
+  }
+  .featureBlock__eqn {
+    &__title {
+      font-size: 15px;
+    }
+    &__price {
+      font-size: 24px;
+    }
+  }
+  &__button {
+    text-align: right;
+    margin-bottom: 50px;
+    @include respond-below(md) {
+      text-align: left;
+    }
+  }
+}
+
+.featureBlock__donation {
+  &--style2 {
+    padding: 0;
+    border: 0;
+    margin-bottom: 40px;
+    box-shadow: none;
+    .featureBlock__donation {
+      padding: 0;
+      margin-bottom: 0;
+      border: 0;
+      box-shadow: none;
+    }
+    .featureBlock__donation__text {
+      transform: translateX(0px);
+      margin-bottom: 15px;
+      font-size: 15px;
+      color: $colorPrimary;
+    }
+    .featureBlock__donation__line {
+      .skill-bars {
+        height: 12px;
+        &::before {
+          height: 12px;
+        }
+        .skill-bar {
+          &::before {
+            height: 12px;
+          }
+          &::after {
+            height: 37px;
+            width: 37px;
+            border-width: 12px;
+            right: -1px;
+          }
+        }
+      }
+    }
+    .featureBlock__donation__progress {
+      margin-bottom: 35px;
+    }
+    .featureBlock__eqn {
+      &__title {
+        font-size: 15px;
+      }
+      &__price {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.donationDetails {
+  &__warning {
+    p {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      padding: 23px 0;
+      border-top: 1px solid $grayColor15;
+      border-bottom: 1px solid $grayColor15;
+      svg {
+        path {
+          fill: $colorPrimary;
+        }
+      }
+      span {
+        font-size: 16px;
+        font-weight: 600;
+        color: $colorBlack;
+        padding-left: 9px;
+        padding-right: 5px;
+      }
+    }
+  }
+  &__title {
+    @include font-size(30px);
+  }
+  &__heading {
+    @include font-size(24px);
+    text-transform: uppercase;
+  }
+  &__payments {
+    padding: 37px 0;
+  }
+  &__cross {
+    border-top: 1px solid $grayColor15;
+    border-bottom: 1px solid $grayColor15;
+    padding: 19px 0;
+    p {
+      color: #a1a1a1;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 0;
+      svg {
+        top: 8px;
+        position: relative;
+      }
+    }
+  }
+  &__text {
+    @include font-size(17px);
+  }
+}
+.payments {
+  &__methods {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  &__method {
+    display: inline-flex;
+    align-items: center;
+  }
+  &__input {
+    display: none;
+  }
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: $colorBlack3;
+    font-size: 16px;
+    font-weight: 500;
+    @include transitionSmooth;
+    &__check {
+      display: inline-flex;
+      width: 16px;
+      height: 16px;
+      background-color: $grayColor6;
+      border-radius: 50%;
+      border: 1px solid $grayColor16;
+      position: relative;
+      @include transitionSmooth;
+      &::before {
+        @include center(both);
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: $colorWhite;
+        border-radius: 50%;
+        opacity: 0;
+        visibility: hidden;
+        @include transitionSmooth;
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+  }
+  &__input:checked + &__label {
+    color: $colorPrimary;
+    @include transitionSmooth;
+  }
+}
+.payments__input:checked {
+  + .payments__label {
+    .payments__label__check {
+      background-color: $colorPrimary;
+      border-color: $colorPrimary;
+      &::before {
+        opacity: 1;
+        visibility: visible;
+        @include transitionSmooth;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+}
+.paymentsHeader,
+.paymentsCustoms {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.paymentsHeader {
+  margin-bottom: 25px;
+}
+.paymentsCustoms {
+  &__field {
+    min-height: 60px;
+    padding: 0 25px;
+    background: $colorWhite;
+    border: 1px solid $grayColor13;
+    box-sizing: border-box;
+    box-shadow: $box-shadow;
+    border-radius: 143px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $colorTitle;
+    &::placeholder {
+      color: $colorTitle;
+      font-weight: 600;
+    }
+  }
+}
+
+.paymentsAmountChoice {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  &__label {
+    background: $grayColor11;
+    border: 1px solid $grayColor5;
+    box-sizing: border-box;
+    border-radius: 143px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $colorMeta;
+    display: inline-grid;
+    min-height: 60px;
+    place-content: center;
+    padding: 0 30px;
+    @include transitionSmooth;
+  }
+}
+
+.payments__input:checked + .paymentsAmountChoice__label {
+  border-color: $grayColor13;
+  color: $colorPrimary;
+  background-color: $colorWhite;
+  @include transitionSmooth;
+}

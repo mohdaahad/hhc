@@ -1,0 +1,34 @@
+// 3.12 Sponsors
+.sponsorsTitle {
+  $self: &;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 37px;
+  margin-bottom: 52px;
+  &__heading {
+    @include font-size(18px);
+    font-weight: 600;
+    font-family: $fontSecondary;
+    margin-bottom: 0;
+  }
+  &__line {
+    height: 1px;
+    border: 1px solid $grayColor9;
+    flex-grow: 1;
+  }
+  &--style2 {
+    margin-bottom: 31px;
+    #{$self}__heading {
+      @include font-size(30px);
+    }
+  }
+}
+
+.sponsorsItem {
+  text-align: center;
+  filter: grayscale(1);
+  .sponsors--style2 & {
+    filter: grayscale(0);
+  }
+}

@@ -1,0 +1,57 @@
+// 4.2 Social
+.itSocial {
+  ul {
+    display: inline-flex;
+    gap: 8px;
+    li {
+      a {
+        height: 50px;
+        width: 50px;
+        display: grid;
+        place-content: center;
+        border: 1px solid rgba($grayColor4, $alpha: 0.15);
+        border-radius: 50%;
+        font-size: 14px;
+        color: $colorWhite;
+        @include transitionSmooth;
+      }
+      &:hover {
+        a {
+          background: $colorSecondary;
+          border-color: $colorSecondary;
+          color: $colorWhite;
+          @include transitionSmooth;
+        }
+      }
+    }
+  }
+  &--sidebar {
+    ul {
+      li {
+        a {
+          color: $colorText;
+          border-color: $colorText;
+        }
+      }
+    }
+  }
+  &--volunteer {
+    ul {
+      gap: 30px;
+      li {
+        a {
+          color: $colorText;
+          height: unset;
+          width: unset;
+          border: none;
+        }
+        &:hover {
+          a {
+            background-color: transparent;
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+  }
+}

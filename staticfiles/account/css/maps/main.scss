@@ -1,0 +1,101 @@
+/**
+    Theme Name: Gainioz - Charity & Donation HTML Template
+    Author: insighttheme
+    Author URI: https://themeforest.net/user/insighttheme
+    Support: shilonmahadi7@gmail.com
+    Description: Gainioz - Charity & Donation HTML Template
+    Version: 1.3
+*/
+
+/**
+* [Table of contents]
+
+## 1. Helpers
+
+    1.1 Variables
+    1.2 Media Queries
+    1.3 Mixins
+
+## 2. Base
+
+    2.1 Reset CSS
+    2.2 Base or Default CSS
+
+## 3. Layouts
+
+    3.1 Navigation
+    3.2 Header
+    3.3 Hero
+    3.4 About
+    3.5 Features
+    3.6 Review
+    3.7 Footer
+    3.8 Sidebar
+    3.9 Forms
+    3.10 Portfolio
+    3.11 Blog
+    3.12 Sponsors
+    3.13 Fact
+    3.14 Volunteer
+	3.15 Donation
+    3.16 Services
+    3.17 Breadcumb
+    3.18 Mission 
+    3.19 Stories
+    3.20 Events
+    3.21 Products
+
+## 4. Components
+    4.1 Buttons
+    4.2 Social
+    4.3 Navbar
+    4.4 Section Title
+    4.5 Contact Block
+    4.6 Faq Block
+    4.7 pagination
+*/
+
+@charset "UTF-8";
+
+// 1. Helpers
+@import "../../node_modules/rfs/scss.scss";
+@import "helpers/variables";
+@import "helpers/media-query";
+@import "helpers/mixins";
+
+// 2. Base
+@import "base/reset";
+@import "base/base";
+
+// 3. Layouts
+@import "layout/navigation";
+@import "layout/header";
+@import "layout/hero";
+@import "layout/about";
+@import "layout/features";
+@import "layout/review";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/forms";
+@import "layout/portfolio";
+@import "layout/blog";
+@import "layout/sponsors";
+@import "layout/fact";
+@import "layout/volunteer";
+@import "layout/donation";
+@import "layout/services";
+@import "layout/breadcumb";
+@import "layout/mission";
+@import "layout/stories";
+@import "layout/events";
+@import "layout/products";
+
+// 4. Components
+@import "components/buttons";
+@import "components/social";
+@import "components/navbarOne";
+@import "components/sectionTitle";
+@import "components/slider";
+@import "components/contactBlock";
+@import "components/faqBlock";
+@import "components/pagination";

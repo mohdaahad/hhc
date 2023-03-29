@@ -1,0 +1,155 @@
+// 2.1 Reset CSS
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+i {
+  font-style: normal;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+a,
+a:active,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  @include transitionSmooth();
+}
+
+a:hover {
+  text-decoration: none;
+  outline: none;
+  color: $colorPrimary;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+label {
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 0 solid;
+}
+
+body {
+  font-family: $fontSecondary;
+  color: $colorText;
+  @include font-size(16px);
+}
+
+p {
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $fontPrimary;
+  color: $colorBlack;
+}
+
+button {
+  cursor: pointer;
+}
+
+button.button {
+  background: transparent;
+  border: 0px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+::-moz-selection {
+  background: #313131;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #313131;
+  color: #fff;
+  text-shadow: none;
+}
+
+h1 {
+  @include font-size(68px);
+}
+h2 {
+  @include font-size(55px);
+}
+h3 {
+  @include font-size(45px);
+}
+h4 {
+  @include font-size(37px);
+}
+h5 {
+  @include font-size(31px);
+}
+h6 {
+  @include font-size(24px);
+}

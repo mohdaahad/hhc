@@ -1,0 +1,47 @@
+.contactBlock {
+  padding: 0 50px 50px 50px;
+  border: 1px solid $grayColor21;
+  &__figure {
+    margin-bottom: 35px;
+    margin-top: -66px;
+    &__thumb {
+      border-radius: 50%;
+    }
+  }
+  &__heading {
+    @include font-size(24px);
+    margin-bottom: 20px;
+  }
+  &__text {
+    @include font-size(18px);
+    margin-bottom: 10px;
+  }
+  a {
+    display: block;
+    color: $colorText;
+    font-size: 18px;
+  }
+}
+
+.commentsPost {
+  $self: &;
+
+  &--style2 {
+    padding: 80px 112px;
+    border: 1px solid $grayColor21;
+    background-color: $colorWhite;
+    position: relative;
+    z-index: 99;
+    @include respond-below(md) {
+      padding: 15px;
+    }
+  }
+}
+
+#myMap {
+  margin-top: -120px;
+  iframe {
+    width: 100%;
+    min-height: 704px;
+  }
+}

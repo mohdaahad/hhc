@@ -1,0 +1,183 @@
+// 3.4 About
+.about {
+  position: relative;
+  &__shape {
+    position: absolute;
+    &--one {
+      left: 37%;
+      top: 20%;
+      animation: scale-up-one 4s infinite;
+    }
+    &--two {
+      top: 3%;
+      left: 6%;
+      animation: scale-up-one 4s infinite;
+    }
+    &--three {
+      top: 4%;
+      left: 35%;
+    }
+  }
+  &--style3 {
+    padding-top: 180px;
+  }
+}
+.aboutArea {
+  &--padding {
+    padding-top: 79px;
+    padding-bottom: 40px;
+  }
+}
+.aboutContent {
+  $self: &;
+  &__text {
+    padding-right: 66px;
+    margin-bottom: 26px;
+    @include respond-below(sm) {
+      padding-right: 0;
+    }
+  }
+  &__quote {
+    display: block;
+    @include font-size(20px);
+    font-weight: 500;
+    color: $colorTitle;
+    margin-bottom: 46px;
+  }
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  &--style2 {
+    #{$self}__text {
+      padding-right: 35px;
+    }
+  }
+  &--style3 {
+    padding-left: 13px;
+    #{$self}__quote {
+      margin-bottom: 14px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    #{$self}__text {
+      padding-right: 0px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.aboutThumb {
+  margin-right: -114px;
+  position: relative;
+  @include respond-below(xxlg) {
+    margin-right: 0;
+  }
+  &__figure {
+    img {
+      border-radius: 50%;
+    }
+  }
+  &__text {
+    position: absolute;
+    bottom: 43px;
+    left: -80px;
+    &__title {
+      @include font-size(22px);
+      font-weight: 500;
+      text-transform: uppercase;
+      font-family: $fontPrimary;
+    }
+    &__year {
+      display: block;
+      @include font-size(150px);
+      font-family: $fontPrimary;
+      line-height: 1;
+      -webkit-text-stroke: 2px #f1f1f1;
+      -text-fill-color: #fff;
+      -webkit-text-fill-color: #fff;
+      font-weight: 500;
+    }
+  }
+  &--style3 {
+    margin-left: 164px;
+    @include respond-below(xxlg) {
+      margin-left: 0;
+    }
+  }
+}
+
+.joinContent {
+  text-align: right;
+  padding-left: 81px;
+  padding-top: 130px;
+  padding-bottom: 130px;
+  @include respond-below(md) {
+    padding-left: 0;
+  }
+  &__text {
+    margin-bottom: 35px;
+  }
+}
+
+.joinSectionThumb {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  mask-image: url(../image/shapes/joinmaskshape.png);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  @include respond-below(xxlg) {
+    max-width: 811px;
+  }
+  @include respond-below(xlg) {
+    max-width: 580px;
+  }
+  @include respond-below(md) {
+    display: none;
+  }
+  img {
+    height: 100%;
+  }
+}
+
+.aboutThumb3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  mask-image: url(../image/shapes/about-mask-shape-h3.png);
+  @include respond-below(md) {
+    display: none;
+  }
+}
+
+.aboutDetailsThumb {
+  border-radius: 50%;
+  overflow: hidden;
+  &--big {
+    margin: 0 -80px;
+    z-index: 1;
+    position: relative;
+    @include respond-below(lg) {
+      margin: -80px 0;
+    }
+    @include respond-below(lg) {
+      margin: 0px 0;
+    }
+  }
+  img {
+    @include respond-below(lg) {
+      width: 100%;
+    }
+  }
+}
+
+img.map-about-tab {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}

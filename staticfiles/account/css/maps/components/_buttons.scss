@@ -1,0 +1,161 @@
+// 4.1 Buttons
+.btn {
+  $self: &;
+  &--styleOne {
+    border-radius: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $colorWhite;
+    font-size: 14px;
+    padding: 17px 40px;
+    @include transitionSmooth;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    box-shadow: none;
+    &:hover {
+      @include transitionSmooth;
+      color: $colorWhite;
+    }
+    &:focus,
+    &:active {
+      outline: none;
+      border: 0;
+      box-shadow: none;
+      @include transitionSmooth;
+    }
+    &#{$self}--primary {
+      background-color: $colorPrimary;
+      &:hover {
+        background-color: $colorSecondary;
+        color: $colorWhite;
+      }
+    }
+    &#{$self}--secondary {
+      background-color: $colorSecondary;
+      &:hover {
+        background-color: $colorPrimary;
+        color: $colorWhite;
+      }
+    }
+  }
+  &--icon {
+    background: $colorWhite;
+    border: 1px solid $grayColor5;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 15px rgba(221, 221, 221, 0.24);
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    width: 55px;
+    height: 55px;
+    place-content: center;
+    #{$self}__icon {
+      color: $grayColor0;
+      @include transitionSmooth;
+      path {
+        @include transitionSmooth;
+      }
+    }
+    &:hover {
+      border-color: transparent;
+      #{$self}__icon {
+        color: $colorWhite;
+        path {
+          fill: $colorWhite;
+        }
+      }
+    }
+  }
+  &--icon2 {
+    width: 92px;
+    height: 92px;
+    border: 0;
+    box-shadow: 0px 4px 40px rgba(139, 139, 139, 0.18);
+  }
+  &__icon {
+    animation: scale-up-one 1.5s linear infinite;
+  }
+}
+
+.it-btn {
+  $numOfBlobs: 4;
+  z-index: 1;
+  transition: color 0.5s;
+  position: relative;
+  &__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $colorPrimary;
+    @include transitionSmooth;
+    .btn--secondary & {
+      background-color: $colorSecondary;
+    }
+    .btn--black & {
+      background-color: $colorBlack;
+    }
+    .btn--icon & {
+      background: transparent;
+    }
+  }
+
+  // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+  &__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url("#goo");
+  }
+
+  &__blob {
+    position: absolute;
+    width: 100% / $numOfBlobs;
+    height: 100%;
+    background: $colorSecondary;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.65s;
+    .btn--secondary & {
+      background-color: $colorPrimary;
+    }
+    .btn--black & {
+      background-color: $colorPrimary;
+    }
+    .btn--icon & {
+      background: $colorPrimary;
+    }
+
+    @supports (filter: url("#goo")) {
+      transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+
+    @for $i from 1 through $numOfBlobs {
+      &:nth-child(#{$i}) {
+        left: ($i - 1) * (120% / $numOfBlobs);
+        transition-delay: ($i - 1) * 0.09s;
+      }
+    }
+
+    .it-btn:hover & {
+      transform: translateZ(0) scale(1.7);
+
+      @supports (filter: url("#goo")) {
+        transform: translateZ(0) scale(1.4);
+      }
+    }
+  }
+  &__animation {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+  }
+}

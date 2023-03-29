@@ -1,0 +1,77 @@
+// 3.13 Fact
+.factWrapper {
+  margin: 0 110px;
+  &--two {
+    margin-top: -115px;
+  }
+  @include respond-below(lg) {
+    margin: 0 0;
+  }
+}
+.factBlock {
+  min-height: 322px;
+  background: #ffffff;
+  border: 1px solid #efefef;
+  box-sizing: border-box;
+  border-radius: 50%;
+  min-width: 322px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 0 35px;
+  @include respond-below(md) {
+    min-width: 100%;
+    min-height: 296px;
+  }
+  &__heading {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    @include font-size(35px);
+    margin-bottom: 14px;
+  }
+  &__ext {
+    color: $colorPrimary;
+  }
+  &__tag {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $colorTitle;
+    display: block;
+    margin-bottom: 13px;
+  }
+  &__text {
+    margin-bottom: 0;
+  }
+  &--one {
+    animation: jump 3s linear infinite;
+  }
+  &--two {
+    animation: jump 5s linear infinite;
+  }
+  &--three {
+    animation: jump 8s linear infinite;
+  }
+  &--four {
+    animation: jump 10s linear infinite;
+  }
+  &--five {
+    animation: jump 12s linear infinite;
+  }
+}
+
+.fact {
+  $self: &;
+  &--layout1 {
+    z-index: 1;
+    #{$self}__map {
+      top: 0;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      z-index: -1;
+      opacity: 0.05;
+    }
+  }
+}

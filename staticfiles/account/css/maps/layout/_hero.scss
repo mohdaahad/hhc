@@ -1,0 +1,224 @@
+// 3.3 Hero
+.hero {
+  $self: &;
+  position: relative;
+  padding-top: 190px;
+  @include respond-below(md) {
+    padding-top: 85px;
+  }
+  @include respond-below(md) {
+    padding-top: 55px;
+  }
+  &__shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include respond-below(xxlg) {
+      display: none;
+    }
+    &--one {
+      left: 50%;
+      top: 28%;
+    }
+    &--two {
+      right: 43%;
+      top: 76%;
+    }
+  }
+  &__content {
+    padding-left: 66px;
+    @include respond-below(sm) {
+      padding-left: 0;
+    }
+  }
+  &__title {
+    &--small {
+      color: $colorPrimary;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 25px;
+    }
+    &--big {
+      @include font-size(100px);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 31px;
+    }
+  }
+  &__text {
+    @include font-size(20px);
+    line-height: 1.6em;
+    color: $colorTitle;
+    margin-bottom: 46px;
+  }
+  &__figure {
+    -webkit-mask-image: url(../image/shapes/shapes2.svg);
+    mask-image: url(../image/shapes/shapes2.svg);
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+    position: relative;
+    margin-right: -70px;
+    margin-left: 108px;
+    @include respond-below(xxlg) {
+      margin-right: 0;
+    }
+    @include respond-below(lg) {
+      margin-left: 0;
+    }
+    &__thumbs {
+      width: 100%;
+    }
+    &__overlay {
+      position: absolute;
+      top: 1px;
+      width: 100%;
+      right: 0;
+      left: 0;
+    }
+    &--style2 {
+      mask-image: none;
+    }
+  }
+  &--style2 {
+    #{$self}__title {
+      &--small {
+        justify-content: center;
+        @include font-size(60px);
+        letter-spacing: 0;
+        font-weight: normal;
+        color: $colorBlack;
+        margin-bottom: 7px;
+      }
+      &--big {
+        @include font-size(120px);
+        font-weight: 500;
+        margin-bottom: 72px;
+      }
+    }
+    #{$self}__content {
+      padding-left: 0;
+    }
+    #{$self}__figure {
+      margin: 0;
+      margin-top: -168px;
+    }
+    #{$self}__topDown {
+      &__text {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        color: $grayColor10;
+        text-transform: uppercase;
+        padding-top: 15px;
+      }
+    }
+  }
+  &--style3 {
+    padding-top: 268px;
+    padding-bottom: 130px;
+    @include respond-below(md) {
+      padding-top: 130px;
+    }
+    #{$self}__map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include respond-below(xxlg) {
+        max-width: 600px;
+      }
+      @include respond-below(lg) {
+        display: none;
+      }
+    }
+    #{$self}__figure {
+      mask-image: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      @include respond-below(xxlg) {
+        max-width: 600px;
+      }
+      @include respond-below(lg) {
+        position: static;
+        max-width: 100%;
+      }
+    }
+    #{$self}__title {
+      &--big {
+        margin-bottom: 24px;
+      }
+      &--small {
+        @include font-size(40px);
+        margin-bottom: 0;
+        letter-spacing: 0;
+        font-weight: 400;
+        color: $colorBlack;
+      }
+    }
+    #{$self}__text {
+      margin-bottom: 36px;
+    }
+    #{$self}__profile {
+      margin-top: 0;
+      padding-top: 60px;
+      ul {
+        padding: 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        border-radius: 0;
+        margin-left: 0;
+      }
+    }
+    #{$self}__instaTitle {
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $colorBlack;
+      display: block;
+      padding-top: 17px;
+      span {
+        color: $colorPrimary;
+      }
+    }
+  }
+  &--style5 {
+    padding-top: 267px;
+    padding-bottom: 135px;
+    position: relative;
+    z-index: 1;
+    background-position: right;
+    background-attachment: fixed;
+    @include respond-below(md) {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      @extend .wh-100;
+      left: 0;
+      top: 0;
+      background-color: rgba($colorBlack, $alpha: 0.6);
+      z-index: -1;
+      clip-path: polygon(0 0, 66% 0, 49% 100%, 0% 100%);
+      @include transitionSmooth;
+    }
+    &:hover {
+      &::before {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        @include transitionSmooth;
+      }
+    }
+  }
+}

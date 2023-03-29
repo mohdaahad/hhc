@@ -1,0 +1,21 @@
+// 4.4 Section Title
+.sectionTitle {
+  &__small {
+    color: #eb9309;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 18px;
+    i {
+      animation: scale-up-one 2s linear infinite;
+    }
+  }
+  &__big {
+    line-height: 1.19;
+    text-transform: uppercase;
+  }
+}

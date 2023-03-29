@@ -1,0 +1,97 @@
+// 3.19 Stories
+.storiesBlock {
+  $self: &;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 59px 117px 59px 70px;
+  border: 1px solid $grayColor5;
+  box-shadow: $box-shadow;
+  &__content {
+    flex: 1;
+  }
+  &__thumb {
+    border-radius: 50%;
+    overflow: hidden;
+    &__link {
+      display: inline-block;
+    }
+    img {
+      @include transitionSmooth;
+    }
+  }
+  &__heading {
+    @include font-size(30px);
+    margin-bottom: 24px;
+    padding-right: 10%;
+  }
+  &__meta {
+    margin-bottom: 25px;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      li {
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+    &__postUser {
+      color: $colorTitle;
+    }
+    &__postUserName {
+      color: $colorText;
+    }
+    &__date {
+      color: $colorPrimary;
+    }
+  }
+  &__text {
+    @include font-size(18px);
+    margin-bottom: 30px;
+  }
+  &__detailsLink {
+    @include font-size(15px);
+    text-transform: uppercase;
+    color: $colorTitle;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    &:hover {
+      svg {
+        path {
+          fill: $colorPrimary;
+        }
+      }
+    }
+  }
+  &:hover {
+    #{$self}__thumb {
+      img {
+        transform: scale(1.15);
+        @include transitionSmooth;
+      }
+    }
+  }
+}
+
+.storiesDetails {
+  &__text {
+    &--first {
+      &::first-letter {
+        color: $colorTitle;
+        float: left;
+        padding: 0px 22px;
+        margin-right: 10px;
+        @include font-size(35px);
+        font-family: $fontPrimary;
+        font-weight: 500;
+        border: $border;
+        box-shadow: $box-shadow;
+        background-color: $colorWhite;
+      }
+    }
+  }
+}

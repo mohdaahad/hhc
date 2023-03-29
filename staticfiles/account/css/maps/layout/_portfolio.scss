@@ -1,0 +1,184 @@
+// 3.10 Portfolio
+.portfolioBlock {
+  $self: &;
+  overflow: hidden;
+  &__figure {
+    &__shape {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform: translateY(40px);
+      > img {
+        width: 100%;
+        min-height: 285px;
+      }
+    }
+    &__thumb {
+      width: 100%;
+    }
+  }
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 15px 30px 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 2;
+  }
+  &__heading {
+    @include font-size(32px);
+    font-weight: 500;
+    color: $colorWhite;
+    padding-bottom: 16px;
+    overflow: hidden;
+    transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    > a {
+      display: inline;
+      padding-bottom: 0;
+      transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background: linear-gradient(to bottom, #fff 0%, #fff 98%);
+      background-size: 0 1px;
+      background-repeat: no-repeat;
+      background-position: left 100%;
+      transform: translateY(-50px);
+    }
+    &:hover {
+      > a {
+        color: $colorWhite;
+      }
+    }
+  }
+  &__hashLink {
+    color: $colorWhite;
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    > span {
+      display: block;
+      transform: translateY(50px);
+      transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    &:hover {
+      color: $colorWhite;
+      span {
+        animation: toBottomFromTop 0.6s forwards;
+      }
+    }
+  }
+  &:hover,
+  &--active {
+    #{$self}__content {
+      opacity: 1;
+      visibility: visible;
+      transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    #{$self}__figure {
+      &__shape {
+        opacity: 1;
+        visibility: visible;
+        transition: 1.5s cubic-bezier(0.52, 1.64, 0.37, 0.66);
+        transform: translateY(0px);
+      }
+    }
+    #{$self}__heading {
+      > a {
+        background-size: 100% 1px;
+        color: #fff;
+        transform: translateY(0px);
+        transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+    }
+    #{$self}__hashLink {
+      > span {
+        transform: translateY(0px);
+        transition: all 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+    }
+  }
+  &--style2 {
+    #{$self}__more {
+      position: absolute;
+      right: 0;
+      left: 0;
+      width: 81px;
+      height: 81px;
+      margin: 0 auto;
+      display: grid;
+      place-content: center;
+      background: #0d0d0d;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      top: -40.5px;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0);
+      transition: all 2s cubic-bezier(0.25, 0.8, 0.25, 1);
+      &:hover {
+        background: $colorWhite;
+        svg {
+          path {
+            fill: $colorPrimary;
+          }
+        }
+      }
+    }
+    #{$self}__content {
+      padding: 0 15px 80px 15px;
+    }
+    &:hover,
+    &#{$self}--active {
+      #{$self}__more {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        transition: all 2s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+    }
+  }
+  &--style3 {
+    z-index: 1;
+    #{$self}__heading {
+      @include font-size(28px);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      @extend .wh-100;
+      left: 0;
+      top: 0;
+      background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+      transform-origin: bottom;
+      transform: scaleY(0);
+      opacity: 0;
+      visibility: hidden;
+      @include transitionSmooth;
+    }
+    &:hover,
+    &#{$self}--active {
+      &::after {
+        transform: scaleY(1);
+        opacity: 1;
+        visibility: visible;
+        @include transitionSmooth;
+      }
+      #{$self}__figure {
+        &__thumb {
+          filter: grayscale(1);
+        }
+      }
+      #{$self}__hashLink {
+        color: $colorPrimary;
+      }
+    }
+  }
+}

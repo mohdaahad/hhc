@@ -1,0 +1,179 @@
+// 3.2 Header
+.header {
+  $self: &;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  @include transitionSmooth;
+  @include respond-below(md) {
+    display: none;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 124px;
+    @include respond-below(xxlg) {
+      gap: 40px;
+    }
+    @include respond-below(lg) {
+      gap: 20px;
+    }
+  }
+  &__menu {
+    flex-grow: 1;
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 103px;
+    @include respond-below(xxlg) {
+      gap: 40px;
+    }
+    &--style2 {
+      gap: 20px;
+    }
+  }
+  &__actions {
+    ul {
+      display: inline-flex;
+      align-items: center;
+      gap: 30px;
+      .header--styleTwo & {
+        gap: 13px;
+      }
+      li {
+        a {
+          position: relative;
+          span {
+            position: absolute;
+            font-size: 10px;
+            height: 19px;
+            width: 19px;
+            background: $colorPrimary;
+            color: $colorWhite;
+            display: grid;
+            place-content: center;
+            border-radius: 50%;
+            right: -45%;
+            top: 10%;
+            .header--styleTwo &,
+            .header--styleThree & {
+              right: -8px;
+              top: 0;
+            }
+          }
+          .header--styleTwo &,
+          .header--styleThree & {
+            width: 50px;
+            height: 50px;
+            background: $colorWhite;
+            border: 1px solid $grayColor5;
+            box-sizing: border-box;
+            box-shadow: 0px 10px 15px rgba(221, 221, 221, 0.15);
+            display: grid;
+            place-content: center;
+            border-radius: 50%;
+            svg {
+              path {
+                fill: $colorTitle;
+              }
+            }
+          }
+        }
+        &:hover {
+          a {
+            svg {
+              path {
+                fill: $colorPrimary;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include respond-below(lg) {
+      display: none;
+    }
+    &--style2 {
+      ul {
+        gap: 15px;
+        li {
+          a {
+            width: 50px;
+            height: 50px;
+            background: $colorWhite;
+            border: 1px solid $grayColor5;
+            box-sizing: border-box;
+            box-shadow: 0px 10px 15px rgba(221, 221, 221, 0.15);
+            display: grid;
+            place-content: center;
+            border-radius: 50%;
+            svg {
+              path {
+                fill: $colorTitle;
+              }
+            }
+            span {
+              right: -8px;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.sticky-on.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0px 7px 65px 0px rgba($colorBlack, 0.05);
+    @include transitionSmooth;
+    background-color: $colorWhite;
+  }
+  &--mobile {
+    @include respond-below(md) {
+      display: block;
+      padding-left: 15px;
+    }
+    #{$self}__actions {
+      @include respond-below(md) {
+        display: block;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include respond-below(sm) {
+          gap: 10px;
+        }
+      }
+    }
+  }
+  &--styleTwo {
+    #{$self}__menu {
+      nav {
+        ul {
+          justify-content: center;
+        }
+      }
+    }
+  }
+  &--styleFour {
+    position: relative;
+    background-color: $colorWhite;
+    &.sticky-on.sticky {
+      position: sticky;
+      z-index: 999;
+    }
+  }
+}
+
+.header__logo__image {
+  .header--styleFive.sticky-on.sticky & {
+    mix-blend-mode: difference;
+  }
+}

@@ -1,0 +1,52 @@
+// 3.17 Breadcumb
+.pageBreadcumb {
+  background: no-repeat center center;
+  background-size: cover;
+  &--style1 {
+    padding: 165px 0 138px;
+    // overflow: hidden;
+    &::before,
+    &::after {
+      @extend .after-before;
+      background: rgba($colorTitle, $alpha: 0.45);
+    }
+  }
+}
+
+.pageTitle {
+  position: relative;
+  z-index: 1;
+  &__heading {
+    @include font-size(60px);
+  }
+  .breadcrumb {
+    justify-content: center;
+    li {
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      a {
+        color: $colorWhite;
+        &:hover {
+          color: $colorPrimary;
+        }
+      }
+      &.active {
+        color: $colorPrimary;
+        &::before {
+          color: $colorWhite;
+        }
+      }
+    }
+  }
+}
+
+.pageBreadcumbTopDown {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  margin-bottom: -46px;
+  z-index: 9;
+}
