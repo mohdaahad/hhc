@@ -1,10 +1,15 @@
-https://towardsdatascience.com/comprehensive-guide-to-deploying-any-ml-model-as-apis-with-python-and-aws-lambda-b441d257f1ec
+git clone https://github.com/aahadrahi/hhc.git
 
-https://blog.nextideatech.com/how-to-create-a-django-app-and-connect-it-to-a-database/
+python -m venv hhcenv
 
+source hhcenv/bin/activate
 
+cd ..
 
-python manage.py migrate --run-syncdb
+cd hhc
 
+pip install -r requirements.txt 
 
-pip install pycryptodome
+python3 manage.py runserver
+
+<!-- python manage.py migrate --run-syncdb -->
