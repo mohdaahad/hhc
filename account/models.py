@@ -91,17 +91,21 @@ class Feature_Campaigns(models.Model):
 
 
 class Donation(models.Model):
+    id = models.AutoField(primary_key=True)
     campaigns = models.ForeignKey(Feature_Campaigns, default = 'Education',on_delete=models.CASCADE)
     name = models.CharField(max_length=100)  
     email = models.EmailField(max_length = 254)  
-    phone_number = PhoneNumberField(null=False, blank=False)
+    phone_number = PhoneNumberField()
     country = models.CharField(max_length=100)
     region = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     pincode = models.IntegerField() 
     amount = models.IntegerField() 
     reference = models.IntegerField(null=True,default=0) 
+    pan_card = models.CharField(max_length=100)  
+    pay_id = models.CharField(max_length=200,blank=True)  
     Certificate_80G = models.BooleanField(default=False)
+    pay_status = models.BooleanField(default=False)
     created_date =models.DateTimeField(auto_now_add=True,null=True)
     updated_date =models.DateTimeField(auto_now=True)
     Created_by = models.CharField(max_length=200,blank=True)
@@ -110,3 +114,15 @@ class Donation(models.Model):
 
     def __str__(self):
         return self.name                   
+class Certificate_80g(models.Model):
+    donater = models.OneToOneField(Donation, on_delete=models.CASCADE)
+    Certificate_80G_no = models.CharField(max_length=200)
+    pdf_file = models.FileField(upload_to='static/account/pdf/')
+    created_date =models.DateTimeField(auto_now_add=True,null=True)
+    updated_date =models.DateTimeField(auto_now=True)
+    Created_by = models.CharField(max_length=200,blank=True)
+    updated_by = models.CharField(max_length=200,blank=True)    
+
+
+    def __str__(self):
+        return self.Certificate_80G_no          

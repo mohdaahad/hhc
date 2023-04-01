@@ -112,7 +112,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'hhc4you@gmail.com'
+EMAIL_HOST_PASSWORD = 'esdnllqopxtrfszb'
+EMAIL_PORT = 587
+EMAIL_USE_TLS= True
 
+
+PAYTM_MERCHANT_ID = 'WorldP64425807474247'
+PAYTM_SECRET_KEY = 'kbzk1DSbJiV_03p5'
+PAYTM_WEBSITE = 'WEBSTAGING'
+PAYTM_CHANNEL_ID = 'WEB'
+PAYTM_INDUSTRY_TYPE_ID = 'Retail'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

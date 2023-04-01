@@ -34,9 +34,10 @@ class ContactsAdmin(admin.ModelAdmin):
 class Feature_CampaignsAdmin(admin.ModelAdmin):
     list_display=('tag','title' )
 
-
+class Certificate_80gAdmin(admin.ModelAdmin):
+    list_display=('donater','Certificate_80G_no' )
 class DonationAdmin(admin.ModelAdmin):
-    list_display=('id','name','phone_number','amount' ,'campaigns','Certificate_80G')
+    list_display=('id','name','phone_number','amount' ,'campaigns','pay_status',)
     class Meta:
         widgets = {
             'phone_number': PhoneNumberPrefixWidget(),
@@ -51,3 +52,4 @@ admin.site.register(Social_Voluteers,Social_VoluteersAdmin)
 admin.site.register(Contacts,ContactsAdmin)
 admin.site.register(Feature_Campaigns,Feature_CampaignsAdmin)
 admin.site.register(Donation,DonationAdmin)
+admin.site.register(Certificate_80g,Certificate_80gAdmin)

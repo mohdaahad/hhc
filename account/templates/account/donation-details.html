@@ -95,13 +95,18 @@
   <div class="commentsPost__input">
  {{form.amount}} <small class="text-warning">{{form.amount.errors|striptags}}</small>
 </div>
-</div>   <div class="col-md-6">
+</div>   
+<div class="col-md-6">
   <div class="commentsPost__input">
  {{form.reference}} <small class="text-warning">{{form.reference.errors|striptags}}</small>
 </div>
 </div>
-                  <div id="alert12" class="">
-                  </div>
+<div class="col-md-12">
+  <div class="commentsPost__input">
+ {{form.pan_card}} <small class="text-warning">{{form.pan_card.errors|striptags}}</small>
+</div>
+</div>
+                 
 
                   <!-- <img src="" alt="" id="image"> -->
                   <div class="col-12">
@@ -112,6 +117,8 @@
                         </div>
                     </div>
                 </div>     
+                <!-- <div id="alert12" class="">
+                </div> -->
                           <div class="col-12">
                               <div class="commentsPost__button text-center">
                                   <button type="submit" class="btn btn--styleOne btn--primary it-btn">
@@ -147,7 +154,7 @@
         <!-- Donation Details End -->
     </main>
     <!-- Main End -->
-    <script>
+    <!-- <script>
       $('#donation').submit(function(event) {
           event.preventDefault();
           var formData = new FormData(this);
@@ -175,5 +182,5 @@
       
       
       
-      </script>
+      </script> -->
     {% endblock body %}
