@@ -15,7 +15,6 @@ from datetime import datetime,date
 # Create your views here.
 
 def home(request):
-
     campaigns = Feature_Campaigns.objects.all()
     return render(request, "account/home.html",{'campaigns':campaigns})
 
