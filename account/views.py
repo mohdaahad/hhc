@@ -126,18 +126,18 @@ def donation_details(request):
         if form.is_valid():
             donation=form.save()
 
-            # ************
-            donation.pay_status = 'True'
-            donation.save()  
-            if donation.Certificate_80G:
-                donation_id = donation.id
-                donation_instance = Donation.objects.get(id=donation_id)
-                year = str(datetime.now().year)
-                id_keyword = f"NGO-80G-{year}-{donation_id}"
-                pdf = sendMail(donation.name,id_keyword,donation.amount,donation.id,donation.email)
-                g = Certificate_80g.objects.create(donater=donation_instance, Certificate_80G_no=id_keyword, pdf_file=pdf)
-                g.save()
-            # ********************  
+            # # ************
+            # donation.pay_status = 'True'
+            # donation.save()  
+            # if donation.Certificate_80G:
+            #     donation_id = donation.id
+            #     donation_instance = Donation.objects.get(id=donation_id)
+            #     year = str(datetime.now().year)
+            #     id_keyword = f"NGO-80G-{year}-{donation_id}"
+            #     pdf = sendMail(donation.name,id_keyword,donation.amount,donation.id,donation.email)
+            #     g = Certificate_80g.objects.create(donater=donation_instance, Certificate_80G_no=id_keyword, pdf_file=pdf)
+            #     g.save()
+            # # ********************  
 
 
             param_dict={
