@@ -7633,3 +7633,9 @@ input[type="checkbox"].switch_1{
   }
 	
 /* Switch 1 Specific Style End */
+
+
+.header__logo{
+    position: relative;
+    top: -8px;
+}
