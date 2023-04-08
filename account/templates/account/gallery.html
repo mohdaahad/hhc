@@ -98,6 +98,9 @@ $(function() {
             e.preventDefault();
             var page = $(this).data('page');
             load_data(page);
+            $('html, body').animate({
+                scrollTop: $(".pt-120").offset().top
+                 }, 000);
         });
     });
 

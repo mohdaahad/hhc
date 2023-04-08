@@ -108,6 +108,11 @@
                 e.preventDefault();
                 var page = $(this).data('page');
                 load_data(page);
+            
+    $('html, body').animate({
+        scrollTop: $(".volunteersSection").offset().top
+    }, 000,);
+
             });
         });
     
