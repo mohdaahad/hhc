@@ -202,7 +202,7 @@ def gallery(request):
     return render(request, "account/gallery.html") 
 
 def gallery_ajax(request):
-    data = Gallery.objects.all()
+    data = Gallery.objects.all().order_by('-created_date')
     paginator = Paginator(data, 8)
     page = request.GET.get('page')
     paginated_data = paginator.get_page(page)

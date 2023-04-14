@@ -6,7 +6,8 @@ from django import forms
 
 
 class GalleryAdmin(admin.ModelAdmin):
-    list_display=('image', )
+    readonly_fields = ['image_tag']
+    list_display = ['title', 'image_tag']
 
 class VolunteersForm(forms.ModelForm):
     class Meta:

@@ -1,13 +1,17 @@
 from django.contrib.gis.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-
+from django.utils.html import mark_safe
 class Gallery(models.Model): 
+    title = models.CharField(max_length=300)
     image=models.ImageField(upload_to='static/account/image/gallery/') 
     created_date =models.DateTimeField(auto_now_add=True,null=True)
     updated_date =models.DateTimeField(auto_now=True)
     Created_by = models.CharField(max_length=200,blank=True)
     updated_by = models.CharField(max_length=200,blank=True)
+    def image_tag(self):
+            return mark_safe('<img src="/%s" width="100"  />' % (self.image))
 
+    image_tag.short_description = 'Image'
     def __str__(self):
         return self.image.url
 

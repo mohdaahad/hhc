@@ -74,7 +74,7 @@ $(function() {
                 success: function(data) {
                     var html = '';
                     for (var i = 0; i < data.data.length; i++) {
-                      html += '<div class="col-lg-3 col-md-4 col-6"><a data-lightbox="image-1" href="/' + data.data[i].image+'"class="d-block mb-4 h-100"><img class="img-fluid img-thumbnail" style="object-fit: cover; width: 304px; height: 206px;" src="/' +data.data[i].image + '" alt=""></a></div>';
+                      html += '<div class="col-lg-3 col-md-4 col-6"><a title="' +data.data[i].title + '" data-lightbox="image-1" href="/' + data.data[i].image+'"class="d-block mb-4 h-100"><img  class="img-fluid img-thumbnail" style="object-fit: cover; width: 304px; height: 206px;" src="/' +data.data[i].image + '" alt=""></a></div>';
                     }
                     $('#my-data').html(html);
                     var pagination_html = '';

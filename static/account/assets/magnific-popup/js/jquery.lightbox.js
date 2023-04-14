@@ -76,12 +76,13 @@
                     plugin.setCaption();
                 });
             },
-
+    
             setCaption: function () {
-                var caption = $(plugin.current).data('caption');
-                if (!!caption && caption.length > 0) {
+                var title = $(plugin.current).attr('title');
+                console.log("*************************")
+                if (!!title && title.length > 0) {
                     plugin.caption.fadeIn();
-                    $('p', plugin.caption).text(caption);
+                    $('p', plugin.caption).text(title);
                 } else {
                     plugin.caption.hide();
                 }

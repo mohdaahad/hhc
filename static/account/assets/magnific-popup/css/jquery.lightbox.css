@@ -54,9 +54,9 @@ body.blurred > * {
     display: inline-block;
     *display: inline;
     *zoom: 1;
-    padding: 10px;
+    padding: 20px;
     color: #fff;
-    font-size: 12px;
+    font-size: 32px;
     line-height: 18px;
 }
 
