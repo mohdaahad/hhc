@@ -6,7 +6,7 @@ from .form import *
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from .chacksum import generate_checksum, verify_checksum
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage,BadHeaderError    
 import pdfkit
 from django.http import HttpResponse
 import os
@@ -115,8 +115,10 @@ Helping Hands Community"""
     mail.attach_file(pdf)
     try:
       mail.send()
-    except:
-        print("Email not Send")
+    except BadHeaderError as e:
+        print("Email not sent. Invalid header:", e)
+    except Exception as e:
+        print("Email not sent. An error occurred:", e)
     return pdf
 
    
@@ -126,36 +128,37 @@ def donation_details(request):
         if form.is_valid():
             donation=form.save()
 
-            # # ************
+            # ************
             # donation.pay_status = 'True'
             # donation.save()  
-            # if donation.Certificate_80G:
-            #     donation_id = donation.id
-            #     donation_instance = Donation.objects.get(id=donation_id)
-            #     year = str(datetime.now().year)
-            #     id_keyword = f"NGO-80G-{year}-{donation_id}"
-            #     pdf = sendMail(donation.name,id_keyword,donation.amount,donation.id,donation.email)
-            #     g = Certificate_80g.objects.create(donater=donation_instance, Certificate_80G_no=id_keyword, pdf_file=pdf)
-            #     g.save()
-            # # ********************  
+            if donation.Certificate_80G:
+                donation_id = donation.id
+                donation_instance = Donation.objects.get(id=donation_id)
+                year = str(datetime.now().year)
+                id_keyword = f"NGO-80G-{year}-{donation_id}"
+                pdf = sendMail(donation.name,id_keyword,donation.amount,donation.id,donation.email)
+                g = Certificate_80g.objects.create(donater=donation_instance, Certificate_80G_no=id_keyword, pdf_file=pdf)
+                g.save()
+            # ********************  
 
 
-            param_dict={
-                'MID': settings.PAYTM_MERCHANT_ID,
-                'ORDER_ID': str(donation.id),
-                'TXN_AMOUNT': str(donation.amount),
-                'CUST_ID': donation.email,
-                'INDUSTRY_TYPE_ID': settings.PAYTM_INDUSTRY_TYPE_ID,
-                'WEBSITE':  settings.PAYTM_WEBSITE,
-                'CHANNEL_ID': settings.PAYTM_CHANNEL_ID,
-                'CALLBACK_URL':'http://127.0.0.1:8000/callback/',
-                }
+            # param_dict={
+            #     'MID': settings.PAYTM_MERCHANT_ID,
+            #     'ORDER_ID': str(donation.id),
+            #     'TXN_AMOUNT': str(donation.amount),
+            #     'CUST_ID': donation.email,
+            #     'INDUSTRY_TYPE_ID': settings.PAYTM_INDUSTRY_TYPE_ID,
+            #     'WEBSITE':  settings.PAYTM_WEBSITE,
+            #     'CHANNEL_ID': settings.PAYTM_CHANNEL_ID,
+            #     'CALLBACK_URL':'http://127.0.0.1:8000/callback/',
+            #     }
             
 
-            checksum = generate_checksum(param_dict , settings.PAYTM_SECRET_KEY)
-            donation.checksum = checksum
-            param_dict['CHECKSUMHASH'] = checksum
-            return render(request, 'account/redirect.html', context=param_dict)
+            # checksum = generate_checksum(param_dict , settings.PAYTM_SECRET_KEY)
+            # donation.checksum = checksum
+            # param_dict['CHECKSUMHASH'] = checksum
+            # return render(request, 'account/redirect.html', context=param_dict)
+            return render(request, "account/home.html") 
         else:
             form = DonationForm()
     else:
