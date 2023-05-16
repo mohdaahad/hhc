@@ -141,6 +141,18 @@ def donation_details(request):
                 pdf = sendMail(donation.name,id_keyword,donation.amount,donation.pay_id,donation.email,donation.phone_number,donation.pan_card,donation.pay_mode)
                 g = Certificate_80g.objects.create(donater=donation_instance, Certificate_80G_no=id_keyword, pdf_file=pdf)
                 g.save()
+                dirname = os.path.dirname(pdf)
+
+# Get the base name of the URL (filename)
+                basename = os.path.basename(pdf)
+
+# Get the path relative to the directory containing "static"
+                relative_path = os.path.relpath(dirname, start=dirname.split("static")[0])
+
+                # Construct the final URL path
+                final_path = os.path.join(relative_path, basename)
+
+                return render(request, "account/payment.html",{"pdf_url":final_path})  
             # ********************  
 
 

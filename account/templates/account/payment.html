@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment successful</title>
+    <title>Donation successful</title>
     <style>
         body {
   font-family: "Roboto";
@@ -232,7 +233,7 @@
     <h1>Donation Successful!</h1>
     <p>We are incredibly grateful for your support! Your donation will help us continue our important work.!</p>
     <a href="/"> <button class="submit-btn" type="submit">Go to home page</button></a>
-   
+    <a href="http://localhost:8000/{{pdf_url}}"  target="_blank"> <button class="submit-btn">Download</button></a>
 
   </div>  
   <script>

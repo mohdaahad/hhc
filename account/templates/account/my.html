@@ -132,7 +132,7 @@
                                             <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:22px;text-align:left;color:#555;">
                                                 <strong>Certificate No. : </strong>{{no}}<br>
                                                 <strong>Date :</strong> {{date}} <br></br>
-                                                This is to confirm that the Helping Hands Community received an amount of <strong>&#8377</strong> <strong>{{amount}}</strong> from <strong>{{name}}</strong> via the Mode of Payment upi bearing Paytm <strong>{{pay_mode}}</strong> {% if not pay_mode == 'Cash' %} ID <Strong>{{id}}</Strong> {% endif %}on <strong>{{date}}</strong><br><br>
+                                                This is to confirm that the Helping Hands Community Trust received an amount of <strong>&#8377</strong> <strong>{{amount}}</strong> from <strong>{{name}}</strong> via the Mode of Payment <strong>{{pay_mode}}</strong> {% if not pay_mode == 'Cash' %} with {% if pay_mode == 'UPI' %}UPI ID{% elif pay_mode == 'Cheque' %}Cheque No.{% else %}TXN ID{% endif %} <Strong>{{id}}</Strong> {% endif %}on <strong>{{date}}</strong><br><br>
 We thank you for your contribution towards the corpus of the Helping Hands Community and helping support our work.
                                             </div>
 
@@ -146,7 +146,8 @@ We thank you for your contribution towards the corpus of the Helping Hands Commu
                                                 <strong>Donor Details: </strong><br>
                                                 Pan Card No. : {{pan_card_no}}<br>
                                                 Gmail: {{gmail}}<br>
-                                                Phone No. : {{phone_no}} 
+                                                Phone No. : {{phone_no}} <br><br>
+
                                                
                                             </div>
                                         </td>
