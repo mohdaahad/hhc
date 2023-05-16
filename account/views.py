@@ -77,8 +77,8 @@ def volunteers_ajax(request):
     })
 
 
-def generate_pdf(name,cert_id,amount,pay_id):
-    context = {'name': name, 'no':cert_id,'date':date.today().strftime("%d-%m-%Y"),'amount':amount,'id':pay_id}
+def generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email):
+    context = {'name': name, 'no':cert_id,'date':date.today().strftime("%d-%m-%Y"),'amount':amount,'id':pay_id,'pan_card_no':pan_card,'gmail':email,'phone_no':phone_no}
     html_template = 'account/my.html'
     rendered_html = render_to_string(html_template, context)
     output_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static/account/pdf', f"{cert_id}.pdf")
@@ -90,8 +90,8 @@ def generate_pdf(name,cert_id,amount,pay_id):
     response['Content-Disposition'] = 'attachment; filename=f"{i}.pdf"'
     return output_path
 
-def sendMail(name,cert_id,amount,pay_id,email):
-    pdf = generate_pdf(name,cert_id,amount,pay_id)
+def sendMail(name,cert_id,amount,pay_id,email,phone_no,pan_card):
+    pdf = generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email)
     date1= date.today().strftime("%d-%m-%Y")
     subject = "Donation Receipt for Your Generous Contribution to Helping Hands Community"
     message = f"""Dear {name},
@@ -136,7 +136,7 @@ def donation_details(request):
                 donation_instance = Donation.objects.get(id=donation_id)
                 year = str(datetime.now().year)
                 id_keyword = f"NGO-80G-{year}-{donation_id}"
-                pdf = sendMail(donation.name,id_keyword,donation.amount,donation.id,donation.email)
+                pdf = sendMail(donation.name,id_keyword,donation.amount,donation.id,donation.email,donation.phone_number,donation.pan_card)
                 g = Certificate_80g.objects.create(donater=donation_instance, Certificate_80G_no=id_keyword, pdf_file=pdf)
                 g.save()
             # ********************  
@@ -158,7 +158,7 @@ def donation_details(request):
             # donation.checksum = checksum
             # param_dict['CHECKSUMHASH'] = checksum
             # return render(request, 'account/redirect.html', context=param_dict)
-            return render(request, "account/home.html") 
+            return render(request, "account/payment.html") 
         else:
             form = DonationForm()
     else:

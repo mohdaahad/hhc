@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 # adminuser;'HHC4U'
 # adminpass:'HHC'
+# gm:pkkmzxdhpdfjsaus
 
 from pathlib import Path
 
