@@ -132,7 +132,7 @@
                                             <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:22px;text-align:left;color:#555;">
                                                 <strong>Certificate No. : </strong>{{no}}<br>
                                                 <strong>Date :</strong> {{date}} <br></br>
-                                                This is to confirm that the Helping Hands Community received an amount of <strong>&#8377</strong> <strong>{{amount}}</strong> from <strong>{{name}}</strong> via the Mode of Payment upi bearing Paytm ID <Strong>{{id}}</Strong> on <strong>{{date}}</strong><br><br>
+                                                This is to confirm that the Helping Hands Community received an amount of <strong>&#8377</strong> <strong>{{amount}}</strong> from <strong>{{name}}</strong> via the Mode of Payment upi bearing Paytm <strong>{{pay_mode}}</strong> {% if not pay_mode == 'Cash' %} ID <Strong>{{id}}</Strong> {% endif %}on <strong>{{date}}</strong><br><br>
 We thank you for your contribution towards the corpus of the Helping Hands Community and helping support our work.
                                             </div>
 
@@ -155,11 +155,8 @@ We thank you for your contribution towards the corpus of the Helping Hands Commu
                                         <td align="left" style="font-size:0px;padding:10px 25px 10px 25px;word-break:break-word;">
 
                                             <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;color:#525252;">
-                                                324,Main Road,Islamnagar,Saharanpur<br>
-                                                PIN Code: 247451<br>
-                                                India<br>
-                                                Email: hhc4you@gmail.com<br><br><br>
-                                                <center>Computer generated receipt - Does not require signature<br>
+                                               
+                                                <center>324,Main Road,Islamnagar,Saharanpur,Uttar Pradesh,India PIN Code: 247451 Email: hhc4you@gmail.com<br>Computer generated receipt - Does not require signature<br>
                                                <strong>Helping Hands Community PAN Account No:</strong>AACTH7941K<br>
                                                <strong>80G Number:</strong>AACTH7941KE2021</center>
                                             </div>

@@ -118,8 +118,36 @@ class Donation(models.Model):
 
     def __str__(self):
         return self.name                   
+    
+
+class Donations(models.Model):
+    COLOR_CHOICES = (
+    ('Cash','Cash'),
+    ('UPI', 'UPI'),
+    ('Cheque','Cheque'),
+    ('Net Banking','Net Banking'),
+
+)
+    id = models.AutoField(primary_key=True)
+    campaigns = models.ForeignKey(Feature_Campaigns, default = 'Education',on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)  
+    email = models.EmailField(max_length = 254)  
+    phone_number = PhoneNumberField()
+    amount = models.IntegerField() 
+    pan_card = models.CharField(max_length=100)  
+    pay_mode = models.CharField(max_length=11, choices=COLOR_CHOICES, default='upi')
+    pay_id = models.CharField(max_length=200,blank=True)  
+    Certificate_80G = models.BooleanField(default=False)
+    created_date =models.DateTimeField(auto_now_add=True,null=True)
+    updated_date =models.DateTimeField(auto_now=True)
+    Created_by = models.CharField(max_length=200,blank=True)
+    updated_by = models.CharField(max_length=200,blank=True)    
+
+
+    def __str__(self):
+        return self.name                   
 class Certificate_80g(models.Model):
-    donater = models.OneToOneField(Donation, on_delete=models.CASCADE)
+    donater = models.OneToOneField(Donations, on_delete=models.CASCADE)
     Certificate_80G_no = models.CharField(max_length=200)
     pdf_file = models.FileField(upload_to='static/account/pdf/')
     created_date =models.DateTimeField(auto_now_add=True,null=True)
@@ -130,3 +158,8 @@ class Certificate_80g(models.Model):
 
     def __str__(self):
         return self.Certificate_80G_no          
+
+
+class Users(models.Model):
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=200) 

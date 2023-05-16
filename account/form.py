@@ -1,7 +1,6 @@
 from django.forms import ModelForm
-from .models import Volunteers,Contacts,Donation
+from .models import Volunteers,Contacts,Donation,Donations,Users
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
-from django.forms.widgets import ClearableFileInput
 from django import forms
 class VolunteersForm(ModelForm):
     class Meta:
@@ -24,3 +23,22 @@ class ContactsForm(ModelForm):
         fields = ['name','email','phone_number','subject','massage']
         widgets={'name':forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter your full name*',}),'email':forms.EmailInput(attrs={'class':'form-control','placeholder': 'Enter your email*'}),'phone_number':PhoneNumberPrefixWidget(initial='IN',attrs={'class':'form-control','placeholder': 'Enter your phone number*',}),'subject':forms.TextInput(attrs={'class':'form-control','placeholder': 'Subject*',}),'massage':forms.Textarea(attrs={'class':'form-control','placeholder': 'Enter your Massage*',}),}
         
+
+
+
+class DonationsForm(ModelForm):
+    class Meta:
+        model = Donations
+        fields = ['campaigns','name','email','phone_number','amount','Certificate_80G','pan_card','pay_mode','pay_id']
+        widgets={'name':forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter your full name*',}),'pan_card':forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter your pan card number*',}),
+                 'pay_id':forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter your pay card number*', 'onchange': 'updatePayMode()'}),'email':forms.EmailInput(attrs={'class':'form-control','placeholder': 'Enter your email*'}),'phone_number':PhoneNumberPrefixWidget(initial='IN',attrs={'class':'form-control','placeholder': 'Enter your phone number*',}),'amount':forms.NumberInput(attrs={'class':'form-control','placeholder': 'Amount INR*',}),'reference':forms.NumberInput(attrs={'class':'form-control','placeholder': 'Ref code',}),'Certificate_80G':forms.CheckboxInput(attrs={'class':'switch_1',}), 'pay_mode': forms.Select(attrs={'class': 'form-control', 'onchange': 'updatePayMode()'}),}        
+        
+
+
+
+class UserForm(ModelForm):
+    class Meta:
+        model = Users
+        fields = ['username','password']
+        widgets={'username':forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter your username*',}),'password':forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter your password*',}),
+                 }                

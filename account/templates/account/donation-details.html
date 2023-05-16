@@ -75,33 +75,26 @@
     <div class="commentsPost__input">
    {{form.phone_number}} <small class="text-warning">{{form.phone_number.errors|striptags}}</small>
 </div>
-</div>   <div class="col-md-6">
+</div>  
+<div class="col-md-6">
   <div class="commentsPost__input">
- {{form.country}} <small class="text-warning">{{form.country.errors|striptags}}</small>
+ {{form.pay_mode}} <small class="text-warning">{{form.pay_mode.errors|striptags}}</small>
 </div>
-</div>   <div class="col-md-6">
+</div>
+
+<div class="col-md-6">
   <div class="commentsPost__input">
- {{form.region}} <small class="text-warning">{{form.region.errors|striptags}}</small>
+ {{form.pay_id}} <small class="text-warning">{{form.pay_id.errors|striptags}}</small>
 </div>
-</div>   <div class="col-md-6">
-  <div class="commentsPost__input">
- {{form.city}} <small class="text-warning">{{form.city.errors|striptags}}</small>
 </div>
-</div>   <div class="col-md-6">
-  <div class="commentsPost__input">
- {{form.pincode}} <small class="text-warning">{{form.pincode.errors|striptags}}</small>
-</div>
-</div>   <div class="col-md-6">
+
+<div class="col-md-6">
   <div class="commentsPost__input">
  {{form.amount}} <small class="text-warning">{{form.amount.errors|striptags}}</small>
 </div>
 </div>   
+
 <div class="col-md-6">
-  <div class="commentsPost__input">
- {{form.reference}} <small class="text-warning">{{form.reference.errors|striptags}}</small>
-</div>
-</div>
-<div class="col-md-12">
   <div class="commentsPost__input">
  {{form.pan_card}} <small class="text-warning">{{form.pan_card.errors|striptags}}</small>
 </div>
@@ -183,4 +176,24 @@
       
       
       </script> -->
+      <script>
+         function updatePayMode() {
+        var payModeSelect = document.getElementById("id_pay_mode");
+        var payIdInput = document.getElementById("id_pay_id");
+        var selectedPayMode = payModeSelect.value;
+
+        if (selectedPayMode === "cash") {
+          payIdInput.style.display = "none";
+        } else if (selectedPayMode === "upi") {
+          payIdInput.style.display = "block"; 
+            payIdInput.placeholder = "Enter UPI details";
+        } else if (selectedPayMode === "cheque") {
+          payIdInput.style.display = "block"; 
+            payIdInput.placeholder = "Enter cheque details";
+        } else if (selectedPayMode === "net banking") {
+          payIdInput.style.display = "block"; 
+            payIdInput.placeholder = "Enter net banking details";
+        }
+    }
+      </script>
     {% endblock body %}

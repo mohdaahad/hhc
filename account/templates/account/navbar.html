@@ -37,7 +37,10 @@
                                         <li class="dropdown"><a class="a" href="{% url 'home' %}">Home</a> </li>
                                         <li><a class="a" href="{% url 'about' %}">About</a></li>
                                         <!-- <li><a class="a" href="{% url 'donation_details' %}">Donations</a></li> -->
-                                         <li><a class="a" href="{% url 'donation_details' %}">Donations</a></li>
+                                        {% if request.user.is_authenticated  %}
+                                        <li><a class="a" href="{% url 'donation_details' %}">Donations</a></li>
+                                        {% endif %}
+                                      
                                         <!-- <li><a href="{% url 'blog' %}">Blog</a></li> -->
                                         <li class="dropdown"><p class="a" >Pages</p>
                                             <ul class="dropdown_menu dropdown_menu-2">
@@ -69,8 +72,16 @@
                                                             </ul>
                                                         </div>
                                                         <div class="header__button">
-                                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'donation_details' %}">
-                                            <span class="btn__text">donate now</span>
+                                                            {% if request.user.is_authenticated  %}
+                                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'logout' %}">
+                                                            <span class="btn__text">Logout</span>
+                                                            {% endif %}
+                                                            {% if not request.user.is_authenticated  %}
+                                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'login' %}">
+                                                            <span class="btn__text">Login</span>
+                                                            {% endif %}
+                                                           
+                                         
                                             <i class="fa-solid fa-heart btn__icon"></i>
                                             <span class="it-btn__inner">
                                                             <span class="it-btn__blobs">
@@ -150,9 +161,12 @@
                                                 <li class="list menu-item-parent">
                                                     <a class="animation" href="{% url 'about' %}">About</a>
                                                 </li>
+                                              
+                                                {% if request.user.is_authenticated  %}
                                                 <li class="list menu-item-parent">
                                                     <a class="animation" href="{% url 'donation_details' %}">Donations</a>
                                                 </li>
+                                                {% endif %}
                                                 <!-- <li class="list menu-item-parent">
                                                     <a class="animation" href="{% url 'blog' %}">Blog</a>
                                                 </li> -->
@@ -208,8 +222,15 @@
                                     </div>
                                     <div class="cc__button">
                                         <div class="header__button">
-                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'donation_details' %}">
-                                    <span class="btn__text">Donate Now</span>
+                                            {% if request.user.is_authenticated  %}
+                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'logout' %}">
+                                            <span class="btn__text">Logout</span>
+                                            {% endif %}
+                                            {% if not request.user.is_authenticated  %}
+                                            <a class="btn btn--styleOne btn--secondary it-btn" href="{% url 'login' %}">
+                                            <span class="btn__text">Login</span>
+                                            {% endif %}
+                                       
                                     <i class="fa-solid fa-heart btn__icon"></i>
                                     <span class="it-btn__inner">
                                             <span class="it-btn__blobs">

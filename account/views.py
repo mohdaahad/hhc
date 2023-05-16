@@ -12,7 +12,9 @@ from django.http import HttpResponse
 import os
 from django.template.loader import render_to_string
 from datetime import datetime,date
+from django.http.response import HttpResponseRedirect
 # Create your views here.
+from django.contrib.auth import authenticate, login as Login_process ,logout
 
 def home(request):
     campaigns = Feature_Campaigns.objects.all()
@@ -77,8 +79,8 @@ def volunteers_ajax(request):
     })
 
 
-def generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email):
-    context = {'name': name, 'no':cert_id,'date':date.today().strftime("%d-%m-%Y"),'amount':amount,'id':pay_id,'pan_card_no':pan_card,'gmail':email,'phone_no':phone_no}
+def generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email,pay_mode):
+    context = {'name': name, 'no':cert_id,'date':date.today().strftime("%d-%m-%Y"),'amount':amount,'id':pay_id,'pan_card_no':pan_card,'gmail':email,'phone_no':phone_no,'pay_mode':pay_mode}
     html_template = 'account/my.html'
     rendered_html = render_to_string(html_template, context)
     output_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static/account/pdf', f"{cert_id}.pdf")
@@ -90,8 +92,8 @@ def generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email):
     response['Content-Disposition'] = 'attachment; filename=f"{i}.pdf"'
     return output_path
 
-def sendMail(name,cert_id,amount,pay_id,email,phone_no,pan_card):
-    pdf = generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email)
+def sendMail(name,cert_id,amount,pay_id,email,phone_no,pan_card,pay_mode):
+    pdf = generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email,pay_mode)
     date1= date.today().strftime("%d-%m-%Y")
     subject = "Donation Receipt for Your Generous Contribution to Helping Hands Community"
     message = f"""Dear {name},
@@ -124,7 +126,7 @@ Helping Hands Community"""
    
 def donation_details(request):
     if request.method == 'POST':
-        form= DonationForm(request.POST) 
+        form= DonationsForm(request.POST) 
         if form.is_valid():
             donation=form.save()
 
@@ -133,10 +135,10 @@ def donation_details(request):
             # donation.save()  
             if donation.Certificate_80G:
                 donation_id = donation.id
-                donation_instance = Donation.objects.get(id=donation_id)
+                donation_instance = Donations.objects.get(id=donation_id)
                 year = str(datetime.now().year)
                 id_keyword = f"NGO-80G-{year}-{donation_id}"
-                pdf = sendMail(donation.name,id_keyword,donation.amount,donation.id,donation.email,donation.phone_number,donation.pan_card)
+                pdf = sendMail(donation.name,id_keyword,donation.amount,donation.pay_id,donation.email,donation.phone_number,donation.pan_card,donation.pay_mode)
                 g = Certificate_80g.objects.create(donater=donation_instance, Certificate_80G_no=id_keyword, pdf_file=pdf)
                 g.save()
             # ********************  
@@ -160,9 +162,9 @@ def donation_details(request):
             # return render(request, 'account/redirect.html', context=param_dict)
             return render(request, "account/payment.html") 
         else:
-            form = DonationForm()
+            form = DonationsForm()
     else:
-        form = DonationForm()
+        form = DonationsForm()
     return render(request, "account/donation-details.html",{'form':form}) 
 
 @csrf_exempt
@@ -235,3 +237,29 @@ def join_volunteers(request):
     else:
         form = VolunteersForm()
     return render(request, "account/join-volunteers.html",{'form': form}) 
+
+
+
+def login(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                Login_process(request, user)
+                return HttpResponseRedirect('/')   # Redirect to the home page after successful login
+            else:
+                form.add_error(None, 'Invalid username or password')
+    else:
+        form = UserForm()
+
+    context = {
+        'form': form
+    }
+    return render(request, 'account/login.html', context)
+
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/') 

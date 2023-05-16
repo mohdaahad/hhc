@@ -18,5 +18,8 @@ urlpatterns = [
     path('ajax_gallery/', views.gallery_ajax, name='ajax_gallery'),
     path('volunteers_ajax/', views.volunteers_ajax, name='volunteers_ajax'),
     path('callback/', views.callback, name='callback'),
+    path('login/', views.login, name='login'),
+     path('logout/', views.user_logout, name='logout'),
+
 
 ]
