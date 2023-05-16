@@ -76,17 +76,6 @@
    {{form.phone_number}} <small class="text-warning">{{form.phone_number.errors|striptags}}</small>
 </div>
 </div>  
-<div class="col-md-6">
-  <div class="commentsPost__input">
- {{form.pay_mode}} <small class="text-warning">{{form.pay_mode.errors|striptags}}</small>
-</div>
-</div>
-
-<div class="col-md-6">
-  <div class="commentsPost__input">
- {{form.pay_id}} <small class="text-warning">{{form.pay_id.errors|striptags}}</small>
-</div>
-</div>
 
 <div class="col-md-6">
   <div class="commentsPost__input">
@@ -99,7 +88,18 @@
  {{form.pan_card}} <small class="text-warning">{{form.pan_card.errors|striptags}}</small>
 </div>
 </div>
-                 
+<div class="col-md-6">
+  <div class="commentsPost__input">
+ {{form.pay_mode}} <small class="text-warning">{{form.pay_mode.errors|striptags}}</small>
+</div>
+</div>
+
+<div class="col-md-6">
+  <div class="commentsPost__input">
+ {{form.pay_id}} <small class="text-warning">{{form.pay_id.errors|striptags}}</small>
+</div>
+</div>
+      
 
                   <!-- <img src="" alt="" id="image"> -->
                   <div class="col-12">
@@ -182,15 +182,15 @@
         var payIdInput = document.getElementById("id_pay_id");
         var selectedPayMode = payModeSelect.value;
 
-        if (selectedPayMode === "cash") {
+        if (selectedPayMode === "Cash") {
           payIdInput.style.display = "none";
-        } else if (selectedPayMode === "upi") {
+        } else if (selectedPayMode === "UPI") {
           payIdInput.style.display = "block"; 
             payIdInput.placeholder = "Enter UPI details";
-        } else if (selectedPayMode === "cheque") {
+        } else if (selectedPayMode === "Cheque") {
           payIdInput.style.display = "block"; 
             payIdInput.placeholder = "Enter cheque details";
-        } else if (selectedPayMode === "net banking") {
+        } else if (selectedPayMode === "Net Banking") {
           payIdInput.style.display = "block"; 
             payIdInput.placeholder = "Enter net banking details";
         }

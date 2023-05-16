@@ -135,7 +135,7 @@ class Donations(models.Model):
     phone_number = PhoneNumberField()
     amount = models.IntegerField() 
     pan_card = models.CharField(max_length=100)  
-    pay_mode = models.CharField(max_length=11, choices=COLOR_CHOICES, default='upi')
+    pay_mode = models.CharField(max_length=11, choices=COLOR_CHOICES, default='UPI')
     pay_id = models.CharField(max_length=200,blank=True)  
     Certificate_80G = models.BooleanField(default=False)
     created_date =models.DateTimeField(auto_now_add=True,null=True)
