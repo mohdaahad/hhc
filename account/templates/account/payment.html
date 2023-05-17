@@ -233,8 +233,9 @@
     <h1>Donation Successful!</h1>
     <p>We are incredibly grateful for your support! Your donation will help us continue our important work.!</p>
     <a href="/"> <button class="submit-btn" type="submit">Go to home page</button></a>
+    {% if pdf_url %}
     <a href="http://localhost:8000/{{pdf_url}}"  target="_blank"> <button class="submit-btn">Download</button></a>
-
+    {% endif %}
   </div>  
   <script>
     const Confettiful = function(el) {
