@@ -16,6 +16,11 @@ from django.http.response import HttpResponseRedirect
 # Create your views here.
 from django.contrib.auth import authenticate, login as Login_process ,logout
 
+
+def get_ip(request):
+    ip = request.get_host().split(':')[0]
+    return ip
+
 def home(request):
     campaigns = Feature_Campaigns.objects.all()
     return render(request, "account/home.html",{'campaigns':campaigns})
@@ -79,8 +84,8 @@ def volunteers_ajax(request):
     })
 
 
-def generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email,pay_mode):
-    context = {'name': name, 'no':cert_id,'date':date.today().strftime("%d-%m-%Y"),'amount':amount,'id':pay_id,'pan_card_no':pan_card,'gmail':email,'phone_no':phone_no,'pay_mode':pay_mode}
+def generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email,pay_mode,ip):
+    context = {'name': name, 'no':cert_id,'date':date.today().strftime("%d-%m-%Y"),'amount':amount,'id':pay_id,'pan_card_no':pan_card,'gmail':email,'phone_no':phone_no,'pay_mode':pay_mode,'ip':ip}
     html_template = 'account/my.html'
     rendered_html = render_to_string(html_template, context)
     output_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static/account/pdf', f"{cert_id}.pdf")
@@ -92,8 +97,8 @@ def generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email,pay_mode):
     response['Content-Disposition'] = 'attachment; filename=f"{i}.pdf"'
     return output_path
 
-def sendMail(name,cert_id,amount,pay_id,email,phone_no,pan_card,pay_mode):
-    pdf = generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email,pay_mode)
+def sendMail(name,cert_id,amount,pay_id,email,phone_no,pan_card,pay_mode,ip):
+    pdf = generate_pdf(name,cert_id,amount,pay_id,phone_no,pan_card,email,pay_mode,ip)
     date1= date.today().strftime("%d-%m-%Y")
     subject = "Donation Receipt for Your Generous Contribution to Helping Hands Community"
     message = f"""Dear {name},
@@ -103,7 +108,7 @@ We have processed your donation and are pleased to provide you with the followin
 
 Donation Amount: {amount}
 Date of Donation: {date1}
-Donation Type: UPI
+Donation Type: {pay_mode}
 
 We are a non-profit organization and all donations are tax-deductible as allowed by law. Please consult with your tax advisor for any specific tax-related questions.
 
@@ -134,11 +139,12 @@ def donation_details(request):
             # donation.pay_status = 'True'
             # donation.save()  
             if donation.Certificate_80G:
+                ip =get_ip(request)
                 donation_id = donation.id
                 donation_instance = Donations.objects.get(id=donation_id)
                 year = str(datetime.now().year)
                 id_keyword = f"NGO-80G-{year}-{donation_id}"
-                pdf = sendMail(donation.name,id_keyword,donation.amount,donation.pay_id,donation.email,donation.phone_number,donation.pan_card,donation.pay_mode)
+                pdf = sendMail(donation.name,id_keyword,donation.amount,donation.pay_id,donation.email,donation.phone_number,donation.pan_card,donation.pay_mode,ip)
                 g = Certificate_80g.objects.create(donater=donation_instance, Certificate_80G_no=id_keyword, pdf_file=pdf)
                 g.save()
                 dirname = os.path.dirname(pdf)
@@ -151,8 +157,9 @@ def donation_details(request):
 
                 # Construct the final URL path
                 final_path = os.path.join(relative_path, basename)
-
-                return render(request, "account/payment.html",{"pdf_url":final_path})  
+               
+                
+                return render(request, "account/payment.html",{"pdf_url":final_path,'ip':ip})  
             # ********************  
 
 
